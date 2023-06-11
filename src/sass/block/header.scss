@@ -1,0 +1,29 @@
+.header {
+  margin-top: 27px;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: baseline;
+  }
+
+  a {
+    font-family: $ff-inter-extralight;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  p {
+    text-align: center;
+  }
+}

@@ -21,12 +21,13 @@ const watcher = () => {
   watch($.path.scss.watch, task.scss);
   watch($.path.js.watch, task.js);
   watch($.path.img.watch, task.img);
+  watch($.path.video.watch, task.video);
   watch($.path.font.watch, task.font);
 }
 
 const build = $.gulp.series(
   task.clear,
-  $.gulp.parallel(task.pug, task.scss, task.js, task.img, task.font)
+  $.gulp.parallel(task.pug, task.scss, task.js, task.img, task.video, task.font)
 );
 
 const dev = $.gulp.series(
@@ -39,6 +40,7 @@ exports.pug = task.pug;
 exports.scss = task.scss;
 exports.js = task.js;
 exports.img = task.img;
+exports.video = task.video;
 exports.font = task.font;
 
 // Сборка

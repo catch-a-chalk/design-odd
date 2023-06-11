@@ -1,10 +1,6 @@
-$base-font-size: 22px;
-
-@mixin ph {
-  @media (max-width: 700px) {
-    @content;
-  }
-}
+@import "vendor/*.scss";
+@import "global/*.scss";
+@import "block/*.scss";
 
 * {
   box-sizing: border-box;
@@ -12,14 +8,7 @@ $base-font-size: 22px;
 
 body {
   font-size: $base-font-size;
-  font-family: Arial;
+  font-family: $ff-inter-extralight;
   line-height: 1.5;
-  background-image: url("../img/background.jpg") no-repeat;
-
-  @include ph {
-    color: #fff;
-    background-color: #000;
-  }
+  background-color: $color-white;
 }
-
-@import "block/*.scss";

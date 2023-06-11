@@ -1,0 +1,89 @@
+//- -
+//-   const PROJECTS_IDs = ['all', 'branding', 'identity', 'web', 'illustration', 'photo'],
+//-   PROJECTS_NAV = [
+//-     { text: 'все', id: PROJECTS_IDs[0]},
+//-     { text: 'брендинг', id: PROJECTS_IDs[1]},
+//-     { text: 'айдентика', id: PROJECTS_IDs[2]},
+//-     { text: 'web', id: PROJECTS_IDs[3]},
+//-     { text: 'иллюстрация', id: PROJECTS_IDs[4]},
+//-     { text: 'фотография', id: PROJECTS_IDs[5]},
+//-   ],
+//-   PROJECTS = {
+//-     [PROJECTS_IDs[0]]: [
+//-       { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns' },
+//-       { title: 'Айдентика WIJI', href: '/identity--wiji' },
+//-       { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex' },
+//-       { title: 'Брендинг/айдентика Element', href: '/branding-identity--element' },
+//-       { title: 'упаковка WIJI Cosmetics', href: '/photo--wiji-cosmetics' },
+//-       { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' },
+//-       { title: 'Ребрендинг Craft Cartel', href: '/branding--craft-cartel' },
+//-       { title: 'Дизайн упаковки Steppe&Wind vs CRAFT CARTEL', href: '/illustration--steppe&wind-vs-craft-cartel' },
+//-       { title: 'Корпоративный фирменный стиль/мерч  Craft Cartel', href: '/illustration--craft-cartel-merch' }
+//-     ],
+//-     [PROJECTS_IDs[1]]: [
+//-       { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns' },
+//-       { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex' },
+//-       { title: 'Брендинг/айдентика Element', href: '/branding-identity--element' },
+//-       { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' },
+//-       { title: 'Ребрендинг Craft Cartel', href: '/branding--craft-cartel' }
+//-     ],
+//-     [PROJECTS_IDs[2]]: [
+//-       { title: 'Айдентика WIJI', href: '/identity--wiji' },
+//-       { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex' },
+//-       { title: 'Брендинг/айдентика Element', href: '/branding-identity--element' },
+//-       { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' }
+//-     ],
+//-     [PROJECTS_IDs[3]]: [
+//-       { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns' },
+//-       { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' }
+//-     ],
+//-     [PROJECTS_IDs[4]]: [
+//-       { title: 'Дизайн упаковки Steppe&Wind vs CRAFT CARTEL', href: '/illustration--steppe&wind-vs-craft-cartel' },
+//-       { title: 'Корпоративный фирменный стиль/мерч  Craft Cartel', href: '/illustration--craft-cartel-merch' }
+//-     ],
+//-     [PROJECTS_IDs[5]]: [
+//-       { title: 'упаковка WIJI Cosmetics', href: '/photo--wiji-cosmetics' }
+//-     ]
+//-   },
+
+
+
+
+//-   platesPath = 'img/plates'
+
+//- // 1х: 381px; 2x: 762px
+//- section.plans#plans(style=`--bg: url("../${platesPath}-desktop@1x.png");
+//- --bg2: url("../${platesPath}-desktop@2x.png");
+//- --tab: url("../${platesPath}-tablet@1x.png");
+//- --tab2: url("../${platesPath}-tablet@2x.png");
+//- --next-block-size: 0;
+//- --next-block-color: white;
+//- `)
+  h2.section-heading._title Абонементы
+  ul._nav(role='tablist')
+    each plan, index in PROJECTS_NAV
+      li(role="presentation")
+        - const isSelected = index === 0
+        a(href=`#${plan.id}` role="tab" id=`${plan.id}-tab`,
+          aria-selected=String(isSelected), tabindex=isSelected ? undefined : -1)=plan.text
+  each plans, id in PLANS
+    div._list(role="tabpanel", id=id, aria-labelledby=`${id}-tab`
+    tabindex=-1, hidden=id !== PLAN_IDs[0])
+      each plan in plans
+        article.plan-card
+          h3._title=plan.title
+          p._subtitle=plan.condition
+          p._price(data-back=plan.price)=plan.price
+            svg(width=30 height=42 aria-label='рублей' title='рублей' role fill="#102654")
+              use(href='img/sprite_auto.svg#icon-rouble')
+          a(href=plan.href)._cta Купить абонемент
+
+//- section.projects
+//-   .wrapper
+//-     h2.title наши проекты 2023
+//-   ul.projects__list(role='tablist')
+//-     each project, index in PROJECTS_NAV
+//-       li(role="presentation")
+//-         - const isSelected = index === 0
+//-         a(href=`#${project.id}` role="tab" id=`${project.id}-tab`,
+//-           aria-selected=String(isSelected), tabindex=isSelected ? undefined : -1)=project.text

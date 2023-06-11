@@ -1,1 +1,15 @@
-header Шапка
+header.header
+  .wrapper
+    h2.visually-hidden Навигационное меню
+    img(src="img/logo-design-odd.png", atl="Логотип", width="160")
+    nav.header__nav.header__nav--closed.header__nav--nojs
+      // Убрать класс .visually-hidden при получении ТЗ на бургерное меню
+      button(type="button").visually-hidden.mobile-only
+      a(href="#")
+        p.is-active портфолио
+      a(href="#") 
+        p брендинг/<br>айдентика
+      a(href="#")
+        p веб
+      a(href="#") 
+        p заказ/<br>контакты
