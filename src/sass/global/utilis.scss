@@ -21,6 +21,8 @@
   line-height: 48px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .wrapper {
@@ -29,6 +31,8 @@
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .is-active {

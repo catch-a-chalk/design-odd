@@ -7,25 +7,26 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("const sum = __webpack_require__(/*! ./module/sum.js */ \"./src/js/module/sum.js\");\r\nconsole.log(sum(2, 10));\n\n//# sourceURL=webpack://starter/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_init_plantabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/init-plantabs */ \"./src/js/modules/init-plantabs.js\");\n// import {iosVhFix} from './utils/ios-vh-fix';\r\n// import {initModals} from './modules/modals/init-modals';\r\n// import {initVideo} from './modules/init-video';\r\n\r\n// import {initSwiper} from './modules/init-swiper';\r\n\r\n// ---------------------------------\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n\r\n  // Utils\r\n  // ---------------------------------\r\n\r\n  // iosVhFix();\r\n\r\n  // Modules\r\n  // ---------------------------------\r\n\r\n  // initVideo();\r\n  (0,_modules_init_plantabs__WEBPACK_IMPORTED_MODULE_0__.initPlanTabs)();\r\n  // initSwiper();\r\n\r\n  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'\r\n  // в load следует добавить скрипты, не участвующие в работе первого экрана\r\n//   window.addEventListener('load', () => {\r\n//     initModals();\r\n//   });\r\n});\n\n//# sourceURL=webpack://starter/./src/js/main.js?");
 
 /***/ }),
 
-/***/ "./src/js/module/sum.js":
-/*!******************************!*\
-  !*** ./src/js/module/sum.js ***!
-  \******************************/
-/***/ (function(module) {
+/***/ "./src/js/modules/init-plantabs.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/init-plantabs.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("module.exports = (a, b) => a + b;\r\n\n\n//# sourceURL=webpack://starter/./src/js/module/sum.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"initPlanTabs\": function() { return /* binding */ initPlanTabs; }\n/* harmony export */ });\nfunction initPlanTabs() {\n  const projectsSection = document.querySelector(\".projects\");\n\n  if (projectsSection) {\n    const navigation = projectsSection.querySelector(\".projects__nav\"),\n      tabs = navigation !== null && navigation.querySelectorAll(\"a\"),\n      panels = projectsSection.querySelectorAll(\".projects__list\");\n\n    let currentTabIndex = 0;\n\n    if (tabs !== false) {\n      tabs.forEach((tab, index) => {\n        tab.addEventListener(\"click\", (e) => {\n          e.preventDefault();\n          if (currentTabIndex === index) {\n            return panels[currentTabIndex].focus();\n          }\n\n          return switchTab(index);\n        });\n\n        tab.addEventListener(\"keydown\", ({ key }) => {\n          switch (key) {\n            case \"ArrowRight\":\n              return (\n                currentTabIndex !== tabs.length - 1 && switchTab(currentTabIndex + 1)\n              );\n\n            case \"ArrowLeft\":\n              return currentTabIndex !== 0 && switchTab(currentTabIndex - 1);\n\n            case \"ArrowDown\": return panels[currentTabIndex].focus();\n            default: break;\n          }\n        });\n      });\n\n      function switchTab(newIndex) {\n        const newTab = tabs[newIndex],\n          oldTab = tabs[currentTabIndex];\n\n        newTab.focus();\n        newTab.removeAttribute(\"tabindex\");\n        newTab.setAttribute(\"aria-selected\", \"true\");\n\n        oldTab.removeAttribute(\"aria-selected\");\n        oldTab.setAttribute(\"tabindex\", \"-1\");\n        panels[currentTabIndex].hidden = true;\n        panels[newIndex].hidden = false;\n        currentTabIndex = newIndex;\n      }\n    }\n  }\n}\n\n\n//# sourceURL=webpack://starter/./src/js/modules/init-plantabs.js?");
 
 /***/ })
 
@@ -54,6 +55,35 @@ eval("module.exports = (a, b) => a + b;\r\n\n\n//# sourceURL=webpack://starter/.
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
 /******/ 	
 /************************************************************************/
 /******/ 	

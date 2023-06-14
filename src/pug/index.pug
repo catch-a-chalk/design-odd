@@ -1,8 +1,11 @@
 extends layout/app
+//- block content
 
 block page
   h1.visually-hidden Страница-портфолио Design Odd
   include chunk/header
-  include chunk/video
-  include chunk/projects
+  main
+    include chunk/video
+    include chunk/projects
   include chunk/footer
+  script(src='js/main.js')

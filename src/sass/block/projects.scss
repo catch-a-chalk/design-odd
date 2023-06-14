@@ -1,0 +1,43 @@
+.projects {
+  &__nav {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    a {
+      font-size: 16px;
+      font-weight: 200;
+      line-height: 19px;
+      color: $color-black;
+    }
+  }
+
+  li {
+    border: 1px solid $color-black;
+    border-radius: 84px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: baseline;
+    margin-top: 10px;
+  }
+
+  &__card {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    color: $color-black;
+  }
+}
