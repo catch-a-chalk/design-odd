@@ -14,20 +14,33 @@
       font-weight: 200;
       line-height: 19px;
       color: $color-black;
+      width: 100%;
+
+      &[aria-selected="true"],
+      &:hover {
+        font-weight: 700;
+      }
+  
+      &:focus-visible {
+        font-weight: 700;
+      }
+    }
+
+    &__cta {
+      display: flex;
+      flex-direction: column;
     }
   }
 
   li {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
     border: 1px solid $color-black;
     border-radius: 84px;
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    align-items: baseline;
-    margin-top: 10px;
   }
 
   &__card {
@@ -39,5 +52,6 @@
     font-weight: 700;
     line-height: 29px;
     color: $color-black;
+    margin-top: 10px;
   }
 }

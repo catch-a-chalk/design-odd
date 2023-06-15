@@ -1,10 +1,10 @@
-export function initPlanTabs() {
-  const projectsSection = document.querySelector(".projects");
+export function initProjects() {
+  const plansSection = document.querySelector(".projects");
 
-  if (projectsSection) {
-    const navigation = projectsSection.querySelector(".projects__nav"),
+  if (plansSection) {
+    const navigation = plansSection.querySelector(".projects__nav"),
       tabs = navigation !== null && navigation.querySelectorAll("a"),
-      panels = projectsSection.querySelectorAll(".projects__list");
+      panels = plansSection.querySelectorAll(".projects__list");
 
     let currentTabIndex = 0;
 

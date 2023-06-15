@@ -6,7 +6,7 @@
     { text: 'айдентика', id: PROJECTS_IDs[2]},
     { text: 'web', id: PROJECTS_IDs[3]},
     { text: 'иллюстрация', id: PROJECTS_IDs[4]},
-    { text: 'фотография', id: PROJECTS_IDs[5]},
+    { text: 'фотография', id: PROJECTS_IDs[5] }
   ],
   PROJECTS = {
     [PROJECTS_IDs[0]]: [
@@ -21,42 +21,32 @@
       { title: 'Корпоративный фирменный стиль/мерч  Craft Cartel', href: '/illustration--craft-cartel-merch', img: 'merchcc' }
     ],
     [PROJECTS_IDs[1]]: [
-      { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns' },
-      { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex' },
-      { title: 'Брендинг/айдентика Element', href: '/branding-identity--element' },
-      { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' },
-      { title: 'Ребрендинг Craft Cartel', href: '/branding--craft-cartel' }
+      { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns', img: 'jugosa' },
+      { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex', img: 'seedex' },
+      { title: 'Брендинг/айдентика Element', href: '/branding-identity--element', img: 'element' },
+      { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop', img: 'hardypop' },
+      { title: 'Ребрендинг Craft Cartel', href: '/branding--craft-cartel', img: 'brandingcc' }
     ],
     [PROJECTS_IDs[2]]: [
-      { title: 'Айдентика WIJI', href: '/identity--wiji' },
-      { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex' },
-      { title: 'Брендинг/айдентика Element', href: '/branding-identity--element' },
-      { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' }
+      { title: 'Айдентика WIJI', href: '/identity--wiji', img: 'idenity-wiji' },
+      { title: 'Брендинг/айдентика Seedex', href: '/branding-identity--seedex', img: 'seedex' },
+      { title: 'Брендинг/айдентика Element', href: '/branding-identity--element', img: 'element' },
+      { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop', img: 'hardypop' }
     ],
     [PROJECTS_IDs[3]]: [
-      { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns' },
-      { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop' }
+      { title: 'Ребрендинг/web сидры JNS', href: '/branding-web--siders-jns', img: 'jugosa' },
+      { title: 'Брендинг/айдентика/web Hardypop', href: '/branding-identity-web--hardypop', img: 'hardypop' }
     ],
     [PROJECTS_IDs[4]]: [
-      { title: 'Дизайн упаковки Steppe&Wind vs CRAFT CARTEL', href: '/illustration--steppe&wind-vs-craft-cartel' },
-      { title: 'Корпоративный фирменный стиль/мерч  Craft Cartel', href: '/illustration--craft-cartel-merch' }
+      { title: 'Дизайн упаковки Steppe&Wind vs CRAFT CARTEL', href: '/illustration--steppe&wind-vs-craft-cartel', img: 'designcc' },
+      { title: 'Корпоративный фирменный стиль/мерч  Craft Cartel', href: '/illustration--craft-cartel-merch', img: 'merchcc' }
     ],
     [PROJECTS_IDs[5]]: [
-      { title: 'упаковка WIJI Cosmetics', href: '/photo--wiji-cosmetics' }
+      { title: 'упаковка WIJI Cosmetics', href: '/photo--wiji-cosmetics', img: 'wijicosmetics' }
     ]
   }
 
-//-   imgPath = 'img/plates'
-
-//- // 1х: 381px; 2x: 762px
-//- section.projects#projects(style=`--bg: url("../${platesPath}-desktop@1x.png");
-//- --bg2: url("../${platesPath}-desktop@2x.png");
-//- --tab: url("../${platesPath}-tablet@1x.png");
-//- --tab2: url("../${platesPath}-tablet@2x.png");
-//- --next-block-size: 0;
-//- --next-block-color: white;
-//- `)
-section.projects
+section.projects#projects
   .wrapper
     h2.title наши проекты 2023
     ul.projects__nav(role='tablist')
@@ -70,6 +60,6 @@ section.projects
       tabindex=-1, hidden=id !== PROJECTS_IDs[0])
         each project in projects
           article.projects__card
-            a(href=project.href)._cta
+            a(href=project.href).projects__cta
               img(src=`img/${project.img}@1x.jpg`, atl="Логотип", width="300")
-              h3._title=project.title
+              h3=project.title
