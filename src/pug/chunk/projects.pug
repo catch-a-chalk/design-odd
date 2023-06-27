@@ -58,11 +58,10 @@ section.projects#projects
     each projects, id in PROJECTS
       div.projects__list(role="tabpanel", id=id, aria-labelledby=`${id}-tab`
       tabindex=-1, hidden=id !== PROJECTS_IDs[0])
-        each project in projects
+        each project, number in projects
           article.projects__card
-          - for(let count = 0; count < PROJECTS_IDs[count].length; count++)
             a(href=project.href).projects__cta
               h4=project.group
-              p= '0' + count
+              p= '0' + (number + 1)
               img(src=`img/${project.img}@1x.jpg`, atl="Логотип", width="658")
               h3=project.title
