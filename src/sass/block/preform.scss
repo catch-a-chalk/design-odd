@@ -1,0 +1,28 @@
+.preform {
+  font-size: 40px;
+  line-height: 48px;
+  margin-top: 88px;
+  margin-bottom: 10px;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  p {
+    font-weight: 200;
+    margin: 0;
+  }
+
+  span {
+    font-weight: 700;
+  }
+
+  button {
+    
+  justify-content: flex-start;
+  align-items: end;
+  
+  align-self: end;
+  }
+}
