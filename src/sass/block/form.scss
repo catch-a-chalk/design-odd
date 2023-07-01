@@ -1,25 +1,114 @@
 .form {
+  counter-reset: cnt;
   margin-top: 88px;
 
-  small {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
+  &__intro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  
+    h2 {
+      grid-column: 2 / 3;
+      justify-self: center;
+    }
+  
+    button {
+      grid-column: 3 / 4;
+      justify-self: end;
+      justify-items: baseline;
+    }
+  }
+
+  fieldset {
+    counter-increment: cnt;
+    position: relative;
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 60px 1fr 1fr;
+    gap: 40px;
+
+    h4 {
+      grid-column: 2 / 3;
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 29px;
+    }
+
+    h4:after {
+      content: "0"counter(cnt);
+      position: absolute;
+      left: 50%;
+      top: 42%;
+    }
+  }
+
+  &__stage {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+
+    h3 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    small {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+    }
   }
 }
 
-.form__intro {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.form__list {
+  grid-column: 4 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: fit-content;
 
-  h2 {
-    grid-column: 2 / 3;
-    justify-self: center;
-  }
+  label {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 19px;
 
-  button {
-    grid-column: 3 / 4;
-    justify-self: end;
-    justify-items: baseline;
+    .form__tooltip {
+      visibility: hidden;
+      width: 197px;
+      background-color: $color-white;
+      box-shadow: 6px 6px 16px 8px rgba(174, 174, 192, 0.35);
+      text-align: initial;
+      padding: 22px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(175, 185, 193, 0.69);
+      position: absolute;
+      z-index: 1;
+      top: -5px;
+      left: 105%; 
+
+      font-size: 10px;
+      font-weight: 200;
+      line-height: 12px;
+      color: $color-black;
+    }
+
+    &:hover .form__tooltip {
+      visibility: visible;
+    }
   }
+}
+
+.form__label-branding .form__tooltip::after {
+  content: 'Изучение бренда для решения конкретных маркетинговых задач, в том числе повышение конкурентноспособности, формирование уникального образа, повышение симпатии потребителей, а также закрепление и дальнейшее развитие позиции на рынке.';
+}
+.form__label-rebranding .form__tooltip::after {
+  content: 'Обновление уже имеющихся концептов и реализованных идей на основе полученного опыта компании на рынке, в том числе и полное реконструкция образа компании с нуля.';
+}
+.form__label-retail-branding .form__tooltip::after {
+  content: 'Проектирование и оптимизация торгового пространства, развитие качества взаимодействия торговых точек с клиентами.';
+}
+.form__label-localization .form__tooltip::after {
+  content: 'Перевод и адаптирование иностранной продукции под Российский сегмент (в том числе по программе импортозамещения).';
 }
