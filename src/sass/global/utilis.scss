@@ -43,8 +43,16 @@ letter-spacing: 0em;
 text-align: left;
 }
 
-.btn-arrow {
-  display: flex;
-  width: 100px;
-  height: 100px;
+.btn {
+  &-arrow {
+    display: flex;
+    width: 100px;
+    height: 100px;
+  }
+
+  &-white {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+  }
 }

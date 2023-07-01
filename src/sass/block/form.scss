@@ -18,26 +18,39 @@
     }
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
   fieldset {
+    margin-bottom: 25px;
+
+    &:not(:first-of-type) {
+      margin-top: 25px;
+    }
+
     counter-increment: cnt;
     position: relative;
     border: none;
     display: grid;
     grid-template-columns: 1fr 1fr 60px 1fr 1fr;
-    gap: 40px;
+    gap: 50px;
 
     h4 {
       grid-column: 2 / 3;
       font-size: 24px;
       font-weight: 200;
       line-height: 29px;
+      text-align: end;
+      margin-top: 8px;
     }
 
     h4:after {
       content: "0"counter(cnt);
       position: absolute;
-      left: 50%;
-      top: 42%;
+      left: 49%;
+      top: 17px;
     }
   }
 
@@ -69,7 +82,8 @@
 
   label {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: baseline;
     font-size: 16px;
     font-weight: 200;
     line-height: 19px;
@@ -98,8 +112,31 @@
       visibility: visible;
     }
   }
+
+  input {
+    margin-right: 10px;
+  }
 }
 
+.form__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .btn-white {
+    grid-column: 2 / 3;
+    border: 3px solid $color-black;
+    border-radius: 60px;
+  }
+
+  .btn-arrow {
+    grid-column: 3 / 4;
+    justify-self: end;
+    align-items: center;
+    transform: rotate(180deg);
+  }
+}
+
+/* ВИД РАЗРАБОТКИ */
 .form__label-branding .form__tooltip::after {
   content: 'Изучение бренда для решения конкретных маркетинговых задач, в том числе повышение конкурентноспособности, формирование уникального образа, повышение симпатии потребителей, а также закрепление и дальнейшее развитие позиции на рынке.';
 }
@@ -111,4 +148,21 @@
 }
 .form__label-localization .form__tooltip::after {
   content: 'Перевод и адаптирование иностранной продукции под Российский сегмент (в том числе по программе импортозамещения).';
+}
+
+/* ИССЛЕДОВАНИЕ */
+.form__label-marketing-analysis .form__tooltip::after {
+  content: 'Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).';
+}
+.form__label-cjm .form__tooltip::after {
+  content: 'Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).';
+}
+.form__label-customer-experience .form__tooltip::after {
+  content: 'Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).';
+}
+.form__label-brand-audit .form__tooltip::after {
+  content: 'Аудит бренда — один из самых надёжных методов анализа составляющих бренда, а именно: его конкурентоспособности, текущего положения бренда на рынке, включая исследование потенциала для его дальнейшего развития.';
+}
+.form__label-structuring-of-the-received-data .form__tooltip::after {
+  content: 'Все полученные данные затем структурируются для подбора оптимальной стратегии позиционирования, сегментирования ключевых групп целевой аудитории, выявлении сильных и слабых сторон позиционирования бренда относительно конкурентов. Мы используем собственные и международные методики изучения брендов, применяя самые результативные модели.';
 }
