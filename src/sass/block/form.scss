@@ -1,5 +1,4 @@
 .form {
-  counter-reset: cnt;
   margin-top: 88px;
 
   &__intro {
@@ -30,7 +29,6 @@
       margin-top: 25px;
     }
 
-    counter-increment: cnt;
     position: relative;
     border: none;
     display: grid;
@@ -44,13 +42,6 @@
       line-height: 29px;
       text-align: end;
       margin-top: 8px;
-    }
-
-    h4:after {
-      content: "0"counter(cnt);
-      position: absolute;
-      left: 49%;
-      top: 17px;
     }
   }
 
