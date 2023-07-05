@@ -1,48 +1,114 @@
-//- - const LOGOTYPES = [{ value: 'one-option', span: '1 вариант' }, { value: 'two-options', span: '2 варианта' }]
-//- - const STYLES = [{ value: 'corporate-pattern-colors-fonts', span: 'фирменный паттерн, цвета, шрифты' }, { value: 'two-options', span: '2 варианта' }]
-//- - const PACKAGING = [{ value: 'design-development-of-shipping-containers', span: 'разработка дизайна транспортировочных тар' }, { value: 'packaging-design-development', span: 'разработка дизайна упаковки' }, { value: 'development-of-a-non-standard-packaging', span: 'разработка нестандартной для рынка формы упаковки в соответствии с технологическими возможностями' }]
-//- - const LABELS = [{ value: 'label-development', span: 'разработка этикеток ' }]
-//- - const VISUALIZATION = [{ value: 'an-example', span: 'пример работы фирменного стиля в среде' }]
-//- - const INSTRUCTIONS = [{ value: 'logobook', span: 'логобук' }, { value: 'brandbook', span: 'брендбук' }, { value: 'cut-guide', span: 'кат гайд' }, { value: 'guideline', span: 'гайдлайн' }]
-//- - const NAVIGATION = [{ value: 'food-styling-and-advertising-photography-lookbooks-etc', span: 'фудстайлинг и рекламная съемка, лукбуки и  т.д' }, { value: 'design-of-spaces-and-navigation', span: 'оформление пространств и навигации' }, { value: 'support-from-the-layout', span: 'сопровождение от макета до готового тиража клиенту' }, { value: 'creating-infographics-and-animations', span: 'создание-инфографики-и-анимации' }, { value: 'development-of-additional-elements', span: 'разработка дополнительных элементов фирменного стиля' }]
-//- - const TITLES = { text: [{value: 'value1', h4: "вид разработки"}, {value: 'value2', h4: "исследование"}], options: [{ value: 'branding', span: 'брендинг' }, { value: 'rebranding', span: 'ребрендинг' }, { value: 'retail-branding', span: 'ритейл-брендинг' }, { value: 'localization', span: 'локализация' }, { value: 'marketing-analysis', span: 'маркетинговый анализ' }, { value: 'cjm', span: 'CJM' }, { value: 'customer-experience', span: 'Customer Experience' }, { value: 'brand-audit', span: 'аудит бренда' }, { value: 'structuring-of-the-received-data', span: 'структурирование полученных данных' }]}
-
 -
-  const BRANDING = [
-    { title: 'вид разработки',
-      number: '01',
-      checkBoxes: 
-      [
-        { value: 'branding', span: 'брендинг' },
-        { value: 'rebranding', span: 'ребрендинг' },
-        { value: 'retail-branding', span: 'ритейл-брендинг' },
-        { value: 'localization', span: 'локализация' }
-      ] 
+  const STAGES = [
+    { header: 'брендинг',
+      description: 'создание твердой платформы бренда при помощи определения характеристик будущего бренда, таких как: ценности, целевая аудитория, миссия и философия, позиционирование, тон голоса бренда и стиль визуальной коммуникации, сервис и опыт взаимодействия потребителя с брендом.',
+      data: [
+        { title: 'вид разработки',
+          number: '01',
+          checkBoxes: 
+          [
+            { value: 'branding', span: 'брендинг' },
+            { value: 'rebranding', span: 'ребрендинг' },
+            { value: 'retail-branding', span: 'ритейл-брендинг' },
+            { value: 'localization', span: 'локализация' }
+          ] 
+        },
+        { title: 'исследование',
+          number: '02',
+          checkBoxes: 
+          [
+            { value: 'marketing-analysis', span: 'маркетинговый анализ' }, 
+            { value: 'cjm', span: 'CJM' }, 
+            { value: 'customer-experience', span: 'Customer Experience' }, 
+            { value: 'brand-audit', span: 'аудит бренда' }, 
+            { value: 'structuring-of-the-received-data', span: 'структурирование полученных данных' }
+          ] 
+        },
+        { title: 'анализ и теория',
+          number: '03',
+          checkBoxes: 
+          [
+            { value: 'brand-architecture', span: 'архитектура бренда' }, 
+            { value: 'promotion-concepts', span: 'концепции продвижения' }, 
+            { value: 'creating-a-brand-legend', span: 'создание легенды бренда' }, 
+            { value: 'naming', span: 'нейминг' }, 
+            { value: 'slogan', span: 'слоган' }, 
+            { value: 'development-of-a-design-strategy', span: 'разработка дизайн-стратегии' }, 
+            { value: 'creating-creative-texts', span: 'создание креативных текстов' }, 
+            { value: 'brand positioning', span: 'позиционирование бренда' }
+          ] 
+        }
+      ]
     },
-    { title: 'исследование',
-      number: '02',
-      checkBoxes: 
-      [
-        { value: 'marketing-analysis', span: 'маркетинговый анализ' }, 
-        { value: 'cjm', span: 'CJM' }, 
-        { value: 'customer-experience', span: 'Customer Experience' }, 
-        { value: 'brand-audit', span: 'аудит бренда' }, 
-        { value: 'structuring-of-the-received-data', span: 'структурирование полученных данных' }
-      ] 
+    { header: 'айдентика',
+      description: 'набор выдержанных в едином стиле и концепции визуальных и прочих элементов, которые формируют образ и восприятие бренда.',
+      data: [
+        { title: 'логотип',
+          number: '04',
+          checkBoxes: 
+          [
+            { value: 'one-option', span: '1 вариант' },
+            { value: 'two-options', span: '2 варианта' }
+          ] 
+        },
+        { title: 'фирменный стиль',
+          number: '05',
+          checkBoxes: 
+          [
+            { value: 'corporate-pattern-colors-fonts', span: 'фирменный паттерн, цвета, шрифты' },
+            { value: 'two-options', span: '2 варианта' }
+          ] 
+        },
+        { title: 'разработка формы/дизайна упаковки',
+          number: '06',
+          checkBoxes: 
+          [
+            { value: 'design-development-of-shipping-containers', span: 'разработка дизайна транспортировочных тар' },
+            { value: 'packaging-design-development', span: 'разработка дизайна упаковки' },
+            { value: 'development-of-a-non-standard-packaging', span: 'разработка нестандартной для рынка формы упаковки в соответствии с технологическими возможностями' }
+          ] 
+        },
+        { title: 'разработка дизайна этикеток',
+          number: '07',
+          checkBoxes: 
+          [
+            { value: 'label-development', span: 'разработка этикеток ' }
+          ] 
+        },
+        { title: 'визуализация на носителях',
+          number: '08',
+          checkBoxes: 
+          [
+            { value: 'an-example', span: 'пример работы фирменного стиля в среде' }
+          ] 
+        },
+        { title: 'инструкции',
+          number: '09',
+          checkBoxes: 
+          [
+            { value: 'logobook', span: 'логобук' },
+            { value: 'brandbook', span: 'брендбук' },
+            { value: 'cut-guide', span: 'кат гайд' },
+            { value: 'guideline', span: 'гайдлайн' }
+          ] 
+        }
+      ]
     },
-    { title: 'анализ и теория',
-      number: '03',
-      checkBoxes: 
-      [
-        { value: 'brand-architecture', span: 'архитектура бренда' }, 
-        { value: 'promotion-concepts', span: 'концепции продвижения' }, 
-        { value: 'creating-a-brand-legend', span: 'создание легенды бренда' }, 
-        { value: 'naming', span: 'нейминг' }, 
-        { value: 'slogan', span: 'слоган' }, 
-        { value: 'development-of-a-design-strategy', span: 'разработка дизайн-стратегии' }, 
-        { value: 'creating-creative-texts', span: 'создание креативных текстов' }, 
-        { value: 'brand positioning', span: 'позиционирование бренда' }
-      ] 
+    { header: 'дополнительные услуги',
+      description: '',
+      data: [
+        { title: 'контент, навигация',
+          number: '10',
+          checkBoxes: 
+          [
+            { value: 'food-styling-and-advertising-photography-lookbooks-etc', span: 'фудстайлинг и рекламная съемка, лукбуки и  т.д' },
+            { value: 'design-of-spaces-and-navigation', span: 'оформление пространств и навигации' },
+            { value: 'support-from-the-layout', span: 'сопровождение от макета до готового тиража клиенту' },
+            { value: 'creating-infographics-and-animations', span: 'создание-инфографики-и-анимации' },
+            { value: 'development-of-additional-elements', span: 'разработка дополнительных элементов фирменного стиля' }
+          ] 
+        }
+      ]
     }
   ]
 
@@ -54,23 +120,21 @@ section.form
         svg(xmlns='http://www.w3.org/2000/svg' width='52' height='60' fill='none')
           path(fill='#000' d='M29.5 4a3.5 3.5 0 1 0-7 0h7Zm-5.975 54.475a3.5 3.5 0 0 0 4.95 0L50.749 36.2a3.5 3.5 0 1 0-4.95-4.95L26 51.051 6.201 31.25a3.5 3.5 0 1 0-4.95 4.95l22.274 22.274ZM22.5 4v52h7V4h-7Z')
     form(action='https://echo.htmlacademy.ru/' method='post')
-      .form__stage
-        h3.title брендинг
-        small создание твердой платформы бренда при помощи определения характеристик 
-          | будущего бренда, таких как: ценности, целевая аудитория, миссия и&nbsp;философия, 
-          | позиционирование, тон голоса бренда и&nbsp;стиль визуальной коммуникации, сервис 
-          | и&nbsp;опыт взаимодействия потребителя с&nbsp;брендом.
-      fieldset
-        each element in BRANDING
-          h4=element.title
-          p=element.number
-          .form__list 
-            each checkBox in element.checkBoxes
-              label(class=`form__label-${checkBox.value}` for=`element-${checkBox.value}`)
-                input.form__input(type='checkbox' name='element' id=`element-${checkBox.value}` value=checkBox.value)
-                span.form__option
-                =checkBox.span
-                span.form__tooltip
+      each component in STAGES
+        .form__stage
+          h3.title=component.header
+          small=component.description
+        fieldset
+          each element in component.data
+            h4=element.title
+            p=element.number
+            .form__list 
+              each checkBox in element.checkBoxes
+                label(class=`form__label-${checkBox.value}` for=`element-${checkBox.value}`)
+                  input.form__input(type='checkbox' name='element' id=`element-${checkBox.value}` value=checkBox.value)
+                  span.form__option
+                  =checkBox.span
+                  span.form__tooltip
       .form__buttons
         button.btn-white(type='submit') оставить заявку
         button.btn-arrow(type="button")
