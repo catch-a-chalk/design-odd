@@ -46,13 +46,23 @@ text-align: left;
 .btn {
   &-arrow {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
   }
 
   &-white {
     font-size: 40px;
     font-weight: 700;
     line-height: 48px;
+    background-color: $color-white;
+    color: $color-black;
+  }
+
+  &-black {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    background-color: $color-black;
+    color: $color-white;
   }
 }

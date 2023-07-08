@@ -1,8 +1,11 @@
 .preform {
   font-size: 40px;
   line-height: 48px;
-  margin-top: 88px;
-  margin-bottom: 10px;
+  padding-top: 88px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  background-color: $color-white;
 
   .wrapper {
     display: grid;

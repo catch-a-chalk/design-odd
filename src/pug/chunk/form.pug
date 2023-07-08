@@ -112,31 +112,86 @@
     }
   ]
 
+-
+  const PACKAGES = [
+      { title: 'Пакет START',
+        checkBoxes: 
+        [
+          { value: 's-two-logotypes', span: '2 логотипа' },
+          { value: 's-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн' },
+          { value: 's-three-carriers', span: '3 носителя' },
+          { value: 's-package', span: 'упаковка' }
+        ],
+        price: '250 000 ₽'
+      },
+      { title: 'Пакет айдентика',
+        checkBoxes: 
+        [
+          { value: 'i-two-logotypes', span: '2 логотипа' },
+          { value: 'i-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн' },
+          { value: 'i-five-carriers', span: '5 носителей' },
+          { value: 'i-brandbook', span: 'брендбук' }, 
+          { value: 'i-package', span: 'упаковка' }
+        ],
+        price: '250 000'
+      },
+      { title: 'Пакет брендинг и айдентика ',
+        checkBoxes: 
+        [
+          { value: 'bi-two-types-of-naming', span: '2 варианта нейминга' }, 
+          { value: 'bi-two-logotypes', span: '2 логотипа' },
+          { value: 'bi-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн' },
+          { value: 'bi-five-carriers', span: '5 носителей' },
+          { value: 'bi-brandbook', span: 'брендбук' },
+          { value: 'bi-brand-platform', span: 'бренд-платформа*' }, 
+        ],
+        price: '270 000',
+        commentary: '*характер и ценности бренда, его идея, смысловая основа'
+      }
+    ]
+
 section.form
   .wrapper
     .form__intro
       h2.title этапы разработки
-      button.btn-arrow(type="button")
-        svg(xmlns='http://www.w3.org/2000/svg' width='52' height='60' fill='none')
-          path(fill='#000' d='M29.5 4a3.5 3.5 0 1 0-7 0h7Zm-5.975 54.475a3.5 3.5 0 0 0 4.95 0L50.749 36.2a3.5 3.5 0 1 0-4.95-4.95L26 51.051 6.201 31.25a3.5 3.5 0 1 0-4.95 4.95l22.274 22.274ZM22.5 4v52h7V4h-7Z')
-    form(action='https://echo.htmlacademy.ru/' method='post')
+    .form__progress
+      .form__progress-bar
+      .form__progress-overlay-top
+      .form__progress-overlay-bottom
+    form.form__stages(action='https://echo.htmlacademy.ru/' method='post')#content
       each component in STAGES
-        .form__stage
+        .form__stages-container
           h3.title=component.header
           small=component.description
         fieldset
           each element in component.data
             h4=element.title
-            p=element.number
-            .form__list 
+            p.form__stages-toggle#line=element.number
+            .form__stages-list 
               each checkBox in element.checkBoxes
-                label(class=`form__label-${checkBox.value}` for=`element-${checkBox.value}`)
-                  input.form__input(type='checkbox' name='element' id=`element-${checkBox.value}` value=checkBox.value)
+                label(class=`form__label-stages-${checkBox.value}` for=`stages-${checkBox.value}`)
+                  input(type='checkbox' name='stages' id=`stages-${checkBox.value}` value=checkBox.value)
                   span.form__option
                   =checkBox.span
-                  span.form__tooltip
-      .form__buttons
+                  span.form__stages-tooltip
+      .form__stages-btn
         button.btn-white(type='submit') оставить заявку
         button.btn-arrow(type="button")
           svg(xmlns='http://www.w3.org/2000/svg' width='52' height='60' fill='none')
             path(fill='#000' d='M29.5 4a3.5 3.5 0 1 0-7 0h7Zm-5.975 54.475a3.5 3.5 0 0 0 4.95 0L50.749 36.2a3.5 3.5 0 1 0-4.95-4.95L26 51.051 6.201 31.25a3.5 3.5 0 1 0-4.95 4.95l22.274 22.274ZM22.5 4v52h7V4h-7Z')
+    article.form__ready
+      h3.title готовые пакеты услуг для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
+      form.form__ready-cards(action='https://echo.htmlacademy.ru/' method='post')
+        each package in PACKAGES
+          fieldset
+            .form__ready-card
+              h4=package.title
+              .form__ready-list
+                each checkBox in package.checkBoxes
+                  label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
+                    input(type='checkbox' name='ready' id=`ready-${checkBox.value}` value=checkBox.value)
+                    p=checkBox.span
+              .form__ready-container
+                p=package.price
+                button.btn-black(type='submit') Заказать
+            small.form__ready-commentary=package.commentary

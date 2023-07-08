@@ -2,8 +2,7 @@
 // import {initModals} from './modules/modals/init-modals';
 // import {initVideo} from './modules/init-video';
 import { initProjects } from './modules/init-projects';
-// import {initSwiper} from './modules/init-swiper';
-
+import { initLine } from './modules/init-line';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   // initVideo();
+  initLine();
   initProjects();
   // initSwiper();
 

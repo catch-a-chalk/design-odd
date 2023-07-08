@@ -1,25 +1,147 @@
 .form {
-  margin-top: 88px;
+  .wrapper {
+    position: relative;
+  }
 
-  &__intro {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  
-    h2 {
-      grid-column: 2 / 3;
-      justify-self: center;
-    }
-  
-    button {
-      grid-column: 3 / 4;
-      justify-self: end;
-      justify-items: baseline;
+  fieldset {
+    padding: 0;
+
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
     }
   }
 
-  form {
+  label:hover {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    align-items: center;
+  }
+}
+
+.form__option {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' fill='%23fff' rx='3.5'/%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23E8E7E7' rx='3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+fieldset input:checked + .form__option,
+fieldset input:checked:hover + .form__option {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' fill='%23fff' rx='3.5'/%3E%3Cpath stroke='%23000' d='M4 7.143 7.2 10 12 5'/%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23000' rx='3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.form__intro {
+  padding-top: 88px;
+  background-color: $color-white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  h2 {
+    grid-column: 2 / 3;
+    justify-self: center;
+  }
+}
+
+.form__progress {
+  position: absolute;
+  width: 6px;
+  height: 100vw;
+  background-color: $color-solitude;
+  box-shadow: 1px 1px 2px 0px rgba(166, 171, 189, 1) inset;
+  display: flex;
+  align-self: center;
+  top: 150px;
+  z-index: -2;
+  border-radius: 6px;
+
+  &-bar {
+    position: fixed;
+    width: 6px;
+    height: 50vh;
+    background-color: $color-black;
+    top: 0;
+    bottom: 50vh;
+    z-index: -1;
+  }
+
+  &-overlay-top {
+    position: absolute;
+    width: 6px;
+    height: 10vh;
+    background-color: $color-black;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &-overlay-bottom {
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    background-color: linear-gradient(top,#040404 50%, #fff 50%);
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.form__stages {
+  display: flex;
+  flex-direction: column;
+
+  &-container {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+
+    h3 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    small {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+    }
+  }
+
+  &-toggle {
+    margin-top: 0;
+    border-radius: 30px;
+    width: 58px;
+    height: 58px;
+
+    position: sticky;
+    top: 50vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-solitude;
+    box-shadow: 3px 3px 3px 0px rgba(174, 184, 192, 1) inset;
+  }
+
+  &-toggle--active {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    color: white;
+
+    background-color: black;
+    box-shadow: none;
   }
 
   fieldset {
@@ -41,35 +163,30 @@
       font-weight: 200;
       line-height: 29px;
       text-align: end;
-      margin-top: 8px;
-    }
-
-    p {
-      margin-top: 8px;
-      justify-self: center;
-    }
-  }
-
-  &__stage {
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-
-    h3 {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
-
-    small {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 17px;
+      margin-top: 14px;
     }
   }
 }
 
-.form__list {
+.form__stages-btn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .btn-white {
+    grid-column: 2 / 3;
+    border: 3px solid $color-black;
+    border-radius: 60px;
+  }
+
+  .btn-arrow {
+    grid-column: 3 / 4;
+    justify-self: end;
+    align-items: center;
+    transform: rotate(180deg);
+  }
+}
+
+.form__stages-list {
   grid-column: 4 / -1;
   display: flex;
   flex-direction: column;
@@ -84,7 +201,7 @@
     font-weight: 200;
     line-height: 19px;
 
-    .form__tooltip {
+    .form__stages-tooltip {
       visibility: hidden;
       width: 197px;
       background-color: $color-white;
@@ -104,7 +221,7 @@
       color: $color-black;
     }
 
-    &:hover .form__tooltip {
+    &:hover .form__stages-tooltip {
       visibility: visible;
     }
   }
@@ -114,51 +231,125 @@
   }
 }
 
-.form__buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  .btn-white {
-    grid-column: 2 / 3;
-    border: 3px solid $color-black;
-    border-radius: 60px;
-  }
-
-  .btn-arrow {
-    grid-column: 3 / 4;
-    justify-self: end;
-    align-items: center;
-    transform: rotate(180deg);
-  }
-}
-
-/* ВИД РАЗРАБОТКИ */
-.form__label-branding .form__tooltip::after {
+/* КОММЕНТАРИИ К РАДИОКНОПКАМ*/
+/* вид разработки */
+.form__label-stages-branding .form__stages-tooltip::after {
   content: 'Изучение бренда для решения конкретных маркетинговых задач, в том числе повышение конкурентноспособности, формирование уникального образа, повышение симпатии потребителей, а также закрепление и дальнейшее развитие позиции на рынке.';
 }
-.form__label-rebranding .form__tooltip::after {
+.form__label-stages-rebranding .form__stages-tooltip::after {
   content: 'Обновление уже имеющихся концептов и реализованных идей на основе полученного опыта компании на рынке, в том числе и полное реконструкция образа компании с нуля.';
 }
-.form__label-retail-branding .form__tooltip::after {
+.form__label-stages-retail-branding .form__stages-tooltip::after {
   content: 'Проектирование и оптимизация торгового пространства, развитие качества взаимодействия торговых точек с клиентами.';
 }
-.form__label-localization .form__tooltip::after {
+.form__label-stages-localization .form__stages-tooltip::after {
   content: 'Перевод и адаптирование иностранной продукции под Российский сегмент (в том числе по программе импортозамещения).';
 }
-
-/* ИССЛЕДОВАНИЕ */
-.form__label-marketing-analysis .form__tooltip::after {
+/* исследование */
+.form__label-stages-marketing-analysis .form__stages-tooltip::after {
   content: 'Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).';
 }
-.form__label-cjm .form__tooltip::after {
+.form__label-stages-cjm .form__stages-tooltip::after {
   content: 'Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).';
 }
-.form__label-customer-experience .form__tooltip::after {
+.form__label-stages-customer-experience .form__stages-tooltip::after {
   content: 'Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).';
 }
-.form__label-brand-audit .form__tooltip::after {
+.form__label-stages-brand-audit .form__stages-tooltip::after {
   content: 'Аудит бренда — один из самых надёжных методов анализа составляющих бренда, а именно: его конкурентоспособности, текущего положения бренда на рынке, включая исследование потенциала для его дальнейшего развития.';
 }
-.form__label-structuring-of-the-received-data .form__tooltip::after {
+.form__label-stages-structuring-of-the-received-data .form__stages-tooltip::after {
   content: 'Все полученные данные затем структурируются для подбора оптимальной стратегии позиционирования, сегментирования ключевых групп целевой аудитории, выявлении сильных и слабых сторон позиционирования бренда относительно конкурентов. Мы используем собственные и международные методики изучения брендов, применяя самые результативные модели.';
+}
+
+.form__ready {
+  padding-top: 83px;
+
+  h3 {
+    padding-left: 100px;
+    max-width: 755px;
+  }
+
+  &-cards {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+    // gap: 93px;
+    display: flex;
+    justify-content: space-between;
+
+    fieldset {
+      border: none;
+    }
+  }
+
+  &-card {
+    aspect-ratio: 314 / 451;
+    height: 451px;
+    display: grid;
+    grid-template-rows: 70px auto auto;
+    justify-items: center;
+    padding: 8px 30px 43px;
+    border: 2px solid $color-light-grey;
+    border-radius: 7px;
+    overflow: hidden;
+
+    h4 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 13px;
+    }
+
+    label {
+      display: flex;
+
+      input {
+        margin-right: 10px;
+      }
+  
+      p {
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 19px;
+        margin: 0;
+      }
+    }
+  }
+
+  &-list {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 0;
+    padding: 20px;
+  }
+
+  &-container {
+    margin-top: 20px;
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      text-align: center;
+      margin: 5px 0;
+    }
+  
+    button {
+      padding: 5px 36px;
+      border-radius: 84px;
+    }
+  }
+
+  &-commentary {
+    display: flex;
+    width: 314px;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 19px;
+  }
 }

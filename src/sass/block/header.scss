@@ -1,6 +1,9 @@
 .header {
-  margin-top: 27px;
-  margin-bottom: 10px;
+  padding-top: 27px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  background-color: $color-white;
 
   .wrapper {
     display: flex;
