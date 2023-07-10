@@ -1,0 +1,80 @@
+.dev__web {
+  &-container {
+    padding-top: 88px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr;
+    align-items: center;
+
+    p {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 60px;
+      justify-self: end;
+    }
+  }
+
+  &-services {
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 120px 0;
+      gap: 100px;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: 250px 70px auto 250px;
+      gap: 20px;
+    }
+  }
+
+  &-title {
+    text-align: end;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 29px;
+  }
+
+  &-number {
+    justify-self: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+  }
+
+  &-description {
+    padding-right: 20px;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 29px;
+
+    span {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+    }
+  }
+
+  &-order {
+    justify-self: end;
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+    }
+
+    button {
+      padding: 5px 45px;
+      border-radius: 50px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+-
+  const PACKAGES = [
+      { title: 'Пакет START',
+        checkBoxes: 
+        [
+          { value: 's-two-logotypes', span: '2 логотипа' },
+          { value: 's-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн' },
+          { value: 's-three-carriers', span: '3 носителя' },
+          { value: 's-package', span: 'упаковка' }
+        ],
+        price: '250 000 ₽'
+      },
+      { title: 'Пакет айдентика',
+        checkBoxes: 
+        [
+          { value: 'i-two-logotypes', span: '2 логотипа' },
+          { value: 'i-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн' },
+          { value: 'i-five-carriers', span: '5 носителей' },
+          { value: 'i-brandbook', span: 'брендбук' }, 
+          { value: 'i-package', span: 'упаковка' }
+        ],
+        price: '250 000'
+      },
+      { title: 'Пакет брендинг и айдентика ',
+        checkBoxes: 
+        [
+          { value: 'bi-two-types-of-naming', span: '2 варианта нейминга' }, 
+          { value: 'bi-two-logotypes', span: '2 логотипа' },
+          { value: 'bi-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн' },
+          { value: 'bi-five-carriers', span: '5 носителей' },
+          { value: 'bi-brandbook', span: 'брендбук' },
+          { value: 'bi-brand-platform', span: 'бренд-платформа*' }, 
+        ],
+        price: '270 000',
+        commentary: '*характер и ценности бренда, его идея, смысловая основа'
+      }
+    ]
+
+article.form__ready
+  h3.title готовые пакеты услуг для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
+  form.form__ready-cards(action='https://echo.htmlacademy.ru/' method='post')
+    each package in PACKAGES
+      fieldset
+        .form__ready-card
+          h4=package.title
+          .form__ready-list
+            each checkBox in package.checkBoxes
+              label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
+                input(type='checkbox' name='ready' id=`ready-${checkBox.value}` value=checkBox.value)
+                span.form__option
+                p=checkBox.span
+          .form__ready-container
+            p=package.price
+            button.btn-black(type='submit') Заказать
+        small.form__ready-commentary=package.commentary

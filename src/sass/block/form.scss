@@ -14,13 +14,6 @@
       clip: rect(0 0 0 0);
     }
   }
-
-  label:hover {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19px;
-    align-items: center;
-  }
 }
 
 .form__option {
@@ -75,7 +68,7 @@ fieldset input:checked:hover + .form__option {
   &-overlay-top {
     position: absolute;
     width: 6px;
-    height: 10vh;
+    height: 20vh;
     background-color: $color-black;
     top: 0;
     bottom: auto;
@@ -171,6 +164,8 @@ fieldset input:checked:hover + .form__option {
 .form__stages-btn {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding-top: 50px;
+  background-color: $color-white;
 
   .btn-white {
     grid-column: 2 / 3;
@@ -201,24 +196,9 @@ fieldset input:checked:hover + .form__option {
     font-weight: 200;
     line-height: 19px;
 
-    .form__stages-tooltip {
-      visibility: hidden;
-      width: 197px;
-      background-color: $color-white;
-      box-shadow: 6px 6px 16px 8px rgba(174, 174, 192, 0.35);
-      text-align: initial;
-      padding: 22px 14px;
-      border-radius: 6px;
-      border: 1px solid rgba(175, 185, 193, 0.69);
-      position: absolute;
-      z-index: 1;
-      top: -5px;
-      left: 105%; 
-
-      font-size: 10px;
-      font-weight: 200;
-      line-height: 12px;
-      color: $color-black;
+    &:hover {
+      font-weight: 700;
+      line-height: 19px;
     }
 
     &:hover .form__stages-tooltip {
@@ -229,6 +209,26 @@ fieldset input:checked:hover + .form__option {
   input {
     margin-right: 10px;
   }
+}
+
+.form__stages-tooltip {
+  visibility: hidden;
+  width: 197px;
+  background-color: $color-white;
+  box-shadow: 6px 6px 16px 8px rgba(174, 174, 192, 0.35);
+  text-align: initial;
+  padding: 22px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(175, 185, 193, 0.69);
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%; 
+
+  font-size: 10px;
+  font-weight: 200;
+  line-height: 12px;
+  color: $color-black;
 }
 
 /* КОММЕНТАРИИ К РАДИОКНОПКАМ*/
@@ -264,6 +264,7 @@ fieldset input:checked:hover + .form__option {
 
 .form__ready {
   padding-top: 83px;
+  background-color: $color-white;
 
   h3 {
     padding-left: 100px;
@@ -326,6 +327,11 @@ fieldset input:checked:hover + .form__option {
     margin-top: 24px;
     margin-bottom: 0;
     padding: 20px;
+
+    label {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
   }
 
   &-container {
