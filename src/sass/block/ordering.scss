@@ -1,0 +1,75 @@
+.ordering {
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__info {
+    p {
+      display: flex;
+      &:not(:last-of-type) {
+        flex-direction: column;
+      }
+
+      &:last-of-type {
+        outline: 2px solid $color-black;
+        border-radius: 25px;
+        padding: 5px 20px;
+        input {
+            border: none;
+        }
+      }
+    }
+
+    label,
+    input {
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 29px;
+      cursor: pointer;
+    }
+  }
+
+  &__required {
+    outline: 2px solid $color-black;
+    border-radius: 25px;
+    padding: 5px 20px;
+
+    &:focus,
+    &:active {
+      outline: 3px solid $color-black;
+    }
+  }
+
+  &__file {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 15px;
+
+    &-label {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+    &-btn {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      text-align: center;
+      padding: 3px 30px;
+      border-radius: 25px;
+    }
+
+    &-text {
+      grid-column: 2 / 3;
+      grid-row:  2 / 3;
+      text-align: center;
+    }
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
