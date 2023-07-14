@@ -1,10 +1,23 @@
 .ordering {
+  margin-top: 50px;
+
+  label,
+  input,
+  textarea {
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 29px;
+    cursor: pointer;
+  }
+
   &__form {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 100px;
   }
 
   &__info {
+    grid-column: 1 / 2;
     p {
       display: flex;
       &:not(:last-of-type) {
@@ -15,18 +28,15 @@
         outline: 2px solid $color-black;
         border-radius: 25px;
         padding: 5px 20px;
+        label {
+          font-weight: 700;
+        }
         input {
             border: none;
+            width: 100%;
+            text-align: center;
         }
       }
-    }
-
-    label,
-    input {
-      font-size: 24px;
-      font-weight: 200;
-      line-height: 29px;
-      cursor: pointer;
     }
   }
 
@@ -34,8 +44,11 @@
     outline: 2px solid $color-black;
     border-radius: 25px;
     padding: 5px 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 
     &:focus,
+    &:focus-within,
     &:active {
       outline: 3px solid $color-black;
     }
@@ -71,5 +84,146 @@
 
   input[type="file"] {
     display: none;
+  }
+
+  &__details {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 29px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea {
+      resize: none;
+      margin-top: 10px;
+      margin-bottom: 26px;
+      outline: 2px solid $color-black;
+      border-radius: 20px;
+      padding: 5px 20px;
+      height: 225px;
+
+      &:focus,
+      &:focus-within,
+      &:active {
+        outline: 3px solid $color-black;
+      }
+    }
+  }
+
+  &__container {
+    min-height: 170px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      height: fit-content;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+      margin-left: 10px;
+    }
+  }
+
+  &__discount {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 21px 0;
+    outline: 2px solid $color-black;
+    border-radius: 25px;
+
+    p {
+      margin: 0;
+      padding: 5px 30px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+    }
+  }
+
+  &__buttons {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    label {
+      line-height: 12px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      &:first-of-type {
+        grid-column: 1 / 2;
+      }
+      &:last-of-type {
+        grid-column: 2 / 3;
+      }
+    }
+
+    small {
+      font-size: 10px;
+      font-weight: 200;
+      line-height: 12px;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    button {
+      grid-column: 3 / 4;
+      border-radius: 25px;
+    }
+
+    input[type="checkbox"] + span {
+      width: 21px;
+      height: 21px;
+      margin-right: 9px;
+      content: url("../img/icon-radio-off.svg");
+      opacity: 0.8;
+  
+      &:hover,
+      &:focus,
+      &:focus-within {
+        opacity: 1;
+      }
+    }
+
+    input[type="checkbox"]:checked + span {
+      content: url("../img/icon-radio-on.svg");
+    }
+  
+    // input[type="checkbox"]:focus + span {
+    //   outline: 2px solid $color-black;
+    //   outline-offset: 0.3em;
+    // }
+  
+    input[type="checkbox"]:disabled + span,
+    input[type="checkbox"]:disabled ~ small {
+      opacity: 0.5;
+      cursor: default;
+    }
   }
 }
