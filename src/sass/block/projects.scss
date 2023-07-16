@@ -1,20 +1,23 @@
 .projects {
   --mt-inside-card: 10px;
+  overflow: hidden;
 
   &__nav {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     text-align: center;
     gap: 50px;
     margin-top: 20px;
     margin-bottom: 50px;
 
+    @media (max-width: ($vp-1024 - 1)) {
+      padding: 0 50px;
+    }
+
     a {
-      font-size: 16px;
-      font-weight: 200;
-      line-height: 19px;
+      font: $font-200-16-19;
       color: $color-black;
       width: 100%;
 
@@ -39,16 +42,27 @@
 
   &__card {
     text-align: center;
-    padding: 60px 0;
-    border-top: 1px solid $color-black;
+    padding: 40px 0;
+    position: relative;
 
-    
+    &:before{
+      content: '';
+      width: 120%;
+      height: 1px;
+      background-color: $color-black;
+      position: absolute;
+      display: block;
+    }
+
     p {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 29px;
+      font: $font-700-24-29;
       color: $color-black;
       margin-top: var(--mt-inside-card);
+
+      
+      @media (max-width: ($vp-1024 - 1)) {
+        font: $font-700-18-21;
+      }
     }
   }
 
@@ -57,25 +71,50 @@
     grid-template-columns: 200px 50px auto 200px;
     justify-content: start;
     gap: 45px;
+    margin-top: 60px;
+
+    img {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      // height: auto;
+      // max-width: 658px;
+      // max-height: 401px;
+      aspect-ratio: 658 / 401;
+
+      @media (max-width: ($vp-1024 - 1)) {
+        // max-width: 381px;
+        // max-height: 233px;
+        aspect-ratio: 381 / 233;
+      }
+    }
+
+    @media (max-width: ($vp-1024 - 1)) {
+      grid-template-columns: 150px 30px auto 150px;
+    }
   }
 
   h3 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px;
+    font: $font-700-24-29;
     color: $color-black;
     margin-top: var(--mt-inside-card);
     max-width: 200px;
     text-align: left;
+
+    @media (max-width: ($vp-1024 - 1)) {
+      font: $font-700-18-21;
+    }
   }
 
   h4 {
-    font-size: 24px;
-    font-weight: 200;
-    line-height: 29px;
+    font: $font-200-24-29;
     color: $color-black;
     margin-top: var(--mt-inside-card);
     max-width: 180px;
     text-align: end;
+
+    @media (max-width: ($vp-1024 - 1)) {
+      font: $font-200-18-22;
+    }
   }
 }

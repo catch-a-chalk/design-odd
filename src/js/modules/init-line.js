@@ -34,7 +34,7 @@ export const initLine = () => {
   //Записываем, сколько проскроллено по вертикали
   let scrollpos = window.scrollY
 
-  const toggleClass = document.querySelector(".form__stages-toggle")
+  const toggleClass = document.querySelectorAll(".form__stages-toggle")
 
   //Сколько пикселей нужно проскролить, чтобы добавить класс. Можете изменить значение
   const scrollChange = 450

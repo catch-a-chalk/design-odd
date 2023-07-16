@@ -4,9 +4,7 @@
   label,
   input,
   textarea {
-    font-size: 24px;
-    font-weight: 200;
-    line-height: 29px;
+    font: $font-200-24-29;
     cursor: pointer;
   }
 
@@ -65,11 +63,9 @@
     }
 
     &-btn {
+      font: $font-700-24-29;
       grid-column: 1 / 2;
       grid-row: 2 / 3;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 29px;
       text-align: center;
       padding: 3px 30px;
       border-radius: 25px;
@@ -92,9 +88,7 @@
     flex-direction: column;
 
     h3 {
-      font-size: 24px;
-      font-weight: 200;
-      line-height: 29px;
+      font: $font-200-24-29;
       text-align: center;
       margin-top: 20px;
       margin-bottom: 12px;
@@ -140,9 +134,7 @@
     }
 
     span {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 17px;
+      font: $font-700-14-17;
       margin-left: 10px;
     }
   }
@@ -156,11 +148,9 @@
     border-radius: 25px;
 
     p {
+      font: $font-700-24-29;
       margin: 0;
       padding: 5px 30px;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 29px;
     }
   }
 
@@ -183,9 +173,7 @@
     }
 
     small {
-      font-size: 10px;
-      font-weight: 200;
-      line-height: 12px;
+      font: $font-200-10-12;
     }
 
     strong {
@@ -214,11 +202,6 @@
     input[type="checkbox"]:checked + span {
       content: url("../img/icon-radio-on.svg");
     }
-  
-    // input[type="checkbox"]:focus + span {
-    //   outline: 2px solid $color-black;
-    //   outline-offset: 0.3em;
-    // }
   
     input[type="checkbox"]:disabled + span,
     input[type="checkbox"]:disabled ~ small {

@@ -1,15 +1,17 @@
 header.header
   .wrapper
     h2.visually-hidden Навигационное меню
-    img(src="img/logo-design-odd.png", atl="Логотип", width="160")
+    img(src="img/logo-design-odd.png", atl="Логотип", width="205")
     nav.header__nav.header__nav--closed.header__nav--nojs
-      // Убрать класс .visually-hidden при получении ТЗ на бургерное меню
-      button(type="button").visually-hidden.mobile-only
-      a(href="index.html")
-        p портфолио
-      a(href="branding.html") 
-        p брендинг/<br>айдентика
-      a(href="web.html")
-        p веб
-      a(href="order.html") 
-        p заказ/<br>контакты
+      //- button(type="button")
+      a.header__toggle(href="#" role="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-menu")
+        span.visually-hidden Открыть меню
+      .header__list
+        a(href="index.html")
+          p портфолио
+        a(href="branding.html")
+          p брендинг/<br>айдентика
+        a(href="web.html")
+          p веб
+        a(href="order.html") 
+          p заказ/<br>контакты

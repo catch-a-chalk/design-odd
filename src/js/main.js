@@ -3,6 +3,7 @@
 // import {initVideo} from './modules/init-video';
 import { initProjects } from './modules/init-projects';
 import { initLine } from './modules/init-line';
+import { initNav } from './modules/init-toggle';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // initVideo();
   initLine();
   initProjects();
+  initNav();
   // initSwiper();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'

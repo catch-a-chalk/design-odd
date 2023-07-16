@@ -104,11 +104,9 @@ fieldset input:checked:hover + .form__option {
     }
 
     small {
+      font: $font-400-14-17;
       grid-column: 1 / 2;
       grid-row: 2 / 3;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 17px;
     }
   }
 
@@ -128,9 +126,7 @@ fieldset input:checked:hover + .form__option {
   }
 
   &-toggle--active {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px;
+    font: $font-700-24-29;
     color: white;
 
     background-color: black;
@@ -151,10 +147,8 @@ fieldset input:checked:hover + .form__option {
     gap: 50px;
 
     h4 {
+      font: $font-200-24-29;
       grid-column: 2 / 3;
-      font-size: 24px;
-      font-weight: 200;
-      line-height: 29px;
       text-align: end;
       margin-top: 14px;
     }
@@ -189,12 +183,10 @@ fieldset input:checked:hover + .form__option {
   width: fit-content;
 
   label {
+    font: $font-200-16-19;
     position: relative;
     display: flex;
     align-items: baseline;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 19px;
 
     &:hover {
       font-weight: 700;
@@ -225,9 +217,7 @@ fieldset input:checked:hover + .form__option {
   top: -5px;
   left: 105%; 
 
-  font-size: 10px;
-  font-weight: 200;
-  line-height: 12px;
+  font: $font-200-10-12;
   color: $color-black;
 }
 
@@ -272,9 +262,6 @@ fieldset input:checked:hover + .form__option {
   }
 
   &-cards {
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
-    // gap: 93px;
     display: flex;
     justify-content: space-between;
 
@@ -295,9 +282,7 @@ fieldset input:checked:hover + .form__option {
     overflow: hidden;
 
     h4 {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 29px;
+      font: $font-700-24-29;
       text-align: center;
       margin-top: 10px;
       margin-bottom: 13px;
@@ -311,9 +296,7 @@ fieldset input:checked:hover + .form__option {
       }
   
       p {
-        font-size: 16px;
-        font-weight: 200;
-        line-height: 19px;
+        font: $font-200-16-19;
         margin: 0;
       }
     }
@@ -338,9 +321,7 @@ fieldset input:checked:hover + .form__option {
     margin-top: 20px;
 
     p {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 29px;
+      font: $font-700-24-29;
       text-align: center;
       margin: 5px 0;
     }
@@ -352,10 +333,8 @@ fieldset input:checked:hover + .form__option {
   }
 
   &-commentary {
+    font: $font-200-16-19;
     display: flex;
     width: 314px;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 19px;
   }
 }
