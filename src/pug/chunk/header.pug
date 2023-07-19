@@ -1,17 +1,40 @@
+//- header.header
+//-   .wrapper
+//-     h2.visually-hidden Навигационное меню
+//-     img(src="img/logo-design-odd.png", atl="Логотип", width="205")
+//-     nav.header__nav
+//-       button.header__button(type='button' aria-expanded='false' aria-controls='menu__list')
+//-         svg.header__icon(aria-hidden='true' width='29' height='29')
+//-           use.header__icon-menu(href='img/sprite.svg#menu')
+//-           use.header__icon-cross(href='img/sprite.svg#cross')
+//-       #header__list.header__list
+//-         a(href="index.html")
+//-           p портфолио
+//-         a(href="branding.html")
+//-           p брендинг/<br>айдентика
+//-         a(href="web.html")
+//-           p веб
+//-         a(href="order.html") 
+//-           p заказ/<br>контакты
 header.header
   .wrapper
-    h2.visually-hidden Навигационное меню
-    img(src="img/logo-design-odd.png", atl="Логотип", width="205")
-    nav.header__nav.header__nav--closed.header__nav--nojs
-      //- button(type="button")
-      a.header__toggle(href="#" role="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-menu")
-        span.visually-hidden Открыть меню
-      .header__list
-        a(href="index.html")
-          p портфолио
-        a(href="branding.html")
-          p брендинг/<br>айдентика
-        a(href="web.html")
-          p веб
-        a(href="order.html") 
-          p заказ/<br>контакты
+    nav.navbar
+        h2.visually-hidden Навигационное меню
+        .navbar__wrap
+          a#logo.logo(href='#')
+            img(src="img/logo-design-odd.png", atl="Логотип", width="205")
+          ul#menu.menu
+            li
+              a(href="index.html") портфолио
+            li
+              a(href="branding.html") брендинг/<br>айдентика
+            li
+              a(href="web.html") веб
+            li
+              a(href="order.html") заказ/<br>контакты
+          .hamb
+            #hamb.hamb__field
+              span.bar
+              span.bar
+              span.bar
+    #popup.popup

@@ -19,15 +19,15 @@ const task = requireDir("./task", { recurse: true });
 const watcher = () => {
   watch($.path.pug.watch, task.pug);
   watch($.path.scss.watch, task.scss);
-  watch($.path.js.watch, task.js);
   watch($.path.img.watch, task.img);
   watch($.path.video.watch, task.video);
   watch($.path.font.watch, task.font);
+  watch($.path.js.watch, task.js);
 }
 
 const build = $.gulp.series(
   task.clear,
-  $.gulp.parallel(task.pug, task.scss, task.js, task.img, task.video, task.font)
+  $.gulp.parallel(task.pug, task.scss, task.img, task.video, task.font, task.js)
 );
 
 const dev = $.gulp.series(
@@ -38,10 +38,10 @@ const dev = $.gulp.series(
 // Задачи 
 exports.pug = task.pug;
 exports.scss = task.scss;
-exports.js = task.js;
 exports.img = task.img;
 exports.video = task.video;
 exports.font = task.font;
+exports.js = task.js;
 
 // Сборка
 exports.default = $.app.isProd ? build : dev;

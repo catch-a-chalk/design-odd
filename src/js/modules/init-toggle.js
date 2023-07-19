@@ -1,46 +1,18 @@
-// export const initNav = () => {
-//   let headerNav = document.querySelector('.header__nav');
-//   let headerToggle = document.querySelector('.header__toggle');
-//   headerNav.classList.remove('header__nav--nojs');
+export const initToggle = () => {
+  const menuButton = document.querySelector('.header__button');
+  const menuList = document.querySelector('.header__list');
 
-//   headerToggle.addEventListener ('click', () => {
-//     if (headerNav.classList.contains('header__nav--closed')) {
-//       headerNav.classList.remove('header__nav--closed');
-//       headerNav.classList.add('header__nav--opened');
-//     } else {
-//       headerNav.classList.add('header__nav--closed');
-//       headerNav.classList.remove('header__nav--opened');
-//     }
-//   });
-// };
+  menuButton.addEventListener('click', () => {
+    let expanded = menuButton.getAttribute('aria-expanded') === true;
+    menuButton.setAttribute('aria-expanded', !expanded);
+    menuButton.classList.toggle('header__button--open');
+    menuList.classList.toggle('header__list--open');
+  });
 
-
-
-const headerNav = document.querySelector('.header__nav');
-const headerToggle = document.querySelector('.header__toggle');
-
-export default function initNav() {
-  if (headerNav && headerToggle) {
-    headerNav.classList.remove('header__nav--nojs');
-
-    headerToggle.addEventListener('click', () => {
-      // стоит ли открывать
-      const shouldBeOpened = headerToggle.ariaExpanded === 'false';
-      toggleNav(shouldBeOpened);
-    });
-  }
-}
-
-export function toggleNav(willBeOpened) {
-  if (headerNav) {
-    headerNav.classList.toggle('header__nav--closed', !willBeOpened);
-    headerNav.classList.toggle('header__nav--opened', willBeOpened);
-  }
-
-  // не позволяет скроллить
-  document.body.style.overflow = willBeOpened ? 'hidden' : '';
-  if (headerToggle) {
-    headerToggle.ariaExpanded = String(willBeOpened);
-    headerToggle.areaLabel = `${willBeOpened ? 'Открыть' : 'Закрыть'} меню`;
-  }
+  // menuButton.removeEventListener('click', () => {
+  //   let expanded = menuButton.getAttribute('aria-expanded') === 'false';
+  //   menuButton.setAttribute('aria-expanded', !expanded);
+  //   menuButton.classList.remove('header__button--open');
+  //   menuList.classList.remove('header__list--open');
+  // });
 }
