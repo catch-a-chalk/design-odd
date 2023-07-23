@@ -12,6 +12,7 @@ $color-light-grey:            #d3d3d3;
 
 // Viewports
 $vp-320:                      320px;
+$vp-470:                      470px;
 $vp-768:                      768px;
 $vp-1024:                     1024px;
 $vp-1280:                     1280px;
@@ -22,14 +23,19 @@ $vp-1920:                     1920px;
 $base-font-size:              21px;
 $base-font-family:            "Inter", "MS Sans Serif", sans-serif;
 
+$font-200-9-11:               200 9px/11px $base-font-family;
 $font-200-10-12:              200 10px/12px $base-font-family;
+$font-200-12-14:              200 12px/14px $base-font-family;
 $font-200-16-19:              200 16px/19px $base-font-family;
 $font-200-18-22:              200 18px/22px $base-font-family;
 $font-200-24-29:              200 24px/29px $base-font-family;
 
 $font-400-14-17:              400 14px/17px $base-font-family;
 
+$font-700-9-11:               700 9px/11px $base-font-family;
+$font-700-12-15:              700 12px/15px $base-font-family;
 $font-700-14-17:              700 14px/17px $base-font-family;
 $font-700-18-21:              700 18px/21px $base-font-family;
+$font-700-20-29:              700 20px/29px $base-font-family;
 $font-700-24-29:              700 24px/29px $base-font-family;
 $font-700-40-48:              700 40px/48px $base-font-family;

@@ -23,6 +23,15 @@
   text-align: left;
   margin-top: 0;
   margin-bottom: 20px;
+
+  @media (max-width: ($vp-1440 - 1)) {
+    font: $font-700-24-29;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: ($vp-768 - 1)) {
+    font: $font-700-18-21;
+  }
 }
 
 .wrapper {
@@ -35,14 +44,6 @@
   flex-direction: column;
 }
 
-// .is-active {
-// font-weight: 700;
-// font-size: 18px;
-// line-height: 22px;
-// letter-spacing: 0em;
-// text-align: left;
-// }
-
 .btn {
   &-arrow {
     display: flex;
@@ -51,18 +52,93 @@
   }
 
   &-white {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 48px;
+    font: $font-700-40-48;
+    padding: 5px 25px;
+    border: 3px solid $color-black;
+    border-radius: 40px;
     background-color: $color-white;
     color: $color-black;
+
+    &:before {
+      content: 'оставить заявку';
+    }
   }
 
   &-black {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px;
+    font: $font-700-24-29;
+    padding: 5px 36px;
+    border-radius: 25px;
     background-color: $color-black;
     color: $color-white;
+  }
+
+  &-black--order {
+    &:before {
+      content: 'Заказать';
+    }
+  }
+
+  &-black--add {
+    &:before {
+      content: 'Добавить';
+    }
+  }
+
+  &-black--review {
+    &:before {
+      content: 'Обзор..';
+    }
+  }
+
+  &-black--send {
+    &:before {
+      content: 'Отправить';
+    }
+  }
+
+  &-black--add:active {
+    width: 39px;
+    height: 39px;
+    padding: 0;
+
+    &:before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translateY(1px) rotate(45deg);
+    }
+
+    &:after {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translateY(-1px) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: ($vp-1440 - 1)) {
+  .btn-black {
+    font: $font-700-18-21;
+    padding: 5px 20px;
+  }
+
+  .btn-black--add:active {
+    width: 31px;
+    height: 31px;
+    padding: 0;
+
+    &:before,
+    &:after {
+      width: 17px;
+    }
+  }
+
+  .btn-white {
+    font: $font-700-20-29;
+    border: 2px solid $color-black;
+    border-radius: 25px;
   }
 }

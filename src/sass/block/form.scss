@@ -97,6 +97,7 @@ fieldset input:checked:hover + .form__option {
   &-container {
   display: grid;
   grid-template-columns: 2fr 5fr;
+  // background-color: $color-white;
 
     h3 {
       grid-column: 1 / 2;
@@ -128,7 +129,6 @@ fieldset input:checked:hover + .form__option {
   &-toggle--active {
     font: $font-700-24-29;
     color: white;
-
     background-color: black;
     box-shadow: none;
   }
@@ -163,8 +163,6 @@ fieldset input:checked:hover + .form__option {
 
   .btn-white {
     grid-column: 2 / 3;
-    border: 3px solid $color-black;
-    border-radius: 60px;
   }
 
   .btn-arrow {
@@ -271,8 +269,7 @@ fieldset input:checked:hover + .form__option {
   }
 
   &-card {
-    aspect-ratio: 314 / 451;
-    height: 451px;
+    min-height: 451px;
     display: grid;
     grid-template-rows: 70px auto auto;
     justify-items: center;
@@ -325,16 +322,40 @@ fieldset input:checked:hover + .form__option {
       text-align: center;
       margin: 5px 0;
     }
-  
-    button {
-      padding: 5px 36px;
-      border-radius: 84px;
-    }
   }
 
   &-commentary {
     font: $font-200-16-19;
     display: flex;
     width: 314px;
+  }
+}
+
+@media (max-width: ($vp-1440 - 1)) {
+  .form__intro {
+    padding-top: 50px;
+  }
+
+  .form__progress,
+  .form__progress-bar,
+  .form__progress-overlay-top,
+  .form__progress-overlay-bottom {
+    width: 4px;
+  }
+
+  .form__stages-container {
+    small {
+      display: none;
+    }
+  }
+
+  .form__stages-toggle {
+    width: 37px;
+    height: 37px;
+    justify-self: center;
+  }
+
+  .form-stages h4 {
+    font: $font-200-18-22;
   }
 }

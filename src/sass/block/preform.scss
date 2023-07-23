@@ -4,7 +4,6 @@
   padding-top: 88px;
   padding-bottom: 10px;
   position: relative;
-  z-index: 1;
   background-color: $color-white;
 
   .wrapper {
@@ -21,11 +20,30 @@
     font-weight: 700;
   }
 
-  button {
-    
-  justify-content: flex-start;
-  align-items: end;
-  
-  align-self: end;
+  a {
+    justify-content: flex-start;
+    align-items: end;
+    align-self: end;
+  }
+}
+
+@media (max-width: ($vp-1440 - 1)) {
+  .preform {
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0em;
+    padding-top: 45px;
+  }
+
+  .preform a {
+    svg {
+      width: 30px;
+    }
+  }
+}
+
+@media (max-width: ($vp-768 - 1)) {
+  .preform {
+    padding-top: 10px;
   }
 }

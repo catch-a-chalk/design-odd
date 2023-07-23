@@ -36,7 +36,7 @@
       }
     ]
 
-article.form__ready
+article#inner1.form__ready
   h3.title готовые пакеты услуг для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
   form.form__ready-cards(action='https://echo.htmlacademy.ru/' method='post')
     each package in PACKAGES
@@ -51,5 +51,5 @@ article.form__ready
                 p=checkBox.span
           .form__ready-container
             p=package.price
-            button.btn-black(type='submit') Заказать
+            button.btn-black.btn-black--order(type='submit')
         small.form__ready-commentary=package.commentary
