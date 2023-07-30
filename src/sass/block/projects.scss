@@ -23,16 +23,6 @@
     margin-top: 20px;
     margin-bottom: 50px;
 
-    @media (max-width: ($vp-1024 - 1)) {
-      padding: 0 50px;
-    }
-
-    @media (max-width: ($vp-768 - 1)) {
-      padding: 0;
-      column-gap: 50px;
-      row-gap: 10px;
-    }
-
     @media (max-width: ($vp-470 - 1)) {
       grid-template-columns: repeat(auto-fit, minmax(113px, 1fr));
     }
@@ -65,15 +55,10 @@
     }
   }
 
-
   &__card {
     text-align: center;
     padding: 40px 0;
     position: relative;
-
-    @media (max-width: ($vp-768 - 1)) {
-      padding: 10px 0;
-    }
 
     &:before{
       content: '';
@@ -88,15 +73,6 @@
       font: $font-700-24-29;
       color: $color-black;
       margin-top: var(--mt-inside-card);
-
-      
-      @media (max-width: ($vp-1024 - 1)) {
-        font: $font-700-18-21;
-      }
-
-      @media (max-width: ($vp-768 - 1)) {
-        font: $font-700-12-15;
-      }
     }
   }
 
@@ -112,20 +88,6 @@
       width: 100%;
       margin-top: 10px;
       aspect-ratio: 658 / 401;
-
-      @media (max-width: ($vp-1024 - 1)) {
-        aspect-ratio: 381 / 233;
-      }
-    }
-
-    @media (max-width: ($vp-1024 - 1)) {
-      grid-template-columns: 150px 30px auto 150px;
-    }
-
-    @media (max-width: ($vp-768 - 1)) {
-      grid-template-columns: 60px 20px auto 70px;
-      gap: 10px;
-      margin-top: 10px;
     }
   }
 
@@ -135,14 +97,6 @@
     margin-top: var(--mt-inside-card);
     max-width: 200px;
     text-align: left;
-
-    @media (max-width: ($vp-1024 - 1)) {
-      font: $font-700-18-21;
-    }
-
-    @media (max-width: ($vp-768 - 1)) {
-      font: $font-700-9-11;
-    }
   }
 
   h4 {
@@ -151,14 +105,61 @@
     margin-top: var(--mt-inside-card);
     max-width: 180px;
     text-align: end;
-
-    @media (max-width: ($vp-1024 - 1)) {
-      font: $font-200-18-22;
-    }
-
-    @media (max-width: ($vp-768 - 1)) {
-      font: $font-200-9-11;
-    }
   }
 }
 
+@media (max-width: ($vp-1440 - 1)) {
+  .projects__nav {
+    padding: 0 50px;
+  }
+
+  .projects__card p {
+    font: $font-700-18-21;
+  }
+
+  .projects__cta {
+    grid-template-columns: 150px 30px auto 150px;
+  }
+
+  .projects__cta img {
+    aspect-ratio: 381 / 233;
+  }
+
+  .projects h3 {
+    font: $font-700-18-21;
+  }
+
+  .projects h4 {
+    font: $font-200-18-22;
+  }
+}
+
+@media (max-width: ($vp-768 - 1)) {
+  .projects__nav {
+    padding: 0;
+    column-gap: 50px;
+    row-gap: 10px;
+  }
+
+  .projects__card {
+    padding: 10px 0;
+  }
+
+  .projects__card p {
+    font: $font-700-12-15;
+  }
+
+  .projects__cta {
+    grid-template-columns: 60px 20px auto 70px;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .projects h3 {
+    font: $font-700-9-11;
+  }
+
+  .projects h4 {
+    font: $font-200-9-11;
+  }
+}

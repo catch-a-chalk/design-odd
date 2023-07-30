@@ -10,31 +10,57 @@
 
   &__form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "info details"
+      "info about"
+      "file about"
+      "promo discount"
+      "buttons buttons";
+    column-gap: 100px;
+    row-gap: 26px;
+    position: relative;
+    margin-bottom: 120px;
+
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      max-height: 35px;
+    }
   }
 
   &__info {
-    grid-column: 1 / 2;
-    p {
-      display: flex;
-      &:not(:last-of-type) {
-        flex-direction: column;
-      }
+    grid-area: info;
 
-      &:last-of-type {
-        outline: 2px solid $color-black;
-        border-radius: 25px;
-        padding: 5px 20px;
-        label {
-          font-weight: 700;
-        }
-        input {
-            border: none;
-            width: 100%;
-            text-align: center;
-        }
+    p {
+      &:first-child {
+        margin-top: 0;
       }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__promo {
+    grid-area: promo;
+    outline: 2px solid $color-black;
+    border-radius: 25px;
+    padding: 5px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    label {
+      font-weight: 700;
+    }
+
+    input {
+      border: none;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -53,9 +79,13 @@
   }
 
   &__file {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 15px;
+    grid-area: file;
+
+    label {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 15px;
+    }
 
     &-label {
       grid-column: 1 / -1;
@@ -83,21 +113,22 @@
   }
 
   &__details {
-    grid-column: 2 / 3;
+    grid-area: details;
     display: flex;
     flex-direction: column;
 
     h3 {
       font: $font-200-24-29;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 0;
       margin-bottom: 12px;
     }
+  }
 
-    p {
-      display: flex;
-      flex-direction: column;
-    }
+  &__about {
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
 
     textarea {
       resize: none;
@@ -107,7 +138,7 @@
       border-radius: 20px;
       padding: 5px 20px;
       height: 225px;
-
+  
       &:focus,
       &:focus-within,
       &:active {
@@ -140,30 +171,36 @@
   }
 
   &__discount {
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    margin: 26px 0;
+    grid-area: discount;
+    width: 80%;
     outline: 2px solid $color-black;
     border-radius: 25px;
+    padding: 5px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 
     p {
       font: $font-700-24-29;
       margin: 0;
-      padding: 5px 30px;
+      padding: 0;
     }
   }
 
   &__buttons {
-    grid-column: 1 / -1;
+    grid-area: buttons;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 
     label {
       line-height: 12px;
       position: relative;
-      display: flex;
+      display: grid;
+      grid-template-columns: 21px auto;
+      gap: 10px;
       align-items: center;
+
       &:first-of-type {
         grid-column: 1 / 2;
       }
@@ -187,25 +224,150 @@
     input[type="checkbox"] + span {
       width: 21px;
       height: 21px;
-      margin-right: 9px;
-      content: url("../img/check-off.svg");
-      opacity: 0.8;
-  
-      &:hover,
-      &:focus,
-      &:focus-within {
-        opacity: 1;
-      }
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 84px;
+
+    p {
+      font: $font-700-24-29;
     }
 
-    input[type="checkbox"]:checked + span {
-      content: url("../img/check-on.svg");
+    a {
+      font: $font-200-24-29;
+      color: $color-black;
     }
-  
-    input[type="checkbox"]:disabled + span,
-    input[type="checkbox"]:disabled ~ small {
-      opacity: 0.5;
-      cursor: default;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &:nth-child(2n+1) a {
+      text-decoration: underline;
     }
+    &:not(:first-child),
+    &:not(:last-child) {
+      justify-self: center;
+    }
+    &:first-child {
+      justify-self: baseline;
+    }
+    &:last-child {
+      justify-self: end;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1440 / 396;
+  }
+}
+
+@media (max-width: ($vp-1440 - 1)) {
+  .ordering__form {
+    grid-template-areas: 
+    "info details"
+    "info details"
+    "about about"
+    "file promo"
+    "file discount"
+    "buttons buttons";
+    column-gap: 26px;
+  }
+
+  .ordering__promo {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .ordering__promo input {
+    text-align: start;
+  }
+
+  .ordering__discount {
+    width: 100%;
+    grid-template-columns: 2fr 1fr;
+
+    p {
+      &:last-child {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .ordering__buttons {
+    grid-template-columns: repeat(4, 1fr);
+
+    button {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      justify-self: center;
+    }
+  }
+
+  .ordering__contacts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ordering__item {
+    &:nth-child(n) {
+      align-items: center;
+      justify-self: center;
+    }
+    &:nth-child(n) a {
+      text-decoration: none;
+    }
+    &:nth-child(3n+1) a {
+      text-decoration: underline;
+    }
+  }
+
+  .ordering img {
+    aspect-ratio: 768 / 228;
+  }
+}
+
+@media (max-width: ($vp-768 - 1)) {
+  .ordering__form {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "info"
+    "about"
+    "file"
+    "promo"
+    "discount"
+    "buttons";
+  }
+
+  .ordering__details {
+    display: none;
+  }
+
+  .ordering__buttons {
+    grid-template-columns: 1fr;
+
+    label:first-of-type {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    label:last-of-type {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3
+    }
+
+    button {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+  }
+
+  .ordering img {
+    aspect-ratio: 320 / 86;
   }
 }

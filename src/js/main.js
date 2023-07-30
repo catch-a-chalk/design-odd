@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // initLine();
   initProjects();
+  initLine();
   hambHandler;
   // initNav();
   // initSwiper();

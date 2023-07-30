@@ -20,7 +20,6 @@
   cursor: pointer;
   width: 16px;
   height: 16px;
-  margin-right: 10px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' fill='%23fff' rx='3.5'/%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23E8E7E7' rx='3.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
@@ -46,7 +45,7 @@ fieldset input:checked:hover + .form__option {
 .form__progress {
   position: absolute;
   width: 6px;
-  height: 100vw;
+  height: 100em;
   background-color: $color-solitude;
   box-shadow: 1px 1px 2px 0px rgba(166, 171, 189, 1) inset;
   display: flex;
@@ -97,7 +96,9 @@ fieldset input:checked:hover + .form__option {
   &-container {
   display: grid;
   grid-template-columns: 2fr 5fr;
-  // background-color: $color-white;
+  &:first-child {
+    background-color: $color-white;
+  }
 
     h3 {
       grid-column: 1 / 2;
@@ -117,7 +118,7 @@ fieldset input:checked:hover + .form__option {
     width: 58px;
     height: 58px;
 
-    position: sticky;
+    position: static;
     top: 50vh;
     display: flex;
     align-items: center;
@@ -131,9 +132,11 @@ fieldset input:checked:hover + .form__option {
     color: white;
     background-color: black;
     box-shadow: none;
+    position: sticky;
   }
 
   fieldset {
+    margin-top: 30px;
     margin-bottom: 25px;
 
     &:not(:first-of-type) {
@@ -183,7 +186,9 @@ fieldset input:checked:hover + .form__option {
   label {
     font: $font-200-16-19;
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 16px minmax(auto, 350px);
+    gap: 10px;
     align-items: baseline;
 
     &:hover {
@@ -194,10 +199,6 @@ fieldset input:checked:hover + .form__option {
     &:hover .form__stages-tooltip {
       visibility: visible;
     }
-  }
-
-  input {
-    margin-right: 10px;
   }
 }
 
@@ -260,10 +261,14 @@ fieldset input:checked:hover + .form__option {
   }
 
   &-cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, auto));
+    gap: 30px;
     justify-content: space-between;
 
     fieldset {
+      display: flex;
+      flex-direction: column;
       border: none;
     }
   }
@@ -310,7 +315,8 @@ fieldset input:checked:hover + .form__option {
 
     label {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 16px 1fr;
+      gap: 10px;
     }
   }
 
@@ -327,7 +333,7 @@ fieldset input:checked:hover + .form__option {
   &-commentary {
     font: $font-200-16-19;
     display: flex;
-    width: 314px;
+    width: auto;
   }
 }
 
@@ -343,6 +349,15 @@ fieldset input:checked:hover + .form__option {
     width: 4px;
   }
 
+  .form__progress-bar {
+    height: 51vh;
+    bottom: 49vh;
+  }
+
+  .form__progress-overlay-top {
+    height: 0;
+  }
+
   .form__stages-container {
     small {
       display: none;
@@ -355,7 +370,112 @@ fieldset input:checked:hover + .form__option {
     justify-self: center;
   }
 
-  .form-stages h4 {
+  .form__stages {
+    fieldset {
+      gap: 30px;
+    }
+  }
+
+  .form__stages fieldset h4 {
     font: $font-200-18-22;
+    margin-top: 0;
+  }
+
+  .form__stages-list label {
+    grid-template-columns: 16px minmax(auto, 205px);
+  }
+
+  .form__stages-tooltip {
+    top: 50px;
+    left: 0;
+  }
+
+  .form__ready-cards {
+    gap: 15px;
+  }
+
+  .form__ready-card {
+    padding: 8px;
+  }
+
+  .form__ready-list label {
+    grid-template-columns: 16px minmax(auto, 165px);
+  }
+}
+
+@media (max-width: ($vp-768 - 1)) {
+  .form__progress {
+    align-self: flex-start;
+    left: 40px;
+  }
+
+  .form__stages-container {
+    align-self: center;
+  }
+
+  .form__stages-container h3 {
+    grid-column: 1 / -1;
+  }
+
+  .form__stages fieldset {
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+  }
+
+  .form__stages fieldset h4 {
+    grid-column: 2 / 3;
+    text-align: start;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .form__stages-toggle {
+    grid-column: 1 / 2;
+  }
+
+  .form__stages-list {
+    grid-column: 2 / 3;
+  }
+
+  .form__stages-btn {
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+  .form__stages-btn .btn-white {
+    grid-column: 2 / 5;
+  }
+
+  .form__stages-btn .btn-arrow {
+    grid-column: 5 / 6;
+
+    svg {
+      width: 30px;
+    }
+  }
+
+  .form__ready-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form__ready-card {
+    min-height: auto;
+  }
+
+  .form__ready h3 {
+    padding-left: 0;
+  }
+
+  .form__ready-list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    height: auto;
+    padding: 0;
+  }
+
+  .form__ready-list label {
+    font: $font-200-16-19;
   }
 }
