@@ -6,6 +6,10 @@
   textarea {
     font: $font-200-24-29;
     cursor: pointer;
+    outline: none;
+    caret-color: $color-black;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
   }
 
   &__form {
@@ -47,11 +51,13 @@
 
   &__promo {
     grid-area: promo;
-    outline: 2px solid $color-black;
+    border: 2px solid $color-black-pearl;
     border-radius: 25px;
     padding: 5px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
 
     label {
       font-weight: 700;
@@ -61,11 +67,12 @@
       border: none;
       width: 100%;
       text-align: center;
+      outline: none;
     }
   }
 
   &__required {
-    outline: 2px solid $color-black;
+    border: 2px solid $color-black-pearl;
     border-radius: 25px;
     padding: 5px 20px;
     margin-top: 12px;
@@ -74,7 +81,7 @@
     &:focus,
     &:focus-within,
     &:active {
-      outline: 3px solid $color-black;
+      border: 2px solid $color-black;
     }
   }
 
@@ -85,6 +92,7 @@
       display: grid;
       grid-template-columns: 1fr 3fr;
       gap: 15px;
+      align-items: baseline;
     }
 
     &-label {
@@ -134,7 +142,7 @@
       resize: none;
       margin-top: 10px;
       margin-bottom: 26px;
-      outline: 2px solid $color-black;
+      border: 2px solid $color-black-pearl;
       border-radius: 20px;
       padding: 5px 20px;
       height: 225px;
@@ -142,7 +150,7 @@
       &:focus,
       &:focus-within,
       &:active {
-        outline: 3px solid $color-black;
+        border: 2px solid $color-black;
       }
     }
   }
@@ -162,18 +170,44 @@
       display: flex;
       align-items: center;
       height: fit-content;
+
+      button {
+        position: relative;
+      }
     }
 
     span {
       font: $font-700-14-17;
-      margin-left: 10px;
+    }
+  }
+
+  &__cross {
+    cursor: pointer;
+    position: absolute;
+    right: 17px;
+
+    &:before, 
+    &:after {
+      content: ""; 
+      position: absolute; 
+      width: 12px; 
+      height: 2px; 
+      background: $color-mischka;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
     }
   }
 
   &__discount {
     grid-area: discount;
     width: 80%;
-    outline: 2px solid $color-black;
+    border: 2px solid $color-black-pearl;
     border-radius: 25px;
     padding: 5px 20px;
     display: grid;
@@ -267,6 +301,7 @@
     display: block;
     width: 100%;
     aspect-ratio: 1440 / 396;
+    max-height: 294px;
   }
 }
 
@@ -280,21 +315,30 @@
     "file discount"
     "buttons buttons";
     column-gap: 26px;
+    margin-bottom: 78px;
   }
 
-  .ordering__promo {
+  .ordering__form label,
+  .ordering__details h3 {
+    font: $font-200-18-22;
+  }
+
+  .ordering__promo label {
+    font: $font-700-18-21;
     grid-template-columns: 2fr 1fr;
   }
 
   .ordering__promo input {
+    font: $font-700-18-21;
     text-align: start;
   }
 
   .ordering__discount {
     width: 100%;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
     p {
+      font: $font-700-18-21;
       &:last-child {
         align-self: flex-end;
       }
@@ -308,11 +352,13 @@
       grid-column: 1 / -1;
       grid-row: 2 / 3;
       justify-self: center;
+      margin-top: 20px;
     }
   }
 
   .ordering__contacts {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
   }
 
   .ordering__item {
@@ -334,6 +380,10 @@
 }
 
 @media (max-width: ($vp-768 - 1)) {
+  .ordering {
+    margin-top: 0;
+  }
+
   .ordering__form {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -343,6 +393,19 @@
     "promo"
     "discount"
     "buttons";
+    margin-bottom: 30px;
+  }
+
+  .ordering__form label,
+  .ordering__form input,
+  .ordering__about textarea {
+    font: $font-200-12-14;
+  }
+
+  .ordering__promo label,
+  .ordering__promo input,
+  .ordering__discount p {
+    font: $font-700-12-15;
   }
 
   .ordering__details {
@@ -367,7 +430,20 @@
     }
   }
 
+  .ordering__contacts {
+    gap: 20px;
+  }
+
+  .ordering__item p {
+    font: $font-700-12-15;
+  }
+
+  .ordering__item a {
+    font: $font-200-12-14;
+  }
+
   .ordering img {
     aspect-ratio: 320 / 86;
+    max-height: 195px;
   }
 }

@@ -41,8 +41,16 @@
 
     li {
       display: grid;
-      grid-template-columns: 250px 70px auto 250px;
-      gap: 20px;
+      grid-template-columns: 250px 70px auto 200px;
+      grid-template-rows: 50px auto;
+      gap: 10px;
+      grid-template-areas: 
+      "title number description price"
+      "title number description button";
+
+      button {
+        grid-area: button;
+      }
     }
 
     .btn-white {
@@ -53,17 +61,25 @@
 
   &-title {
     font: $font-200-24-29;
+    grid-area: title;
     text-align: end;
     word-break: break-word;
   }
 
   &-number {
     font: $font-700-24-29;
+    grid-area: number;
     justify-self: center;
+  }
+
+  &-description,
+  &-price {
+    margin-bottom: 0;
   }
 
   &-description {
     font: $font-200-24-29;
+    grid-area: description;
     padding-right: 20px;
 
     span {
@@ -71,12 +87,9 @@
     }
   }
 
-  &-order {
-    justify-self: end;
-
-    p {
-      font: $font-700-24-29;
-    }
+  &-price {
+    font: $font-700-24-29;
+    grid-area: price;
   }
 
   &-promotion {
@@ -122,7 +135,8 @@
     }
 
     li {
-      grid-template-columns: 150px 50px auto 125px;
+      grid-template-columns: 150px 50px auto 160px;
+      grid-template-rows: 40px auto;
     }
 
     .btn-white {
@@ -144,11 +158,11 @@
   }
 
   .dev__web-description span,
-  .dev__web-order p {
+  .dev__web-price {
     font: $font-700-18-21;
   }
 
-  .dev__web-order p {
+  .dev__web-price {
     text-align: center;
   }
 
@@ -168,68 +182,68 @@
 @media (max-width: ($vp-768 - 1)) {
   .dev__web-container {
     grid-template-columns: 1fr;
-  }
-
-  .dev__web-container h2 {
-    grid-row: 2 / 3;
+    &:first-child {
+      padding-top: 0;
+    }
   }
 
   .dev__web-services {
     ul {
-      // gap: 15px;
+      gap: 40px;
+      margin: 15px 0;
     }
+
     li {
-      grid-template-columns: 6fr 1fr 2fr;
+      grid-template-columns: auto 20px 120px;
+      grid-template-rows: 40px auto;
+      grid-template-areas: 
+      "title number price"
+      "description description button";
       gap: 10px;
+    }
+
+    button {
+      font: $font-700-14-17;
     }
   }
 
   .dev__web-inbox {
-    grid-column: 1 / 2;
     justify-content: flex-start;
     justify-self: flex-start;
     gap: 20px;
+    grid-row: 1 / 2;
   }
 
   .dev__web-title {
-    font: $font-200-16-19;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    font-size: 15px;
+    line-height: 18px;
     margin-top: 12px;
   }
 
   .dev__web-number {
     font: $font-700-14-17;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2
   }
 
   .dev__web-description {
     font: $font-200-12-14;
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
     margin: 0;
+    padding: 0;
     position: relative;
-    bottom: 15px;
   }
 
   .dev__web-description span {
     font: $font-700-12-15;
   }
 
-  .dev__web-order {
-    grid-column: 3 / 4;
-    grid-row: 1 / -1;
-    justify-self: center;
-  }
-
-  .dev__web-order p,
-  .dev__web-order button {
+  .dev__web-price {
     font: $font-700-14-17;
   }
 
   .dev__web-promotion {
     width: 280px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
     p {
       font: $font-700-14-17;
     }

@@ -79,7 +79,7 @@
       number: '05',
       description: 'комплекс мер, включающий в себя анализ исходного состояния сайта, определение ключевых запросов, внутреннюю и внешнюю оптимизацию, создание уникального контента и другие действия. Сопровождение включает в себя мониторинг позиций сайта в поисковых системах и корректировку ключевых слов при необходимости, а также устранение ошибок в поиске.',
       bold: '',
-      price: ''
+      price: '80 000 ₽'
     }
   ]
 section.dev
@@ -100,9 +100,8 @@ section.dev
               p.dev__web-description=web.description
                 br
                 span=web.bold
-              .dev__web-order
-                p=web.price
-                button.btn-black.btn-black--order(type='button')
+              p.dev__web-price=web.price
+              button.btn-black.btn-black--order(type='button')
         article.dev__web-promotion
           p Пакет web+ брендинг/айдентикa
           p скидка 15%
@@ -119,7 +118,6 @@ section.dev
               p.dev__web-description=seo.description
                 br
                 span=seo.bold
-              .dev__web-order
-                p=seo.price
-                button.btn-black.btn-black--order(type='button')
+              p.dev__web-price=seo.price
+              button.btn-black.btn-black--order(type='button')
         button.btn-white(type='button')

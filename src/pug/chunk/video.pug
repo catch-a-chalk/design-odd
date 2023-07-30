@@ -1,6 +1,6 @@
 section.video
   h2.visually-hidden Видео-вставка
-  // Добавить атрибуты autoplay muted после завершения верстки
-  video(preload="auto" loop).video__item
+  // Добавить атрибуты autoplay playsinline muted после завершения верстки
+  video(preload="auto" loop autoplay playsinline muted).video__item
     source(type="video/webm" src="video/introduction.webm")
     source(type="video/mp4" src="video/introduction.mp4")

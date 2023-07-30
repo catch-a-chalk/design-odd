@@ -34,16 +34,18 @@
     letter-spacing: 0em;
     padding-top: 45px;
   }
-
-  .preform a {
-    svg {
-      width: 30px;
-    }
-  }
 }
 
 @media (max-width: ($vp-768 - 1)) {
   .preform {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0em;
     padding-top: 10px;
+  }
+
+  .preform a {
+    justify-content: end;
+    justify-self: end;
   }
 }

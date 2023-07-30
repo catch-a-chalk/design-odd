@@ -34,8 +34,7 @@ article.ordering
             each position in POSITIONS
               li
                 button(type='button')
-                  svg(width="12" height="12" role="img" aria-labelledby="delete" aria-description="Удалить пункт")
-                    use(href='img/sprite.svg#delete')
+                  .ordering__cross
                 span=position.type
       .ordering__about
         label(for='form-text') Кратко о проекте и бюджете*:

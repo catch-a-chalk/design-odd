@@ -37,7 +37,10 @@
     ]
 
 article#inner1.form__ready
-  h3.title готовые пакеты услуг для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
+  h3.title готовые пакеты услуг
+    | 
+    br
+    | для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
   form.form__ready-cards(action='https://echo.htmlacademy.ru/' method='post')
     each package in PACKAGES
       fieldset
