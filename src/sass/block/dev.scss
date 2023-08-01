@@ -112,6 +112,10 @@
       margin-bottom: 50px;
     }
   }
+
+  &-promotion--active {
+    border: 1px solid $color-black;
+  }
 }
 
 @media (max-width: ($vp-1440 - 1)) {

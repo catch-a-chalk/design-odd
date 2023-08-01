@@ -1,1 +1,17 @@
-footer Подвал подвальный
+- const CONTACTS = [{ label: 'написать', href: 'mailto:Hello@design-odd.com', text: 'Hello@design-odd.com'}, { label: 'позвонить', href: 'tel:+74951656009', text: '+7(495)165-60-09'}, { label: 'посмотреть', href: '#', text: 'behance'}, { label: 'присылайте CV', href: 'mailto:job@design-odd.com', text: 'job@design-odd.com'}]
+
+footer.footer
+  h2.title контакты
+  ul.ordering__contacts
+    each contact in CONTACTS
+      li.ordering__item
+        p=contact.label
+        a(href=contact.href)=contact.text
+  picture
+    source(type='image/webp' media='(max-width: 767px)' srcset='img/trouble-mobile@1x.webp, img/trouble-mobile@2x.webp 2x')
+    source(type='image/png' media='(max-width: 767px)' srcset='img/trouble-mobile@1x.png, img/trouble-mobile@2x.png 2x')
+    source(type='image/webp' media='(max-width: 1439px)' srcset='img/trouble-tablet@1x.webp, img/trouble-tablet@2x.webp 2x')
+    source(type='image/png' media='(max-width: 1439px)' srcset='img/trouble-tablet@1x.png, img/trouble-tablet@2x.png 2x')
+    source(type='image/webp' srcset='img/trouble-desktop@1x.webp, img/trouble-desktop@2x.webp 2x')
+    // 1х: 1440px; 2x: 2880px
+    img(src='img/trouble-desktop@1x.png' srcset='img/trouble-desktop@2x.png 2x' alt='Логотип Trouble Shooters' width='1440' height='396')

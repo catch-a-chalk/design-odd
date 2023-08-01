@@ -73,6 +73,7 @@
   }
 
   &-black--order {
+    justify-self: center;
     &:before {
       content: 'Заказать';
     }
@@ -91,12 +92,16 @@
   }
 
   &-black--send {
+    justify-self: center;
     &:before {
       content: 'Отправить';
     }
   }
 
-  &-black--add:active {
+  &-black--order:active,
+  &-black--add:active,
+  &-black--send:active
+   {
     width: 39px;
     height: 39px;
     padding: 0;

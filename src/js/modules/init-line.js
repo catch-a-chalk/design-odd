@@ -9,6 +9,9 @@ export const initLine = () => {
 
       if (elementPosition < halfScreenHeight) {
         element.classList.add("form__stages-toggle--active");
+      } 
+      if (elementPosition > halfScreenHeight) {
+        element.classList.remove("form__stages-toggle--active"); // убираем класс при скролле обратно
       }
     });
   };
