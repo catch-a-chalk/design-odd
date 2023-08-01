@@ -119,15 +119,16 @@ form.form__stages(action='https://echo.htmlacademy.ru/' method='post')#content
           small=component.description
         fieldset
           each element in component.data
-            h4=element.title
-            p.form__stages-toggle#line=element.number
-            .form__stages-list 
-              each checkBox in element.checkBoxes
-                label(class=`form__label-stages-${checkBox.value}` for=`stages-${checkBox.value}`)
-                  input(type='checkbox' name='stages' id=`stages-${checkBox.value}` value=checkBox.value)
-                  span.form__option
-                  =checkBox.span
-                  span.form__stages-tooltip
+            .form__boooooox
+              h4=element.title
+              p.form__stages-toggle#line=element.number
+              .form__stages-list 
+                each checkBox in element.checkBoxes
+                  label(class=`form__label-stages-${checkBox.value}` for=`stages-${checkBox.value}`)
+                    input(type='checkbox' name='stages' id=`stages-${checkBox.value}` value=checkBox.value)
+                    span.form__option
+                    =checkBox.span
+                    span.form__stages-tooltip
       .form__stages-btn
         button.btn-white(type='submit')
         a.btn-arrow(href="#inner2")
