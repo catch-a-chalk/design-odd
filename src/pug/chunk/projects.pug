@@ -48,7 +48,7 @@
 
 section.projects#projects
   .wrapper
-    h2.title наши проекты 2023
+    h2.title#portfolio наши проекты 2023
     ul.projects__nav(role='tablist')
       each project, index in PROJECTS_NAV
         li(role="presentation")
@@ -60,7 +60,8 @@ section.projects#projects
       tabindex=-1, hidden=id !== PROJECTS_IDs[0])
         each project, number in projects
           article.projects__card
-            a(href=project.href).projects__cta
+            //- a(href=project.href).projects__cta
+            .projects__cta
               h4=project.group
               p= '0' + (number + 1)
               img(src=`img/${project.img}@1x.jpg`, width="658")

@@ -87,9 +87,13 @@
   color: black;
 }
 
-.navbar__wrap .menu > li > a:hover {
-  color: black;
+.navbar__wrap .menu > li > a.active {
+  font: $font-700-18-21;
 }
+
+// .navbar__wrap .menu > li > a:hover {
+//   color: black;
+// }
 
 
 @media (max-width: ($vp-768 - 1)) {
@@ -153,6 +157,10 @@
     display: flex;
     justify-content: center;
     padding: 20px 0;
+  }
+
+  .popup .menu > li > a.active {
+    font: $font-700-14-17;
   }
 
   .popup .menu > li > a:hover {

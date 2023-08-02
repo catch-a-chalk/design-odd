@@ -16,7 +16,7 @@
   \************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_init_projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/init-projects */ \"./src/js/modules/init-projects.js\");\n/* harmony import */ var _modules_init_line__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/init-line */ \"./src/js/modules/init-line.js\");\n/* harmony import */ var _modules_init_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/init-nav */ \"./src/js/modules/init-nav.js\");\n// import {iosVhFix} from './utils/ios-vh-fix';\r\n// import {initModals} from './modules/modals/init-modals';\r\n\r\n\r\n\r\n// ---------------------------------\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n\r\n  // Utils\r\n  // ---------------------------------\r\n\r\n  // iosVhFix();\r\n\r\n  // Modules\r\n  // ---------------------------------\r\n\r\n  // initLine();\r\n  (0,_modules_init_projects__WEBPACK_IMPORTED_MODULE_0__.initProjects)();\r\n  (0,_modules_init_line__WEBPACK_IMPORTED_MODULE_1__.initLine)();\r\n  _modules_init_nav__WEBPACK_IMPORTED_MODULE_2__.hambHandler;\r\n  // initNav();\r\n  // initSwiper();\r\n\r\n  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'\r\n  // в load следует добавить скрипты, не участвующие в работе первого экрана\r\n//   window.addEventListener('load', () => {\r\n//     initModals();\r\n//   });\r\n});\r\n\n\n//# sourceURL=webpack://starter/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_init_projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/init-projects */ \"./src/js/modules/init-projects.js\");\n/* harmony import */ var _modules_init_line__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/init-line */ \"./src/js/modules/init-line.js\");\n/* harmony import */ var _modules_init_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/init-nav */ \"./src/js/modules/init-nav.js\");\n/* harmony import */ var _modules_init_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/init-link */ \"./src/js/modules/init-link.js\");\n// import {iosVhFix} from './utils/ios-vh-fix';\r\n// import {initModals} from './modules/modals/init-modals';\r\n\r\n\r\n\r\n\r\n// ---------------------------------\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n\r\n  // Utils\r\n  // ---------------------------------\r\n\r\n  // iosVhFix();\r\n\r\n  // Modules\r\n  // ---------------------------------\r\n\r\n  // initLine();\r\n  (0,_modules_init_projects__WEBPACK_IMPORTED_MODULE_0__.initProjects)();\r\n  (0,_modules_init_line__WEBPACK_IMPORTED_MODULE_1__.initLine)();\r\n  _modules_init_nav__WEBPACK_IMPORTED_MODULE_2__.hambHandler;\r\n  (0,_modules_init_link__WEBPACK_IMPORTED_MODULE_3__.initLink)();\r\n  // initNav();\r\n  // initSwiper();\r\n\r\n  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'\r\n  // в load следует добавить скрипты, не участвующие в работе первого экрана\r\n//   window.addEventListener('load', () => {\r\n//     initModals();\r\n//   });\r\n});\r\n\n\n//# sourceURL=webpack://starter/./src/js/main.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   initLine: function() { return /* binding */ initLine; }\n/* harmony export */ });\nconst initLine = () => {\r\n  const toggleElements = document.querySelectorAll(\".form__stages-toggle\");\r\n\r\n  // Функция, которая проверяет, нужно ли добавить класс\r\n  const check_add_class = () => {\r\n    toggleElements.forEach((element) => {\r\n      const elementPosition = element.getBoundingClientRect().top;\r\n      const halfScreenHeight = window.innerHeight / 2; // половина высоты экрана\r\n\r\n      if (elementPosition < halfScreenHeight) {\r\n        element.classList.add(\"form__stages-toggle--active\");\r\n      } \r\n      if (elementPosition > halfScreenHeight) {\r\n        element.classList.remove(\"form__stages-toggle--active\"); // убираем класс при скролле обратно\r\n      }\r\n    });\r\n  };\r\n\r\n  // Отслеживаем событие \"скролл\"\r\n  window.addEventListener('scroll', check_add_class);\r\n};\n\n//# sourceURL=webpack://starter/./src/js/modules/init-line.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/init-link.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/init-link.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   initLink: function() { return /* binding */ initLink; }\n/* harmony export */ });\nconst initLink = () => {\r\n  var a = document.querySelectorAll('.menu li a');\r\n    for (var i=a.length; i--;) {\r\n      if (a[i].href === window.location.pathname || a[i].href === window.location.href) a[i].className += ' active';\r\n    }\r\n};\r\n\n\n//# sourceURL=webpack://starter/./src/js/modules/init-link.js?");
 
 /***/ }),
 
@@ -122,6 +132,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./src/js/main.js");
 /******/ 	__webpack_require__("./src/js/modules/init-line.js");
+/******/ 	__webpack_require__("./src/js/modules/init-link.js");
 /******/ 	__webpack_require__("./src/js/modules/init-nav.js");
 /******/ 	__webpack_require__("./src/js/modules/init-projects.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/init-toggle.js");

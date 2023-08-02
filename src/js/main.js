@@ -3,6 +3,7 @@
 import { initProjects } from './modules/init-projects';
 import { initLine } from './modules/init-line';
 import { hambHandler } from './modules/init-nav';
+import { initLink } from './modules/init-link';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initProjects();
   initLine();
   hambHandler;
+  initLink();
   // initNav();
   // initSwiper();
 
