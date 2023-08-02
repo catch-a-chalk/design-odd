@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
+    "deploy": "gh-pages -d build",
     "build": "gulp --production"
   },
+  "homepage": "https://catch-a-chalk.github.io/design-odd",
   "browserslist": [
     "last 3 versions"
   ],
