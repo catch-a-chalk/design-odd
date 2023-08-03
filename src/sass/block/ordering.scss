@@ -1,5 +1,5 @@
 .ordering {
-  margin-top: 50px;
+  margin-top: 70px;
 
   label,
   input,
@@ -250,49 +250,14 @@
       font-weight: 700;
     }
 
-    button {
-      grid-column: 3 / 4;
+    .btn-black {
+      // grid-column: 3 / 4;
+      margin-top: 50px;
     }
 
     input[type="checkbox"] + span {
       width: 21px;
       height: 21px;
-    }
-  }
-
-  &__contacts {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    justify-content: space-between;
-    padding: 0;
-    margin-top: 84px;
-
-    p {
-      font: $font-700-24-29;
-    }
-
-    a {
-      font: $font-200-24-29;
-      color: $color-black;
-    }
-  }
-
-  &__item {
-    display: flex;
-    flex-direction: column;
-    &:nth-child(2n+1) a {
-      text-decoration: underline;
-    }
-    &:not(:first-child),
-    &:not(:last-child) {
-      justify-self: center;
-    }
-    &:first-child {
-      justify-self: baseline;
-    }
-    &:last-child {
-      justify-self: end;
     }
   }
 }

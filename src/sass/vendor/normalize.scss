@@ -233,9 +233,6 @@ input {
 	overflow: visible;
 }
 input[type="checkbox"] + span {
-	// width: 21px;
-	// height: 21px;
-	margin-right: 9px;
 	content: url("../img/check-off.svg");
 	opacity: 0.8;
 	&:hover,

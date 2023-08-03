@@ -1,16 +1,16 @@
+body.on-modal {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
-
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
   overflow: hidden;
-
   white-space: nowrap;
-
   border: 0;
-
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
 }
@@ -23,23 +23,14 @@
   text-align: left;
   margin-top: 0;
   margin-bottom: 20px;
-
-  @media (max-width: ($vp-1440 - 1)) {
-    font: $font-700-24-29;
-    margin-bottom: 10px;
-  }
-
-  @media (max-width: ($vp-768 - 1)) {
-    font: $font-700-18-21;
-  }
 }
 
 .wrapper {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 150px;
+  padding-right: 150px;
   display: flex;
   flex-direction: column;
 }
@@ -56,7 +47,7 @@
     justify-content: center;
     align-items: center;
     font: $font-700-40-48;
-    padding: 5px 25px;
+    padding: 5px 12px;
     border: 2px solid $color-black;
     border-radius: 40px;
     background-color: $color-white;
@@ -128,6 +119,16 @@
 }
 
 @media (max-width: ($vp-1440 - 1)) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .title {
+    font: $font-700-24-29;
+    margin-bottom: 10px;
+  }
+
   .btn-black {
     font: $font-700-18-21;
     padding: 7px 20px;
@@ -168,6 +169,11 @@
 }
 
 @media (max-width: ($vp-768 - 1)) {
+  .title {
+    font: $font-700-18-21;
+    margin-top: 10px;
+  }
+
   .btn-black, 
   .btn-white {
     font: $font-700-18-21;

@@ -2,13 +2,44 @@
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 16px 120px;
+  padding: 80px 150px 120px;
   background-color: $color-white;
-}
 
-.ordering__contacts {
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 50px;
+  &__contacts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 84px;
+
+    p {
+      font: $font-700-24-29;
+    }
+
+    a {
+      font: $font-200-24-29;
+      color: $color-black;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &:nth-child(2n+1) a {
+      text-decoration: underline;
+    }
+    &:not(:first-child),
+    &:not(:last-child) {
+      justify-self: center;
+    }
+    &:first-child {
+      justify-self: baseline;
+    }
+    &:last-child {
+      justify-self: end;
+    }
+  }
 
   img {
     display: block;
@@ -18,37 +49,58 @@
   }
 }
 
-.ordering__item {
-  &:nth-child(n) {
-    align-items: center;
-    justify-self: center;
+@media (max-width: ($vp-1440 - 1)) {
+  .footer {
+    padding: 40px 20px 80px;
   }
-  &:nth-child(n) a {
-    text-decoration: none;
-  }
-  &:nth-child(3n+1) a {
-    text-decoration: underline;
-  }
-}
 
-.ordering img {
-  aspect-ratio: 768 / 228;
+  .footer__contacts {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+  }
+
+  .footer__item {
+    justify-self: center;
+    align-items: center;
+    &:first-child {
+      justify-self: center;
+      order: 1;
+    }
+    &:last-child {
+      justify-self: center;
+      order: 2;
+    }
+    &:nth-child(2) {
+      order: 3;
+    }
+    &:nth-child(3) {
+      order: 4;
+    }
+  }
+
+  .footer img {
+    aspect-ratio: 768 / 228;
+  }
 }
 
 @media (max-width: ($vp-768 - 1)) {
-  .ordering__contacts {
-    gap: 20px;
+  .footer {
+    padding: 30px 20px 40px;
   }
 
-  .ordering__item p {
+  .footer__contacts {
+    gap: 10px;
+  }
+
+  .footer__item p {
     font: $font-700-12-15;
   }
 
-  .ordering__item a {
+  .footer__item a {
     font: $font-200-12-14;
   }
 
-  .ordering img {
+  .footer img {
     aspect-ratio: 320 / 86;
     max-height: 195px;
   }

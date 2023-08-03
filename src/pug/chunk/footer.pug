@@ -2,9 +2,9 @@
 
 footer.footer
   h2.title контакты
-  ul.ordering__contacts
+  ul.footer__contacts
     each contact in CONTACTS
-      li.ordering__item
+      li.footer__item
         p=contact.label
         a(href=contact.href)=contact.text
   picture
