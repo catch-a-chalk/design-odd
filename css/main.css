@@ -300,7 +300,6 @@ input {
 }
 
 input[type=checkbox] + span {
-  margin-right: 9px;
   content: url("../img/check-off.svg");
   opacity: 0.8;
 }
@@ -492,6 +491,10 @@ li {
   font-display: swap;
 }
 
+body.on-modal {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -520,8 +523,8 @@ li {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 150px;
+  padding-right: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,7 +554,7 @@ li {
   -ms-flex-align: center;
   align-items: center;
   font: 700 40px/48px "Inter", "MS Sans Serif", sans-serif;
-  padding: 5px 25px;
+  padding: 5px 12px;
   border: 2px solid #0e0e0e;
   border-radius: 40px;
   color: #0e0e0e;
@@ -773,38 +776,61 @@ li {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 16px 120px;
+  padding: 80px 150px 120px;
 }
 
-.ordering__contacts {
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 50px;
+.footer__contacts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 84px;
 }
 
-.ordering__contacts img {
+.footer__contacts p {
+  font: 700 24px/29px "Inter", "MS Sans Serif", sans-serif;
+}
+
+.footer__contacts a {
+  font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
+  color: #0e0e0e;
+}
+
+.footer__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.footer__item:nth-child(2n+1) a {
+  text-decoration: underline;
+}
+
+.footer__item:not(:first-child),
+.footer__item:not(:last-child) {
+  justify-self: center;
+}
+
+.footer__item:first-child {
+  justify-self: baseline;
+}
+
+.footer__item:last-child {
+  justify-self: end;
+}
+
+.footer img {
   display: block;
   width: 100%;
   aspect-ratio: 1440/396;
   max-height: 294px;
-}
-
-.ordering__item:nth-child(n) {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  justify-self: center;
-}
-
-.ordering__item:nth-child(n) a {
-  text-decoration: none;
-}
-
-.ordering__item:nth-child(3n+1) a {
-  text-decoration: underline;
-}
-
-.ordering img {
-  aspect-ratio: 768/228;
 }
 
 .form {
@@ -851,7 +877,7 @@ li {
 
 .form__boooooox h4 {
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
-  grid-column: 2/3;
+  grid-column: 3/1;
   text-align: end;
   margin-top: 0;
 }
@@ -870,7 +896,7 @@ fieldset input:checked:hover + .form__option {
 
 .form__intro {
   background: #ffffff;
-  padding-top: 88px;
+  padding-top: 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -911,7 +937,6 @@ fieldset input:checked:hover + .form__option {
   background: #0e0e0e;
   position: absolute;
   width: 6px;
-  height: 20vh;
   top: 0;
   bottom: auto;
   left: 0;
@@ -944,10 +969,7 @@ fieldset input:checked:hover + .form__option {
 .form__stages-container {
   display: grid;
   grid-template-columns: 2fr 5fr;
-}
-
-.form__stages-container:first-child {
-  background: #ffffff;
+  overflow: hidden;
 }
 
 .form__stages-container h3 {
@@ -976,6 +998,10 @@ fieldset input:checked:hover + .form__option {
   -webkit-transition-delay: 0.5s;
   -o-transition-delay: 0.5s;
   transition-delay: 0.5s;
+}
+
+.form__stages h4:not(:first-of-type) {
+  background: #ffffff;
 }
 
 .form__stages-toggle {
@@ -1009,6 +1035,11 @@ fieldset input:checked:hover + .form__option {
   -webkit-box-shadow: none;
   box-shadow: none;
   position: sticky;
+}
+
+.form__stages-question,
+.form__stages-modal {
+  display: none;
 }
 
 .form__stages fieldset {
@@ -1056,25 +1087,16 @@ fieldset input:checked:hover + .form__option {
 
 .form__stages-list {
   grid-column: 4/-1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: grid;
   gap: 8px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  /******/
 }
 
 .form__stages-list label {
   font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
   position: relative;
   display: grid;
-  grid-template-columns: 16px minmax(auto, 350px);
+  grid-template-columns: -webkit-min-content minmax(auto, 322px) auto;
+  grid-template-columns: min-content minmax(auto, 322px) auto;
   gap: 10px;
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
@@ -1083,7 +1105,7 @@ fieldset input:checked:hover + .form__option {
 
 .form__stages-list label:hover {
   font-weight: 700;
-  line-height: 19px;
+  font-size: 16px;
 }
 
 .form__stages-list label:hover .form__stages-tooltip {
@@ -1092,6 +1114,7 @@ fieldset input:checked:hover + .form__option {
 
 .form__stages-tooltip {
   background: #ffffff;
+  grid-column: 2/3;
   visibility: hidden;
   width: 197px;
   -webkit-box-shadow: 6px 6px 16px 8px rgba(174, 174, 192, 0.35);
@@ -1102,52 +1125,14 @@ fieldset input:checked:hover + .form__option {
   border: 1px solid rgba(175, 185, 193, 0.69);
   position: absolute;
   z-index: 1;
-  top: -5px;
-  left: 105%;
+  left: 110%;
+  white-space: normal;
   font: 200 10px/12px "Inter", "MS Sans Serif", sans-serif;
   color: #0e0e0e;
 }
 
-/* КОММЕНТАРИИ К РАДИОКНОПКАМ*/
-
-/* вид разработки */
-
-.form__label-stages-branding .form__stages-tooltip::after {
-  content: "Изучение бренда для решения конкретных маркетинговых задач, в том числе повышение конкурентноспособности, формирование уникального образа, повышение симпатии потребителей, а также закрепление и дальнейшее развитие позиции на рынке.";
-}
-
-.form__label-stages-rebranding .form__stages-tooltip::after {
-  content: "Обновление уже имеющихся концептов и реализованных идей на основе полученного опыта компании на рынке, в том числе и полное реконструкция образа компании с нуля.";
-}
-
-.form__label-stages-retail-branding .form__stages-tooltip::after {
-  content: "Проектирование и оптимизация торгового пространства, развитие качества взаимодействия торговых точек с клиентами.";
-}
-
-.form__label-stages-localization .form__stages-tooltip::after {
-  content: "Перевод и адаптирование иностранной продукции под Российский сегмент (в том числе по программе импортозамещения).";
-}
-
-/* исследование */
-
-.form__label-stages-marketing-analysis .form__stages-tooltip::after {
-  content: "Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).";
-}
-
-.form__label-stages-cjm .form__stages-tooltip::after {
-  content: "Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).";
-}
-
-.form__label-stages-customer-experience .form__stages-tooltip::after {
-  content: "Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey), все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment).";
-}
-
-.form__label-stages-brand-audit .form__stages-tooltip::after {
-  content: "Аудит бренда — один из самых надёжных методов анализа составляющих бренда, а именно: его конкурентоспособности, текущего положения бренда на рынке, включая исследование потенциала для его дальнейшего развития.";
-}
-
-.form__label-stages-structuring-of-the-received-data .form__stages-tooltip::after {
-  content: "Все полученные данные затем структурируются для подбора оптимальной стратегии позиционирования, сегментирования ключевых групп целевой аудитории, выявлении сильных и слабых сторон позиционирования бренда относительно конкурентов. Мы используем собственные и международные методики изучения брендов, применяя самые результативные модели.";
+.form__stages-tooltip:not(:last-child) {
+  bottom: -100%;
 }
 
 .form__ready {
@@ -1161,28 +1146,28 @@ fieldset input:checked:hover + .form__option {
 
 .form__ready-cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, auto));
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   gap: 30px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-top: 83px;
 }
 
 .form__ready-cards fieldset {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 60px;
   border: none;
 }
 
+.form__ready-cards a {
+  grid-column: 2/3;
+}
+
 .form__ready-card {
-  min-height: 451px;
   display: grid;
-  grid-template-rows: 70px auto auto;
+  grid-template-rows: 80px minmax(auto, 1fr) auto;
+  gap: 10px;
   justify-items: center;
   padding: 8px 30px 43px;
   border: 2px solid #d3d3d3;
@@ -1201,7 +1186,7 @@ fieldset input:checked:hover + .form__option {
   font: 700 24px/29px "Inter", "MS Sans Serif", sans-serif;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 13px;
+  margin-bottom: 10px;
 }
 
 .form__ready-card label {
@@ -1220,7 +1205,6 @@ fieldset input:checked:hover + .form__option {
 }
 
 .form__ready-list {
-  height: 210px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1229,8 +1213,6 @@ fieldset input:checked:hover + .form__option {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 8px;
-  margin-top: 24px;
-  margin-bottom: 0;
   padding: 20px;
 }
 
@@ -1241,7 +1223,6 @@ fieldset input:checked:hover + .form__option {
 }
 
 .form__ready-container {
-  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1266,6 +1247,8 @@ fieldset input:checked:hover + .form__option {
   display: -ms-flexbox;
   display: flex;
   width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .header {
@@ -1365,7 +1348,7 @@ fieldset input:checked:hover + .form__option {
 }
 
 .ordering {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .ordering label,
@@ -1646,60 +1629,13 @@ fieldset input:checked:hover + .form__option {
   font-weight: 700;
 }
 
-.ordering__buttons button {
-  grid-column: 3/4;
+.ordering__buttons .btn-black {
+  margin-top: 50px;
 }
 
 .ordering__buttons input[type=checkbox] + span {
   width: 21px;
   height: 21px;
-}
-
-.ordering__contacts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0;
-  margin-top: 84px;
-}
-
-.ordering__contacts p {
-  font: 700 24px/29px "Inter", "MS Sans Serif", sans-serif;
-}
-
-.ordering__contacts a {
-  font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
-  color: #0e0e0e;
-}
-
-.ordering__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.ordering__item:nth-child(2n+1) a {
-  text-decoration: underline;
-}
-
-.ordering__item:not(:first-child),
-.ordering__item:not(:last-child) {
-  justify-self: center;
-}
-
-.ordering__item:first-child {
-  justify-self: baseline;
-}
-
-.ordering__item:last-child {
-  justify-self: end;
 }
 
 .preform {
@@ -1785,7 +1721,7 @@ fieldset input:checked:hover + .form__option {
 
 .projects__card {
   text-align: center;
-  padding: 40px 0;
+  padding: 30px 0 40px;
   position: relative;
 }
 
@@ -1843,7 +1779,6 @@ fieldset input:checked:hover + .form__option {
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
   color: #0e0e0e;
   margin-top: var(--mt-inside-card);
-  max-width: 180px;
   text-align: end;
 }
 
@@ -1865,6 +1800,11 @@ body {
 }
 
 @media (max-width: 1439px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .title {
     font: 700 24px/29px "Inter", "MS Sans Serif", sans-serif;
     margin-bottom: 10px;
@@ -1967,6 +1907,52 @@ body {
     margin-bottom: 20px;
   }
 
+  .footer {
+    padding: 40px 20px 80px;
+  }
+
+  .footer__contacts {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+  }
+
+  .footer__item {
+    justify-self: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .footer__item:first-child {
+    justify-self: center;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .footer__item:last-child {
+    justify-self: center;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .footer__item:nth-child(2) {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+
+  .footer__item:nth-child(3) {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+
+  .footer img {
+    aspect-ratio: 768/228;
+  }
+
   .form__intro {
     padding-top: 50px;
   }
@@ -1998,17 +1984,18 @@ body {
 
   .form__stages-toggle {
     font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
-    width: 37px;
-    height: 37px;
+    width: 45px;
+    height: 45px;
     justify-self: center;
   }
 
   .form__stages-toggle--active {
-    font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
+    font-weight: 700;
   }
 
   .form__stages fieldset {
     gap: 30px;
+    margin-top: 0;
   }
 
   .form__stages fieldset h4 {
@@ -2048,7 +2035,7 @@ body {
 
   .form__ready-card {
     padding: 8px;
-    min-height: 390px;
+    grid-template-rows: 70px minmax(auto, 1fr) auto;
   }
 
   .form__ready-card h4 {
@@ -2056,12 +2043,12 @@ body {
   }
 
   .form__ready-list {
-    margin-top: 0;
-    height: 241px;
+    padding: 0;
   }
 
   .form__ready-list label {
     grid-template-columns: 16px minmax(auto, 165px);
+    font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
   }
 
   .header {
@@ -2134,12 +2121,17 @@ body {
     padding: 0 50px;
   }
 
+  .projects__card {
+    padding: 10px 0 20px;
+  }
+
   .projects__card p {
     font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
   }
 
   .projects__cta {
     grid-template-columns: 150px 30px auto 150px;
+    margin-top: 20px;
   }
 
   .projects__cta img {
@@ -2158,6 +2150,7 @@ body {
 @media (max-width: 767px) {
   .title {
     font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
+    margin-top: 10px;
   }
 
   .btn-black,
@@ -2243,21 +2236,106 @@ body {
     font: 700 14px/17px "Inter", "MS Sans Serif", sans-serif;
   }
 
-  .ordering__contacts {
-    gap: 20px;
+  .footer {
+    padding: 30px 20px 40px;
   }
 
-  .ordering__item p {
+  .footer__contacts {
+    gap: 10px;
+  }
+
+  .footer__item p {
     font: 700 12px/15px "Inter", "MS Sans Serif", sans-serif;
   }
 
-  .ordering__item a {
+  .footer__item a {
     font: 200 12px/14px "Inter", "MS Sans Serif", sans-serif;
   }
 
-  .ordering img {
+  .footer img {
     aspect-ratio: 320/86;
     max-height: 195px;
+  }
+
+  .form::after {
+    height: 15%;
+  }
+
+  .form__stages-question {
+    display: block;
+    width: 42px;
+    height: 42px;
+    grid-column: 3/4;
+  }
+
+  .form__stages-modal {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    -webkit-transition: 1.1s ease-out;
+    -o-transition: 1.1s ease-out;
+    transition: 1.1s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    overflow: auto;
+    max-height: 80vh;
+  }
+
+  .form__stages-modal.on {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .form__stages-modal h3 {
+    font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
+  }
+
+  .form__stages-modal h4 {
+    font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .form__stages-content h5 {
+    font: 200 18px/22px "Inter", "MS Sans Serif", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .form__stages-content p {
+    font: 200 10px/12px "Inter", "MS Sans Serif", sans-serif;
+  }
+
+  .form__stages-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: relative;
+    top: 50px;
+    padding: 0.5rem 1rem;
+  }
+
+  .form__stages-actions button {
+    border: 0;
+    background: #d3d3d3;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  .form__boooooox {
+    grid-template-columns: 50px 1fr;
+    gap: 10px;
   }
 
   .form__intro {
@@ -2272,21 +2350,27 @@ body {
   .form__progress {
     -ms-flex-item-align: start;
     align-self: flex-start;
-    left: 40px;
+    left: 46px;
   }
 
   .form__stages-container {
-    -ms-flex-item-align: center;
+    grid-template-columns: 50px auto 40px 40px;
+    width: 100%;
+    gap: 10px;
     align-self: center;
+    overflow: inherit;
   }
 
   .form__stages-container small {
     display: none;
   }
 
+  .form__stages-container:last-child(:last-of-type) {
+    display: none;
+  }
+
   .form__stages-container h3 {
-    grid-column: 1/-1;
-    margin-top: 45px;
+    grid-column: 2/3;
   }
 
   .form__stages fieldset {
@@ -2295,15 +2379,18 @@ body {
   }
 
   .form__stages fieldset h4 {
-    font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
+    font-size: 15px;
+    line-height: 18px;
     grid-column: 2/3;
     text-align: start;
-    margin-top: 30px;
-    margin-bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
   }
 
   .form__stages-toggle {
     grid-column: 1/2;
+    grid-row: 1/2;
     font: 200 18px/22px "Inter", "MS Sans Serif", sans-serif;
   }
 
@@ -2316,7 +2403,17 @@ body {
   }
 
   .form__stages-list label {
-    font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .form__stages-list label:hover {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .form__stages-tooltip {
+    display: none;
   }
 
   .form__stages-btn {
@@ -2335,35 +2432,147 @@ body {
     grid-column: 8/9;
   }
 
+  .form__ready {
+    padding-top: 39px;
+  }
+
   .form__ready-cards {
-    grid-template-columns: 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 60px;
+    gap: 5px;
   }
 
   .form__ready-card {
     grid-template-rows: 35px auto auto;
     min-height: auto;
+    padding: 5px;
   }
 
   .form__ready-card h4 {
     font: 700 14px/17px "Inter", "MS Sans Serif", sans-serif;
+    padding: 5px;
   }
 
   .form__ready-list {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 10px;
+    gap: 8px;
     height: auto;
     padding: 0;
   }
 
   .form__ready-list label {
-    font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    gap: 8px;
   }
 
   .form__ready-container p {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .form__label-ready-s-two-logotypes {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .form__label-ready-s-corporate-style {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+
+  .form__label-ready-s-three-carriers {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .form__label-ready-s-package {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+
+  .form__label-ready-i-two-logotypes {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .form__label-ready-i-corporate-style {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+
+  .form__label-ready-i-five-carriers {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .form__label-ready-i-brandbook {
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+  }
+
+  .form__label-ready-i-package {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+
+  .form__label-ready-bi-two-types-of-naming {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+
+  .form__label-ready-bi-two-logotypes {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .form__label-ready-bi-corporate-style {
+    -webkit-box-ordinal-group: 8;
+    -ms-flex-order: 7;
+    order: 7;
+  }
+
+  .form__label-ready-bi-five-carriers {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .form__label-ready-bi-brandbook {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+
+  .form__label-ready-bi-brand-platform {
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+  }
+
+  .form__label-ready-bi-package {
+    -webkit-box-ordinal-group: 7;
+    -ms-flex-order: 6;
+    order: 6;
   }
 
   .navbar {
@@ -2556,6 +2765,7 @@ body {
     -moz-column-gap: 50px;
     column-gap: 50px;
     row-gap: 10px;
+    margin: 10px 0;
   }
 
   .projects__card {
