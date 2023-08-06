@@ -2,6 +2,7 @@
   const WEB = [
     {
       title: 'сайт-визитка',
+      label: 'bc-website',
       number: '01',
       description: 'Компактный сайт, содержащий основные элементы информации о компании, товарах и услугах.',
       bold: '+3D анимация бесплатно',
@@ -9,6 +10,7 @@
     },
     {
       title: 'лендинг',
+      label: 'landing',
       number: '02',
       description: 'Основная страница для сбора информативных данных о целевой аудитории компании. Используется для усиления эффективности рекламных инструментов.',
       bold: '',
@@ -16,6 +18,7 @@
     },
     {
       title: 'магазин/лукбук',
+      label: 'shop-lookbook',
       number: '03',
       description: 'Создание и интеграция внутреннего магазина с возможностью покупки и оплаты внутри сайта.',
       bold: '',
@@ -23,6 +26,7 @@
     },
     {
       title: 'сайт-портал',
+      label: 'website-portal',
       number: '04',
       description: 'Содержит большое количество мультимедийных и текстовых наполнителей, целью которых является продвижение товаров и услуг.',
       bold: '',
@@ -30,6 +34,7 @@
     },
     {
       title: 'приложение',
+      label: 'application',
       number: '05',
       description: 'Упрощает взаимодействие с аудиторией через специально разработанные приложения для мобильных устройств.',
       bold: '',
@@ -37,6 +42,7 @@
     },
     {
       title: 'индивидуальный продукт',
+      label: 'ind-product',
       number: '06',
       description: 'Отдельная разработка сайта для каждого индивидуального продукта, соответствующая требованиям и целям компании.',
       bold: '',
@@ -48,6 +54,7 @@
   const SEO = [
     {
       title: 'базовое',
+      label: 'base',
       number: '01',
       description: 'Основные пункты работ: оптимизация под ключевые слова, улучшение структуры сайта и помощь в создании качественного контента.',
       bold: '',
@@ -55,6 +62,7 @@
     },
     {
       title: 'среднее',
+      label: 'middle',
       number: '02',
       description: '+ дополнительные работы с внутренней ссылочной структурой, улучшение юзабилити сайта, работу с внешними ресурсами, улучшение ссылочной массы.',
       bold: '',
@@ -62,6 +70,7 @@
     },
     {
       title: 'PRO',
+      label: 'pro',
       number: '03',
       description: 'продвижение включает в себя Базовое и Среднее SEO c детальным разбором и анализом конкурентов, более глубокую аналитику для подготовки стратегии продвижения на длительный период.',
       bold: '',
@@ -69,6 +78,7 @@
     },
     {
       title: 'брендовый трафик',
+      label: 'brand-traffic',
       number: '04',
       description: 'Увеличение органического трафика из поиска. Увеличение трафика из соц-сетей, ссылки с сайтов, E-mail рассылки. Основная поисковая фраза для продвижения - брендовое имя.',
       bold: '',
@@ -76,6 +86,7 @@
     },
     {
       title: 'разовая оптимизация',
+      label: 'one-time-optimization',
       number: '05',
       description: 'комплекс мер, включающий в себя анализ исходного состояния сайта, определение ключевых запросов, внутреннюю и внешнюю оптимизацию, создание уникального контента и другие действия. Сопровождение включает в себя мониторинг позиций сайта в поисковых системах и корректировку ключевых слов при необходимости, а также устранение ошибок в поиске.',
       bold: '',
@@ -83,6 +94,7 @@
     },
     {
       title: 'SEO аудит сайта',
+      label: 'audit',
       number: '06',
       description: 'проверка на соответствие требованиям поисковых систем, которая поможет избежать проблем при продвижении сайта с нуля или найти причины резкого снижения трафика уже продвигаемого ресурса.',
       bold: '',
@@ -98,35 +110,37 @@ section.dev
         a.btn-arrow(href="#inner3")
           svg(width="52" height="60" role="img" aria-labelledby="arrow__down" aria-description="Вниз")
             use(href="img/sprite.svg#arrow")
-    .dev__web-services
-        ul
-          each web in WEB
-            li
-              p.dev__web-title=web.title
-              p.dev__web-number=web.number
-              p.dev__web-description=web.description
-                br
-                span=web.bold
-              p.dev__web-price=web.price
-              button.btn-black.btn-black--order(type='button')
-        article.dev__web-promotion
-          p Пакет web+ брендинг/айдентикa
-          p скидка 15%
-          button.btn-black.btn-black--add(type='button')
-        a.btn-white(href="order.html")
-        //- button.btn-white(type='button')
+    form.dev__web-services#form3(action='https://echo.htmlacademy.ru/' method='post')
+      each web in WEB
+        fieldset
+          p.dev__web-title=web.title
+          p.dev__web-number=web.number
+          p.dev__web-description=web.description
+            br
+            span=web.bold
+          p.dev__web-price=web.price
+          label(class=`dev__label-web-${web.label}` for=`web-${web.label}`)
+            input.visually-hidden(type='radio' name='web' id=`web-${web.label}` value=web.label)
+            button.btn-black.btn-black--order(type='button')
+      article.dev__web-promotion
+        p Пакет web+ брендинг/айдентикa
+        p скидка 15%
+        button.btn-black.btn-black--add(type='button')
+      //- a.btn-white(href="order.html")
+      button.btn-white(type='submit')
     #inner3.dev__web-container
       h2.title SEO продвижение
-    .dev__web-services
-        ul
-          each seo in SEO
-            li
-              p.dev__web-title=seo.title
-              p.dev__web-number=seo.number
-              p.dev__web-description=seo.description
-                br
-                span=seo.bold
-              p.dev__web-price=seo.price
-              button.btn-black.btn-black--order(type='button')
-        a.btn-white(href="order.html")
-        //- button.btn-white(type='button')
+    form.dev__web-services#form4(action='https://echo.htmlacademy.ru/' method='post')
+      each seo in SEO
+        fieldset
+          p.dev__web-title=seo.title
+          p.dev__web-number=seo.number
+          p.dev__web-description=seo.description
+            br
+            span=seo.bold
+          p.dev__web-price=seo.price
+          label(class=`dev__label-seo-${seo.label}` for=`seo-${seo.label}`)
+            input.visually-hidden(type='radio' name='seo' id=`seo-${seo.label}` value=seo.label)
+            button.btn-black.btn-black--order(type='button')
+      //- a.btn-white(href="order.html")
+      button.btn-white(type='submit')

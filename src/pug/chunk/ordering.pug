@@ -1,9 +1,7 @@
-- const POSITIONS = [{ type: 'катгайд' }, { type: 'логотип' }, { type: 'гайдлайн' }, { type: 'разработка этикетки' }, { type: 'визитка сайта + 3D анимация' }, { type: 'лендинг' }]
-
 article.ordering
   .wrapper
     h2.title давайте обсудим детали! 
-    form.ordering__form(action='https://echo.htmlacademy.ru/' method='post')
+    form.ordering__form#resultForm(action='https://echo.htmlacademy.ru/' method='post')
       .ordering__info
         p
           label(for='form-name') Имя*:
@@ -30,11 +28,10 @@ article.ordering
         h3 Выбранные позиции: 6
         .ordering__container
           ul
-            each position in POSITIONS
-              li
-                button(type='button')
-                  .ordering__cross
-                span=position.type
+            li
+              button(type='button')
+                .ordering__cross
+              output 
       .ordering__about
         label(for='form-text') Кратко о проекте и бюджете*:
         textarea#form-text(required='')

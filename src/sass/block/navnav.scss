@@ -2,7 +2,7 @@
   padding-top: 27px;
   padding-bottom: 10px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   min-height: 121px;
   background-color: $color-white;
   @media (max-width: ($vp-1440 - 1)) {
@@ -43,7 +43,7 @@
   display: none;
 }
 
-.popup {
+.popupp {
   display: none;
 }
 
@@ -120,7 +120,7 @@
     transition: 0.2s;
   }
 
-  .popup {
+  .popupp {
     position: fixed;
     top: 75px;
     left: -100%;
@@ -132,11 +132,11 @@
     transition: 0.3s;
   }
 
-  .popup.open {
+  .popupp.open {
     left: 0;
   }
 
-  .popup .menu {
+  .popupp .menu {
     width: 100%;
     height: 100%;
     display: flex;
@@ -147,11 +147,11 @@
     overflow: auto;
   }
 
-  .popup .menu > li {
+  .popupp .menu > li {
     width: 100%;
   }
 
-  .popup .menu > li > a {
+  .popupp .menu > li > a {
     font: $font-200-16-19;
     width: 100%;
     display: flex;
@@ -159,11 +159,11 @@
     padding: 20px 0;
   }
 
-  .popup .menu > li > a.active {
+  .popupp .menu > li > a.active {
     font: $font-700-14-17;
   }
 
-  .popup .menu > li > a:hover {
+  .popupp .menu > li > a:hover {
     background-color: rgba(122, 82, 179, 0.1);
   }
 

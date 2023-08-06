@@ -1,5 +1,5 @@
 const hamb = document.querySelector("#hamb");
-const popup = document.querySelector("#popup");
+const popupp = document.querySelector("#popupp");
 const body = document.body;
 
 // Клонируем меню, чтобы задать свои стили для мобильной версии
@@ -12,15 +12,15 @@ hamb.addEventListener("click", hambHandler);
 function hambHandler(e) {
   e.preventDefault();
   // Переключаем стили элементов при клике
-  popup.classList.toggle("open");
+  popupp.classList.toggle("open");
   hamb.classList.toggle("active");
   body.classList.toggle("noscroll");
-  renderPopup();
+  renderPopupp();
 }
 
 // Здесь мы рендерим элементы в наш попап
-function renderPopup() {
-  popup.appendChild(menu);
+function renderPopupp() {
+  popupp.appendChild(menu);
 }
 
 // Код для закрытия меню при нажатии на ссылку
@@ -33,7 +33,7 @@ links.forEach((link) => {
 
 // Закрытие попапа при клике на меню
 function closeOnClick() {
-  popup.classList.remove("open");
+  popupp.classList.remove("open");
   hamb.classList.remove("active");
   body.classList.remove("noscroll");
 }

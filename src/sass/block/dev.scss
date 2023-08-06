@@ -31,25 +31,26 @@
     display: flex;
     flex-direction: column;
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      margin: 120px 0 30px;
-      gap: 100px;
-    }
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 120px 0 30px;
+    gap: 100px;
 
-    li {
+    fieldset {
+      padding: 0;
       display: grid;
       grid-template-columns: 250px 70px auto 200px;
       grid-template-rows: 50px auto;
       gap: 10px;
+      border: none;
       grid-template-areas: 
       "title number description price"
       "title number description button";
 
-      button {
+      label {
         grid-area: button;
+        justify-self: center;
       }
     }
 
@@ -102,7 +103,7 @@
     border: 1px solid $color-light-grey;
     border-radius: 20px;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 0;
     padding: 30px 10px;
 
     p:first-child {
@@ -133,12 +134,10 @@
   }
 
   .dev__web-services {
-    ul {
-      margin: 30px 0;
-      gap: 60px;
-    }
+    margin: 30px 0;
+    gap: 60px;
 
-    li {
+    fieldset {
       grid-template-columns: 150px 50px auto 160px;
       grid-template-rows: 40px auto;
     }
@@ -192,18 +191,16 @@
   }
 
   .dev__web-services {
-    ul {
-      gap: 40px;
-      margin: 15px 0;
-    }
+    gap: 40px;
+    margin: 15px 0;
 
-    li {
+    fieldset {
       grid-template-columns: auto 20px 120px;
-      grid-template-rows: 40px auto;
+      grid-template-rows: auto auto;
       grid-template-areas: 
       "title number price"
       "description description button";
-      gap: 10px;
+      gap: 5px;
     }
 
     button {

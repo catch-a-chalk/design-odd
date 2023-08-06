@@ -112,26 +112,26 @@
     }
   ]
 
-form.form__stages(action='https://echo.htmlacademy.ru/' method='post')#content
+form.form__stages#form1
       each component in STAGES
         .form__stages-container
           h3.title=component.header
           small=component.description
-          button.form__stages-question(type='button')
-            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none"><rect width="36" height="36" x="1" y="1" stroke="#000" stroke-width="2" rx="18"/><path fill="#000" d="M17.503 23.215v-.307c.006-1.055.09-1.896.253-2.522.17-.627.414-1.133.735-1.519a5.79 5.79 0 0 1 1.16-1.048c.338-.241.64-.491.907-.75.266-.26.479-.546.637-.86.157-.319.236-.674.236-1.066 0-.416-.09-.78-.27-1.094a1.87 1.87 0 0 0-.726-.723 1.993 1.993 0 0 0-.996-.253c-.354 0-.689.088-1.005.262a1.994 1.994 0 0 0-.776.76c-.2.331-.31.744-.326 1.238H14c.027-1.205.289-2.2.784-2.983a4.614 4.614 0 0 1 1.968-1.762c.817-.392 1.718-.588 2.703-.588 1.084 0 2.042.199 2.875.597a4.563 4.563 0 0 1 1.96 1.708c.473.747.71 1.648.71 2.703 0 .705-.106 1.331-.319 1.88a4.641 4.641 0 0 1-.873 1.446c-.376.416-.82.792-1.331 1.13-.43.283-.784.578-1.062.886a3.067 3.067 0 0 0-.613 1.066c-.13.404-.198.901-.204 1.492v.307h-3.095ZM19.12 29c-.544 0-1.01-.21-1.396-.633a2.2 2.2 0 0 1-.564-1.536 2.155 2.155 0 0 1 .564-1.519c.386-.422.852-.633 1.396-.633.517 0 .972.211 1.364.633.392.422.59.928.596 1.519-.005.397-.1.762-.286 1.093-.18.326-.416.588-.71.787-.294.193-.615.289-.964.289Z"/></svg>
-          .form__stages-modal#form__stages-modal
-            .form__stages-actions
-              button.btn-arrow(type='button')
-                svg(width="52" height="60" role="img" aria-labelledby="arrow__down" aria-description="Вниз")
-                  use(href="img/sprite.svg#arrow")
-            each component in STAGES
-              h3=component.header
-              each element in component.data
-                h4=element.title
-                each checkBox in element.checkBoxes
-                  .form__stages-content
-                    h5=checkBox.span
-                    p=checkBox.tooltip
+        //-   button.form__stages-question(type='button')
+        //-     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none"><rect width="36" height="36" x="1" y="1" stroke="#000" stroke-width="2" rx="18"/><path fill="#000" d="M17.503 23.215v-.307c.006-1.055.09-1.896.253-2.522.17-.627.414-1.133.735-1.519a5.79 5.79 0 0 1 1.16-1.048c.338-.241.64-.491.907-.75.266-.26.479-.546.637-.86.157-.319.236-.674.236-1.066 0-.416-.09-.78-.27-1.094a1.87 1.87 0 0 0-.726-.723 1.993 1.993 0 0 0-.996-.253c-.354 0-.689.088-1.005.262a1.994 1.994 0 0 0-.776.76c-.2.331-.31.744-.326 1.238H14c.027-1.205.289-2.2.784-2.983a4.614 4.614 0 0 1 1.968-1.762c.817-.392 1.718-.588 2.703-.588 1.084 0 2.042.199 2.875.597a4.563 4.563 0 0 1 1.96 1.708c.473.747.71 1.648.71 2.703 0 .705-.106 1.331-.319 1.88a4.641 4.641 0 0 1-.873 1.446c-.376.416-.82.792-1.331 1.13-.43.283-.784.578-1.062.886a3.067 3.067 0 0 0-.613 1.066c-.13.404-.198.901-.204 1.492v.307h-3.095ZM19.12 29c-.544 0-1.01-.21-1.396-.633a2.2 2.2 0 0 1-.564-1.536 2.155 2.155 0 0 1 .564-1.519c.386-.422.852-.633 1.396-.633.517 0 .972.211 1.364.633.392.422.59.928.596 1.519-.005.397-.1.762-.286 1.093-.18.326-.416.588-.71.787-.294.193-.615.289-.964.289Z"/></svg>
+        //- .form__stages-modal#form__stages-modal
+        //-   .form__stages-actions
+        //-     button.btn-arrow(type='button')
+        //-       svg(width="52" height="60" role="img" aria-labelledby="arrow__down" aria-description="Вниз")
+        //-         use(href="img/sprite.svg#arrow")
+        //-   each component in STAGES
+        //-     h3=component.header
+        //-     each element in component.data
+        //-       h4=element.title
+        //-       each checkBox in element.checkBoxes
+        //-         .form__stages-content
+        //-           h5=checkBox.span
+        //-           p=checkBox.tooltip
         fieldset
           each element in component.data
             .form__boooooox
@@ -145,8 +145,416 @@ form.form__stages(action='https://echo.htmlacademy.ru/' method='post')#content
                     =checkBox.span
                     span.form__stages-tooltip=checkBox.tooltip
       .form__stages-btn
-        a.btn-white(href="order.html")
-        //- button.btn-white(type='submit')
+        //- a.btn-white(href="order.html")
+        button.btn-white(type="submit")
         a.btn-arrow(href="#inner2")
           svg(width="52" height="60" role="img" aria-labelledby="arrow__down" aria-description="Вниз")
             use(href="img/sprite.svg#arrow")
+
+
+//- form#content.form__stages(action='https://echo.htmlacademy.ru/' method='post')
+//-   .form__stages-container
+//-     h3.title брендинг
+//-     small
+//-       | создание твердой платформы бренда при помощи определения характеристик будущего бренда, таких как: ценности, целевая аудитория, миссия и философия, позиционирование, тон голоса бренда и стиль визуальной
+//-       | коммуникации, сервис и опыт взаимодействия потребителя с брендом.
+//-     button.form__stages-question(type='button')
+//-       svg(xmlns='http://www.w3.org/2000/svg' width='38' height='38' fill='none')
+//-         rect(width='36' height='36' x='1' y='1' stroke='#000' stroke-width='2' rx='18')
+//-         path(fill='#000' d='M17.503 23.215v-.307c.006-1.055.09-1.896.253-2.522.17-.627.414-1.133.735-1.519a5.79 5.79 0 0 1 1.16-1.048c.338-.241.64-.491.907-.75.266-.26.479-.546.637-.86.157-.319.236-.674.236-1.066 0-.416-.09-.78-.27-1.094a1.87 1.87 0 0 0-.726-.723 1.993 1.993 0 0 0-.996-.253c-.354 0-.689.088-1.005.262a1.994 1.994 0 0 0-.776.76c-.2.331-.31.744-.326 1.238H14c.027-1.205.289-2.2.784-2.983a4.614 4.614 0 0 1 1.968-1.762c.817-.392 1.718-.588 2.703-.588 1.084 0 2.042.199 2.875.597a4.563 4.563 0 0 1 1.96 1.708c.473.747.71 1.648.71 2.703 0 .705-.106 1.331-.319 1.88a4.641 4.641 0 0 1-.873 1.446c-.376.416-.82.792-1.331 1.13-.43.283-.784.578-1.062.886a3.067 3.067 0 0 0-.613 1.066c-.13.404-.198.901-.204 1.492v.307h-3.095ZM19.12 29c-.544 0-1.01-.21-1.396-.633a2.2 2.2 0 0 1-.564-1.536 2.155 2.155 0 0 1 .564-1.519c.386-.422.852-.633 1.396-.633.517 0 .972.211 1.364.633.392.422.59.928.596 1.519-.005.397-.1.762-.286 1.093-.18.326-.416.588-.71.787-.294.193-.615.289-.964.289Z')
+//-     #form__stages-modal.form__stages-modal
+//-       .form__stages-actions
+//-         button.btn-arrow(type='button')
+//-           svg(width='52' height='60' role='img' aria-labelledby='arrow__down' aria-description='Вниз')
+//-             use(href='img/sprite.svg#arrow')
+//-       h3 брендинг
+//-       h4 вид разработки
+//-       .form__stages-content
+//-         h5 брендинг
+//-         p
+//-           | Изучение бренда для решения конкретных маркетинговых задач, в том числе повышение конкурентноспособности, формирование уникального образа, повышение симпатии потребителей, а также закрепление
+//-           | и дальнейшее развитие позиции на рынке
+//-       .form__stages-content
+//-         h5 ребрендинг
+//-         p
+//-           | Обновление уже имеющихся концептов и реализованных идей на основе полученного опыта компании на рынке, в том числе и полное реконструкция образа компании с нуля
+//-       .form__stages-content
+//-         h5 ритейл-брендинг
+//-         p
+//-           | Проектирование и оптимизация торгового пространства, развитие качества взаимодействия торговых точек с клиентами
+//-       .form__stages-content
+//-         h5 локализация
+//-         p
+//-           | Перевод и адаптирование иностранной продукции под Российский сегмент (в том числе по программе импортозамещения)
+//-       h4 исследование
+//-       .form__stages-content
+//-         h5 маркетинговый анализ
+//-         p
+//-           | Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey),
+//-           | все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment)
+//-       .form__stages-content
+//-         h5 Коммуникационная стратегия
+//-         p
+//-           | Увеличение спроса и продвижение бренда через общение с целевой аудиторией. Информирование о продукте, его преимуществах, вызывают желание обладать им
+//-       .form__stages-content
+//-         h5 Customer Experience: 5 sense, u&a, CJM
+//-         p
+//-           | Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey),
+//-           | все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment)
+//-       .form__stages-content
+//-         h5 аудит бренда
+//-         p
+//-           | Аудит бренда — один из самых надёжных методов анализа составляющих бренда, а именно: его конкурентоспособности, текущего положения бренда на рынке, включая исследование потенциала для его дальнейшего
+//-           | развития
+//-       .form__stages-content
+//-         h5 структурирование полученных данных
+//-         p
+//-           | Все полученные данные затем структурируются для подбора оптимальной стратегии позиционирования, сегментирования ключевых групп целевой аудитории, выявлении сильных и слабых сторон позиционирования
+//-           | бренда относительно конкурентов. Мы используем собственные и международные методики изучения брендов, применяя самые результативные модели
+//-       h4 анализ и теория
+//-       .form__stages-content
+//-         h5 архитектура бренда
+//-         p
+//-           | Сочетание концепций бренда и суббрендов на основании сформированной портфельной стратегии. Неотъемлемый элемент позиционирования для компаний с широким ассортиментом товаров и услуг
+//-       .form__stages-content
+//-         h5 концепции продвижения
+//-         p
+//-           | Подготовка маркетинговых решений с целью продвижения в целевую аудиторию. На концепции продвижения формируется ключевая идея, которая ложится в основу всех рекламных коммуникаций
+//-       .form__stages-content
+//-         h5 создание легенды бренда
+//-         p
+//-           | Развёрнутое описание легенды формирования бренда в доступном и познавательном формате, включает историю создания, философии, ценностях и чувствах, подчёркивающих уникальные атрибуты компании
+//-       .form__stages-content
+//-         h5 нейминг
+//-         p
+//-           | В основе грамотных и эффективных названий мы выделяем лёгкость, звучность и привлекательность, формирующие лояльность и положительный эмоциональный отклик. Все варианты нейминга проходят проверку
+//-           | на уникальность через базу ФИПС
+//-       .form__stages-content
+//-         h5 слоган
+//-         p
+//-           | Краткость и заразительность наших слоганов всегда отражает основные принципы и ценности бренда, позволяя ярко выделиться на фоне конкурентов. Из множества вариантов мы выбираем самые действенный
+//-           | и бесподобный
+//-       .form__stages-content
+//-         h5 разработка дизайн-стратегии
+//-         p
+//-           | Дизайн является краеугольным камнем любого бренда и основой комплексной стратегии развития бренда через визуальный образ. Разработка стратегии учитывает все элементы невербальной коммуникации
+//-           | для выявления максимально эффективных направлений и сочетаний
+//-       .form__stages-content
+//-         h5 позиционирование бренда
+//-         p
+//-           | Правильный тон вербальной коммуникации создает неотъемлемые черты общей картины бренда. От развернутых статей до кратчайших ответов, грамотный текст всегда краток, лаконичен и доступен как для узкой,
+//-           | так и для широкой аудитории
+//-   fieldset
+//-     .form__boooooox
+//-       h4 вид разработки
+//-       p#line.form__stages-toggle 01
+//-       .form__stages-list
+//-         label.form__label-stages-branding(for='stages-branding')
+//-           input#stages-branding(type='checkbox' name='stages' value='branding')
+//-           span.form__option
+//-           | брендинг
+//-           span.form__stages-tooltip
+//-             | Изучение бренда для решения конкретных маркетинговых задач, в том числе повышение конкурентноспособности, формирование уникального образа, повышение симпатии потребителей, а также закрепление
+//-             | и дальнейшее развитие позиции на рынке
+//-         label.form__label-stages-rebranding(for='stages-rebranding')
+//-           input#stages-rebranding(type='checkbox' name='stages' value='rebranding')
+//-           span.form__option
+//-           | ребрендинг
+//-           span.form__stages-tooltip
+//-             | Обновление уже имеющихся концептов и реализованных идей на основе полученного опыта компании на рынке, в том числе и полное реконструкция образа компании с нуля
+//-         label.form__label-stages-retail-branding(for='stages-retail-branding')
+//-           input#stages-retail-branding(type='checkbox' name='stages' value='retail-branding')
+//-           span.form__option
+//-           | ритейл-брендинг
+//-           span.form__stages-tooltip
+//-             | Проектирование и оптимизация торгового пространства, развитие качества взаимодействия торговых точек с клиентами
+//-         label.form__label-stages-localization(for='stages-localization')
+//-           input#stages-localization(type='checkbox' name='stages' value='localization')
+//-           span.form__option
+//-           | локализация
+//-           span.form__stages-tooltip
+//-             | Перевод и адаптирование иностранной продукции под Российский сегмент (в том числе по программе импортозамещения)
+//-     .form__boooooox
+//-       h4 исследование
+//-       p#line.form__stages-toggle 02
+//-       .form__stages-list
+//-         label.form__label-stages-marketing-analysis(for='stages-marketing-analysis')
+//-           input#stages-marketing-analysis(type='checkbox' name='stages' value='marketing-analysis')
+//-           span.form__option
+//-           | маркетинговый анализ
+//-           span.form__stages-tooltip
+//-             | Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey),
+//-             | все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment)
+//-         label.form__label-stages-communication-strategy(for='stages-communication-strategy')
+//-           input#stages-communication-strategy(type='checkbox' name='stages' value='communication-strategy')
+//-           span.form__option
+//-           | Коммуникационная стратегия
+//-           span.form__stages-tooltip
+//-             | Увеличение спроса и продвижение бренда через общение с целевой аудиторией. Информирование о продукте, его преимуществах, вызывают желание обладать им
+//-         label.form__label-stages-cjm(for='stages-cjm')
+//-           input#stages-cjm(type='checkbox' name='stages' value='cjm')
+//-           span.form__option
+//-           | Customer Experience: 5 sense, u&a, CJM
+//-           span.form__stages-tooltip
+//-             | Проводится полный анализ взаимодействия между брендом и клиентом, напрямую влияющий на уровень клиентского опыта. Включает в себя весь путь клиента от потребности до результата (customer journey),
+//-             | все точки контакта клиента с брендом (brand touchpoints), а также окружение при взаимодействии (environment)
+//-         label.form__label-stages-brand-audit(for='stages-brand-audit')
+//-           input#stages-brand-audit(type='checkbox' name='stages' value='brand-audit')
+//-           span.form__option
+//-           | аудит бренда
+//-           span.form__stages-tooltip
+//-             | Аудит бренда — один из самых надёжных методов анализа составляющих бренда, а именно: его конкурентоспособности, текущего положения бренда на рынке, включая исследование потенциала
+//-             | для его дальнейшего развития
+//-         label.form__label-stages-structuring-of-the-received-data(for='stages-structuring-of-the-received-data')
+//-           input#stages-structuring-of-the-received-data(type='checkbox' name='stages' value='structuring-of-the-received-data')
+//-           span.form__option
+//-           | структурирование полученных данных
+//-           span.form__stages-tooltip
+//-             | Все полученные данные затем структурируются для подбора оптимальной стратегии позиционирования, сегментирования ключевых групп целевой аудитории, выявлении сильных и слабых сторон позиционирования
+//-             | бренда относительно конкурентов. Мы используем собственные и международные методики изучения брендов, применяя самые результативные модели
+//-     .form__boooooox
+//-       h4 анализ и теория
+//-       p#line.form__stages-toggle 03
+//-       .form__stages-list
+//-         label.form__label-stages-brand-architecture(for='stages-brand-architecture')
+//-           input#stages-brand-architecture(type='checkbox' name='stages' value='brand-architecture')
+//-           span.form__option
+//-           | архитектура бренда
+//-           span.form__stages-tooltip
+//-             | Сочетание концепций бренда и суббрендов на основании сформированной портфельной стратегии. Неотъемлемый элемент позиционирования для компаний с широким ассортиментом товаров и услуг
+//-         label.form__label-stages-promotion-concepts(for='stages-promotion-concepts')
+//-           input#stages-promotion-concepts(type='checkbox' name='stages' value='promotion-concepts')
+//-           span.form__option
+//-           | концепции продвижения
+//-           span.form__stages-tooltip
+//-             | Подготовка маркетинговых решений с целью продвижения в целевую аудиторию. На концепции продвижения формируется ключевая идея, которая ложится в основу всех рекламных коммуникаций
+//-         label.form__label-stages-creating-a-brand-legend(for='stages-creating-a-brand-legend')
+//-           input#stages-creating-a-brand-legend(type='checkbox' name='stages' value='creating-a-brand-legend')
+//-           span.form__option
+//-           | создание легенды бренда
+//-           span.form__stages-tooltip
+//-             | Развёрнутое описание легенды формирования бренда в доступном и познавательном формате, включает историю создания, философии, ценностях и чувствах, подчёркивающих уникальные атрибуты компании
+//-         label.form__label-stages-naming(for='stages-naming')
+//-           input#stages-naming(type='checkbox' name='stages' value='naming')
+//-           span.form__option
+//-           | нейминг
+//-           span.form__stages-tooltip
+//-             | В основе грамотных и эффективных названий мы выделяем лёгкость, звучность и привлекательность, формирующие лояльность и положительный эмоциональный отклик. Все варианты нейминга проходят проверку
+//-             | на уникальность через базу ФИПС
+//-         label.form__label-stages-slogan(for='stages-slogan')
+//-           input#stages-slogan(type='checkbox' name='stages' value='slogan')
+//-           span.form__option
+//-           | слоган
+//-           span.form__stages-tooltip
+//-             | Краткость и заразительность наших слоганов всегда отражает основные принципы и ценности бренда, позволяя ярко выделиться на фоне конкурентов. Из множества вариантов мы выбираем самые действенный
+//-             | и бесподобный
+//-         label.form__label-stages-development-of-a-design-strategy(for='stages-development-of-a-design-strategy')
+//-           input#stages-development-of-a-design-strategy(type='checkbox' name='stages' value='development-of-a-design-strategy')
+//-           span.form__option
+//-           | разработка дизайн-стратегии
+//-           span.form__stages-tooltip
+//-             | Дизайн является краеугольным камнем любого бренда и основой комплексной стратегии развития бренда через визуальный образ. Разработка стратегии учитывает все элементы невербальной коммуникации
+//-             | для выявления максимально эффективных направлений и сочетаний
+//-         label.form__label-stages-creating-creative-texts(for='stages-creating-creative-texts')
+//-           input#stages-creating-creative-texts(type='checkbox' name='stages' value='creating-creative-texts')
+//-           span.form__option
+//-           | создание креативных текстов
+//-           span.form__stages-tooltip
+//-         label.form__label-stages-brand.positioning(for='stages-brand positioning')
+//-           input(type='checkbox' name='stages' id='stages-brand positioning' value='brand positioning')
+//-           span.form__option
+//-           | позиционирование бренда
+//-           span.form__stages-tooltip
+//-             | Правильный тон вербальной коммуникации создает неотъемлемые черты общей картины бренда. От развернутых статей до кратчайших ответов, грамотный текст всегда краток, лаконичен и доступен как для
+//-             | узкой, так и для широкой аудитории
+//-   .form__stages-container
+//-     h3.title айдентика
+//-     small
+//-       | набор выдержанных в едином стиле и концепции визуальных и прочих элементов, которые формируют образ и восприятие бренда.
+//-     button.form__stages-question(type='button')
+//-       svg(xmlns='http://www.w3.org/2000/svg' width='38' height='38' fill='none')
+//-         rect(width='36' height='36' x='1' y='1' stroke='#000' stroke-width='2' rx='18')
+//-         path(fill='#000' d='M17.503 23.215v-.307c.006-1.055.09-1.896.253-2.522.17-.627.414-1.133.735-1.519a5.79 5.79 0 0 1 1.16-1.048c.338-.241.64-.491.907-.75.266-.26.479-.546.637-.86.157-.319.236-.674.236-1.066 0-.416-.09-.78-.27-1.094a1.87 1.87 0 0 0-.726-.723 1.993 1.993 0 0 0-.996-.253c-.354 0-.689.088-1.005.262a1.994 1.994 0 0 0-.776.76c-.2.331-.31.744-.326 1.238H14c.027-1.205.289-2.2.784-2.983a4.614 4.614 0 0 1 1.968-1.762c.817-.392 1.718-.588 2.703-.588 1.084 0 2.042.199 2.875.597a4.563 4.563 0 0 1 1.96 1.708c.473.747.71 1.648.71 2.703 0 .705-.106 1.331-.319 1.88a4.641 4.641 0 0 1-.873 1.446c-.376.416-.82.792-1.331 1.13-.43.283-.784.578-1.062.886a3.067 3.067 0 0 0-.613 1.066c-.13.404-.198.901-.204 1.492v.307h-3.095ZM19.12 29c-.544 0-1.01-.21-1.396-.633a2.2 2.2 0 0 1-.564-1.536 2.155 2.155 0 0 1 .564-1.519c.386-.422.852-.633 1.396-.633.517 0 .972.211 1.364.633.392.422.59.928.596 1.519-.005.397-.1.762-.286 1.093-.18.326-.416.588-.71.787-.294.193-.615.289-.964.289Z')
+//-     #form__stages-modal.form__stages-modal
+//-       .form__stages-actions
+//-         button.btn-arrow(type='button')
+//-           svg(width='52' height='60' role='img' aria-labelledby='arrow__down' aria-description='Вниз')
+//-             use(href='img/sprite.svg#arrow')
+//-       h3 айдентика
+//-       h4 логотип
+//-       .form__stages-content
+//-         h5 1 вариант
+//-         p
+//-       .form__stages-content
+//-         h5 2 варианта
+//-         p
+//-       h4 фирменный стиль
+//-       .form__stages-content
+//-         h5 фирменный паттерн, цвета, шрифты
+//-         p
+//-       .form__stages-content
+//-         h5 2 варианта
+//-         p
+//-       h4 разработка формы/дизайна упаковки
+//-       .form__stages-content
+//-         h5 разработка дизайна транспортировочных тар
+//-         p
+//-       .form__stages-content
+//-         h5 разработка дизайна упаковки
+//-         p
+//-       .form__stages-content
+//-         h5
+//-           | разработка нестандартной для рынка формы упаковки в соответствии с технологическими возможностями
+//-         p
+//-       h4 разработка дизайна этикеток
+//-       .form__stages-content
+//-         h5 разработка этикеток
+//-         p
+//-       h4 визуализация на носителях
+//-       .form__stages-content
+//-         h5 пример работы фирменного стиля в среде
+//-         p
+//-       h4 инструкции
+//-       .form__stages-content
+//-         h5 логобук
+//-         p Руководство по использованию логотипа и подробное описание
+//-       .form__stages-content
+//-         h5 брендбук
+//-         p
+//-           | Официальный документ компании, содержащий подробное описание бренда: философия, концепция, атрибуты, ц/а, позиционирование компании/бренда и прочие маркетинговые данные, данные айдентики
+//-       .form__stages-content
+//-         h5 кат гайд
+//-         p
+//-           | Руководство по использованию визуальных материалов, их технические требования и чертежи для производственных целей
+//-       .form__stages-content
+//-         h5 гайдлайн
+//-         p Свод правил использования визуального стиля компании для отдела дизайна
+//-   fieldset
+//-     .form__boooooox
+//-       h4 логотип
+//-       p#line.form__stages-toggle 04
+//-       .form__stages-list
+//-         label.form__label-stages-one-option(for='stages-one-option')
+//-           input#stages-one-option(type='checkbox' name='stages' value='one-option')
+//-           span.form__option
+//-           | 1 вариант
+//-           span.form__stages-tooltip
+//-         label.form__label-stages-two-options(for='stages-two-options')
+//-           input#stages-two-options(type='checkbox' name='stages' value='two-options')
+//-           span.form__option
+//-           | 2 варианта
+//-           span.form__stages-tooltip
+//-     .form__boooooox
+//-       h4 фирменный стиль
+//-       p#line.form__stages-toggle 05
+//-       .form__stages-list
+//-         label.form__label-stages-corporate-pattern-colors-fonts(for='stages-corporate-pattern-colors-fonts')
+//-           input#stages-corporate-pattern-colors-fonts(type='checkbox' name='stages' value='corporate-pattern-colors-fonts')
+//-           span.form__option
+//-           | фирменный паттерн, цвета, шрифты
+//-           span.form__stages-tooltip
+//-         label.form__label-stages-two-options(for='stages-two-options')
+//-           input#stages-two-options(type='checkbox' name='stages' value='two-options')
+//-           span.form__option
+//-           | 2 варианта
+//-           span.form__stages-tooltip
+//-     .form__boooooox
+//-       h4 разработка формы/дизайна упаковки
+//-       p#line.form__stages-toggle 06
+//-       .form__stages-list
+//-         label.form__label-stages-design-development-of-shipping-containers(for='stages-design-development-of-shipping-containers')
+//-           input#stages-design-development-of-shipping-containers(type='checkbox' name='stages' value='design-development-of-shipping-containers')
+//-           span.form__option
+//-           | разработка дизайна
+//-           |                                         транспортировочных тар
+//-           span.form__stages-tooltip
+//-         label.form__label-stages-packaging-design-development(for='stages-packaging-design-development')
+//-           input#stages-packaging-design-development(type='checkbox' name='stages' value='packaging-design-development')
+//-           span.form__option
+//-           | разработка дизайна упаковки
+//-           span.form__stages-tooltip
+//-         label.form__label-stages-development-of-a-non-standard-packaging(for='stages-development-of-a-non-standard-packaging')
+//-           input#stages-development-of-a-non-standard-packaging(type='checkbox' name='stages' value='development-of-a-non-standard-packaging')
+//-           span.form__option
+//-           | разработка нестандартной
+//-           |                                         для рынка формы упаковки в соответствии с технологическими возможностями
+//-           span.form__stages-tooltip
+//-     .form__boooooox
+//-       h4 разработка дизайна этикеток
+//-       p#line.form__stages-toggle 07
+//-       .form__stages-list
+//-         label.form__label-stages-label-development(for='stages-label-development')
+//-           input#stages-label-development(type='checkbox' name='stages' value='label-development')
+//-           span.form__option
+//-           | разработка этикеток
+//-           span.form__stages-tooltip
+//-     .form__boooooox
+//-       h4 визуализация на носителях
+//-       p#line.form__stages-toggle 08
+//-       .form__stages-list
+//-         label.form__label-stages-an-example(for='stages-an-example')
+//-           input#stages-an-example(type='checkbox' name='stages' value='an-example')
+//-           span.form__option
+//-           | пример работы фирменного стиля в среде
+//-           span.form__stages-tooltip
+//-     .form__boooooox
+//-       h4 инструкции
+//-       p#line.form__stages-toggle 09
+//-       .form__stages-list
+//-         label.form__label-stages-logobook(for='stages-logobook')
+//-           input#stages-logobook(type='checkbox' name='stages' value='logobook')
+//-           span.form__option
+//-           | логобук
+//-           span.form__stages-tooltip Руководство по использованию логотипа и подробное описание
+//-         label.form__label-stages-brandbook(for='stages-brandbook')
+//-           input#stages-brandbook(type='checkbox' name='stages' value='brandbook')
+//-           span.form__option
+//-           | брендбук
+//-           span.form__stages-tooltip
+//-             | Официальный документ компании, содержащий подробное описание бренда: философия, концепция, атрибуты, ц/а, позиционирование компании/бренда и прочие маркетинговые данные, данные айдентики
+//-         label.form__label-stages-cut-guide(for='stages-cut-guide')
+//-           input#stages-cut-guide(type='checkbox' name='stages' value='cut-guide')
+//-           span.form__option
+//-           | кат гайд
+//-           span.form__stages-tooltip
+//-             | Руководство по использованию визуальных материалов, их технические требования и чертежи для производственных целей
+//-         label.form__label-stages-guideline(for='stages-guideline')
+//-           input#stages-guideline(type='checkbox' name='stages' value='guideline')
+//-           span.form__option
+//-           | гайдлайн
+//-           span.form__stages-tooltip Свод правил использования визуального стиля компании для отдела дизайна
+//-   .form__stages-container
+//-     h3.title дополнительные услуги
+//-     small
+//-   fieldset
+//-     .form__boooooox
+//-       h4 контент, навигация
+//-       p#line.form__stages-toggle 10
+//-       .form__stages-list
+//-         label.form__label-stages-food-styling-and-advertising-photography-lookbooks-etc(for='stages-food-styling-and-advertising-photography-lookbooks-etc')
+//-           input#stages-food-styling-and-advertising-photography-lookbooks-etc(type='checkbox' name='stages' value='food-styling-and-advertising-photography-lookbooks-etc')
+//-           span.form__option
+//-           | фудстайлинг и рекламная съемка, лукбуки и  т.д
+//-           span.form__stages-tooltip Создаём в отличительной стилистике вашего уникального бренда
+//-         label.form__label-stages-design-of-spaces-and-navigation(for='stages-design-of-spaces-and-navigation')
+//-           input#stages-design-of-spaces-and-navigation(type='checkbox' name='stages' value='design-of-spaces-and-navigation')
+//-           span.form__option
+//-           | оформление пространств и навигации
+//-           span.form__stages-tooltip
+//-             | В понятном и логичном визуальном языке, соответствующим особенностям и целям пространства
+//-         label.form__label-stages-support-from-the-layout(for='stages-support-from-the-layout')
+//-           input#stages-support-from-the-layout(type='checkbox' name='stages' value='support-from-the-layout')
+//-           span.form__option
+//-           | сопровождение от макета до готового тиража клиенту
+//-           span.form__stages-tooltip С полным соответствием требованиям заказчика
+//-         label.form__label-stages-creating-infographics-and-animations(for='stages-creating-infographics-and-animations')
+//-           input#stages-creating-infographics-and-animations(type='checkbox' name='stages' value='creating-infographics-and-animations')
+//-           span.form__option
+//-           | создание инфографики и анимации
+//-           span.form__stages-tooltip В доступном, ярком и современном виде
+//-         label.form__label-stages-development-of-additional-elements(for='stages-development-of-additional-elements')
+//-           input#stages-development-of-additional-elements(type='checkbox' name='stages' value='development-of-additional-elements')
+//-           span.form__option
+//-           | разработка дополнительных элементов
+//-           |                                         фирменного стиля
+//-           span.form__stages-tooltip Ведение ваших проектов при расширении линейки продуктов или архитектуры бренда

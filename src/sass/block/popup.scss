@@ -1,0 +1,38 @@
+.popup {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 271px 60px;
+  align-items: end;
+
+  &__window {
+    background-color: $color-black;
+    border-radius: 20px;
+    padding: 54px 20px;
+    min-height: 269px;
+    // visibility: hidden;
+  }
+
+  // &__window--on {
+  //   visibility: visible;
+  // }
+
+  &__meet {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  a {
+    font: $font-200-18-22;
+    color: $color-white;
+  }
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+  }
+}
