@@ -1,25 +1,53 @@
-// Определяем функцию для открытия модального окна
-function openModal() {
-  var modal = document.querySelector(".popup__window");
-  modal.style.visibility = "visible";
+const popupWindow = document.querySelector(".popup__window");
+const popupButton = document.querySelector(".popup__btn");
+
+// При клике на иконку hamb вызываем ф-ию hambHandler
+popupButton.addEventListener("click", popupHandler);
+
+// Выполняем действия при клике ..
+function popupHandler(e) {
+  e.preventDefault();
+  // Переключаем стили элементов при клике
+  popupWindow.classList.toggle("popup__window--active");
 }
 
-// Определяем функцию для закрытия модального окна
-function closeModal() {
-  var modal = document.querySelector(".popup__window");
-  modal.style.visibility = "hidden";
+function closeOnClick() {
+  popupWindow.classList.remove("popup__window--active");
 }
 
-// Получаем кнопку для открытия модального окна
-var openBtn = document.querySelector(".popup__btn");
+const popupMeet = document.querySelector(".popup__meet");
+const popupForm = document.querySelector(".popup__form");
+const callMe = document.getElementById("call-me");
 
-// Назначаем обработчик события для кнопки открытия модального окна
-openBtn.addEventListener("click", openModal);
+// Обработчик клика на элементе с id "call-me"
+callMe.addEventListener("click", function (event) {
+  // Отменяем действие по умолчанию для ссылки
+  event.preventDefault();
 
-// Закрываем модальное окно при клике на любое место за его пределами
-window.addEventListener("click", function (event) {
-  var modal = document.querySelector(".popup__window");
-  if (event.target === modal) {
-    closeModal();
+  // Переключаем стили элементов при клике
+  if (popupMeet.style.display === "none") {
+    // Если .popup__meet уже скрыт, показываем его
+    popupMeet.style.display = "block";
+    popupForm.style.display = "none";
+  } else {
+    // Если .popup__meet видимый, скрываем его и показываем .popup__form
+    popupMeet.style.display = "none";
+    popupForm.style.display = "flex";
   }
 });
+
+
+// // В зависимости от нажатия на элемент меняем содержимое окна
+// const popupMeet = document.querySelector(".popup__meet");
+// const popupForm = document.querySelector(".popup__form");
+// const callMe = document.getElementById("call-me");
+
+// callMe.addEventListener("click", popupCall);
+
+// function popupCall(j) {
+//   j.preventDefault();
+//   popupMeet.style.display = "none";
+//   popupForm.style.display = "flex";
+// }
+
+// export default {popupHandler, popupCall}

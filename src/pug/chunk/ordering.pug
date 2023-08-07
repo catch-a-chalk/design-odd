@@ -1,7 +1,7 @@
 article.ordering
   .wrapper
     h2.title давайте обсудим детали! 
-    form.ordering__form#resultForm(action='https://echo.htmlacademy.ru/' method='post')
+    form.ordering__form#resultForm
       .ordering__info
         p
           label(for='form-name') Имя*:
@@ -25,10 +25,10 @@ article.ordering
           span.btn-black.btn-black--review.ordering__file-btn
           span.ordering__file-text Файл не выбран
       .ordering__details
-        h3 Выбранные позиции: 6
+        h3 Выбранные позиции:
         .ordering__container
           ul
-            li
+            li.visually-hidden
               button(type='button')
                 .ordering__cross
               output 

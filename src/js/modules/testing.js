@@ -1,69 +1,107 @@
-
-
-
-
-
-
-var formDataObject = {};
-
-document.getElementById("form1").addEventListener("submit", function(e) {
-  e.preventDefault(); 
-  var formData = new FormData(this); 
-  for (var pair of formData.entries()) { 
-    var key = pair[0];
-    var value = pair[1];
-    if (formDataObject.hasOwnProperty(key)) { // Если ключ уже существует в formDataObject, добавляем значение к массиву
-      formDataObject[key].push(value);
-    } else {                                  // Иначе создаем новый ключ
-      formDataObject[key] = [value];
+export const setDataForm = (selector, index) => {
+    const form = document.querySelector(selector);
+    if (form) {
+      const getData = (form) => {
+        const data = {};
+  
+        // Записываем данные всех input'ов в объект data
+        const inputs = form.querySelectorAll('input');
+        inputs.forEach((input) => {
+          if (input.name && (input.type !== 'checkbox' || input.checked)) {
+            if (!data[input.name]) {
+              data[input.name] = [];
+            }
+            data[input.name].push(input.value);
+          }
+        });
+  
+        return data;
+      };
+  
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+  
+        const formData = getData(form);
+        let data = localStorage.getItem('data-form') ? JSON.parse(localStorage.getItem('data-form')) : {};
+  
+        // Объединяем текущие данные с уже сохраненными данными в localStorage
+        data[index] = { ...data[index], ...formData };
+  
+        localStorage.setItem('data-form', JSON.stringify(data));
+      });
     }
+  };
+
+  export const getDataForm = (formSelector) => {
+    const form = document.querySelector(formSelector);
+    const data = JSON.parse(localStorage.getItem('data-form'));
+    const output = form.querySelector('.ordering__details ul');
+    const remove = form.querySelector('.ordering__container button');
+  
+    remove.addEventListener('click', () => {
+      localStorage.removeItem('data-form');
+      while (output.firstChild) {
+        output.removeChild(output.firstChild);
+      }
+    });
+  
+    let totalInputs = 0; // Переменная для общего количества инпутов
+  
+    if (data && data[1]) {
+      const formData = data[1]; // Используйте нужный индекс для получения данных
+  
+      for (const prop in formData) {
+        if (formData.hasOwnProperty(prop)) {
+          formData[prop].forEach((value) => {
+            const li = document.createElement('li');
+  
+            const button = document.createElement('button');
+            button.setAttribute('type', 'button');
+            const span = document.createElement('span');
+            span.classList.add('ordering__cross');
+            button.appendChild(span);
+  
+            const outputElement = document.createElement('output');
+            outputElement.textContent = value;
+  
+            li.appendChild(button);
+            li.appendChild(outputElement);
+  
+            output.appendChild(li);
+  
+            // Добавляем обработчик события для каждого .ordering__cross элемента
+            button.addEventListener('click', () => {
+              // Удаляем соответствующий инпут из localStorage
+              const data = JSON.parse(localStorage.getItem('data-form'));
+              if (data && data[1]) {
+                const index = data[1][prop].indexOf(value);
+                if (index !== -1) {
+                  data[1][prop].splice(index, 1);
+                  localStorage.setItem('data-form', JSON.stringify(data));
+                }
+              }
+  
+              // Удаляем текущий li элемент из DOM
+              output.removeChild(li);
+  
+              // Уменьшаем значение количества инпутов при удалении
+              totalInputs--;
+              updateTotalInputs(totalInputs);
+            });
+  
+            // Увеличиваем значение количества инпутов при добавлении
+            totalInputs++;
+          });
+        }
+      }
+  
+      // Обновляем значение количества инпутов после завершения цикла
+      updateTotalInputs(totalInputs);
+    }
+  };
+  
+  // Функция для обновления значения количества инпутов в <h3> элементе
+  function updateTotalInputs(count) {
+    const totalInputsElement = document.querySelector('.ordering__details h3');
+    totalInputsElement.textContent = `Выбранные позиции: ${count}`;
   }
-  sessionStorage.setItem("formData1", JSON.stringify(formDataObject)); // Сохраняем данные формы первой страницы в sessionStorage
-});
-
-document.getElementById("form2").addEventListener("submit", function(e) {
-  e.preventDefault();
-  var formData = new FormData(this);
-  for (var pair of formData.entries()) {
-    var key = pair[0];
-    var value = pair[1];
-    if (formDataObject.hasOwnProperty(key)) {
-      formDataObject[key].push(value);
-    } else {
-      formDataObject[key] = [value];
-    }
-  }
-  sessionStorage.setItem("formData2", JSON.stringify(formDataObject));
-});  
-
-export const testing = () => {
-  // Загрузка данных из sessionStorage на странице resultForm
-  document.addEventListener("DOMContentLoaded", function() {
-    var savedFormData1 = sessionStorage.getItem("formData1"); // Извлекаем сохраненные данные первой страницы формы
-    var savedFormData2 = sessionStorage.getItem("formData2");
-    
-    if (savedFormData1 && savedFormData2) { // Проверяем, есть ли сохраненные данные с обеих страниц
-      var formData1 = JSON.parse(savedFormData1);
-      var formData2 = JSON.parse(savedFormData2);
-      
-      // Объединяем данные с обеих страниц в один объект
-      var combinedFormData = Object.assign({}, formData1, formData2);
-      var resultFormOutput = document.querySelector(".ordering__container output"); // Заполняем output на странице resultForm
-      resultFormOutput.textContent = JSON.stringify(combinedFormData)
-    }
-  });
-
-  // Обработка отправки формы resultForm
-  document.getElementById("resultForm").addEventListener("submit", function() {
-    var outputValue = document.querySelector(".ordering__container output").textContent; // Получаем значение из output
-    var formData = { data: outputValue }; // Создаем объект с данными формы
-    sessionStorage.setItem("formData", JSON.stringify(formData)); // Сохраняем данные формы в sessionStorage
-  });
-
-  // Очистка данных из sessionStorage при отправке формы resultForm
-  document.getElementById("resultForm").addEventListener("submit", function() {
-    // Удаляем сохраненные данные из sessionStorage
-    sessionStorage.removeItem("formData1");
-    sessionStorage.removeItem("formData2");
-  });
-}
