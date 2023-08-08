@@ -1,4 +1,6 @@
 -
+  const packagePrice = 270000; 
+-
   const PACKAGES = [
       { title: 'Пакет START',
         id: 'package-start',
@@ -7,7 +9,7 @@
           { value: 's-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true' },
           { value: 's-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 's-three-carriers', span: '3 носителя', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 's-package', span: 'упаковка', nosave: 'false' }
+          { value: 's-package', span: 'упаковка' }
         ],
         price: '200 000 ₽'
       },
@@ -19,7 +21,7 @@
           { value: 'i-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'i-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'i-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  }, 
-          { value: 'i-package', span: 'упаковка', nosave: 'false' }
+          { value: 'i-package', span: 'упаковка' }
         ],
         price: '250 000 ₽'
       },
@@ -33,7 +35,7 @@
           { value: 'bi-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'bi-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'bi-brand-platform', span: 'бренд-платформа*', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'bi-package', span: 'упаковка', nosave: 'false'  }
+          { value: 'bi-package', span: 'упаковка' }
         ],
         price: '270 000 ₽',
         commentary: '*характер и ценности бренда, его идея, смысловая основа'
@@ -53,7 +55,7 @@ article#inner1.form__ready
           .form__ready-list
             each checkBox in package.checkBoxes
               label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
-                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled data-no-save=checkBox.nosave)
+                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled data-no-save=checkBox.nosave data-span=`упаковка для ${package.title}`)
                 span.form__option
                 p=checkBox.span
           .form__ready-container
