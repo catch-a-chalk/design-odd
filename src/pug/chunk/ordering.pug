@@ -1,7 +1,9 @@
 article.ordering
   .wrapper
-    h2.title давайте обсудим детали! 
-    form.ordering__form#resultFormform(method='post' enctype='multipart/form-data')
+    h2.title давайте обсудим детали!
+    //- вставить вместо (action='https://echo.htmlacademy.ru/' method='post' autocomplete='off') 
+    //- следующий код (action='http://127.0.0.1:4000/send_email' method='post' enctype='multipart/form-data')
+    form.ordering__form#resultForm(action='http://127.0.0.1:4000/send_email' method='post' enctype='multipart/form-data')
       .ordering__info
         p
           label(for='name') Имя*:

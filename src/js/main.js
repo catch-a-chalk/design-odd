@@ -4,9 +4,8 @@ import { initLine } from './modules/init-line';
 import { hambHandler } from './modules/init-nav';
 import { initLink } from './modules/init-link';
 import { initTooltip } from './modules/init-tooltip';
-// import { initModal } from './modules/init-modal'; ЛОМАЕТ ВООБЩЕ ВСЕ К ХУЯМ
 import { setDataForm, getDataForm } from './modules/testing';
-// import { popupHandler, popupCall } from './modules/popup'; // ЛОМАЕТ initLine
+import { initPrice } from './modules/init-price';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
   hambHandler;
   initLink();
   initTooltip();
-  // initModal();
+  initPrice();
   setDataForm("#form1", 1);
   setDataForm("#form2", 2);
   setDataForm("#form3", 3);
