@@ -5,6 +5,7 @@ import { hambHandler } from './modules/init-nav';
 import { initLink } from './modules/init-link';
 import { initTooltip } from './modules/init-tooltip';
 import { setDataForm, getDataForm } from './modules/testing';
+// import { initDiscount } from './modules/init-discount';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
+  // initDiscount();
   initProjects();
   initLine();
   hambHandler;
