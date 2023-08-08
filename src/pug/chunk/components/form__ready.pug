@@ -50,12 +50,12 @@ article#inner1.form__ready
       fieldset
         label.form__ready-card(for=`ready-radio-${package.id}`)
           h4=package.title
-          .form__ready-list
-            each checkBox in package.checkBoxes
-              label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
-                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled)
-                span.form__option
-                p=checkBox.span
+          //- .form__ready-list
+          //-   each checkBox in package.checkBoxes
+          //-     label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
+          //-       input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled)
+          //-       span.form__option
+          //-       p=checkBox.span
           .form__ready-container
             p=package.price
             input(type='radio' name='ready-radio' id=`ready-radio-${package.id}` data-span=package.title value=package.id)
