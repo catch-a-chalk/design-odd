@@ -74,6 +74,7 @@ export const getDataForm = (formSelector) => {
                 const input = document.createElement('input');
                 input.setAttribute('type', 'text');
                 input.setAttribute('name', 'selected_items');
+                input.setAttribute('value', value.span);
                 input.setAttribute('id', `form-${value.value}`);
                 input.value = value.value;
                 input.classList.add('visually-hidden');
