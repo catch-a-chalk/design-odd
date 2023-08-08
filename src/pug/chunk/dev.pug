@@ -110,7 +110,7 @@ section.dev
         a.btn-arrow(href="#inner3")
           svg(width="52" height="60" role="img" aria-labelledby="arrow__down" aria-description="Вниз")
             use(href="img/sprite.svg#arrow")
-    form.dev__web-services(data-selector="#form3" data-index="3")
+    form.dev__web-services(action='https://echo.htmlacademy.ru/' method='post' autocomplete='on')
       each web in WEB
         fieldset
           p.dev__web-title=web.title

@@ -155,21 +155,13 @@
   }
 
   &__container {
-    min-height: 170px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 10px;
 
-    ul {
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    li {
+    label {
       font: $font-700-14-17;
-      display: flex;
-      align-items: center;
-      height: fit-content;
 
       button {
         position: relative;
@@ -180,7 +172,8 @@
   &__cross {
     cursor: pointer;
     position: absolute;
-    right: 17px;
+    right: 20px;
+    top: 10px;
 
     &:before, 
     &:after {

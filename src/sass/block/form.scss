@@ -349,6 +349,11 @@ fieldset input:checked:hover + .form__option {
       text-align: center;
       margin: 5px 0;
     }
+
+    input:checked + span {
+      outline: 2px solid $color-black;
+      outline-offset: 3px;
+    }
   }
 
   &-commentary {

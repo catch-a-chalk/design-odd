@@ -1,6 +1,7 @@
 -
   const PACKAGES = [
       { title: 'Пакет START',
+        id: 'package-start',
         checkBoxes: 
         [
           { value: 's-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled' },
@@ -11,6 +12,7 @@
         price: '200 000 ₽'
       },
       { title: 'Пакет айдентика',
+        id: 'package-idenity',
         checkBoxes: 
         [
           { value: 'i-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled' },
@@ -22,6 +24,7 @@
         price: '250 000 ₽'
       },
       { title: 'Пакет брендинг и айдентика ',
+        id: 'package-branding-idenity',
         checkBoxes: 
         [
           { value: 'bi-two-types-of-naming', span: '2 варианта нейминга', checked: 'checked', disabled: 'disabled' }, 
@@ -45,16 +48,17 @@ article#inner1.form__ready
   form.form__ready-cards(id="form2" data-index="2")
     each package in PACKAGES
       fieldset
-        .form__ready-card
+        label.form__ready-card(for=`ready-radio-${package.id}`)
           h4=package.title
           .form__ready-list
             each checkBox in package.checkBoxes
               label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
-                input(type='checkbox' name='ready' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled)
+                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled)
                 span.form__option
                 p=checkBox.span
           .form__ready-container
             p=package.price
-            button.btn-black.btn-black--order(type='submit')
+            input(type='radio' name='ready-radio' id=`ready-radio-${package.id}` data-span=package.title value=package.id)
+            span.btn-black.btn-black--order
         small.form__ready-commentary=package.commentary
-    a.btn-white(href="order.html")
+    button.btn-white(type="submit")

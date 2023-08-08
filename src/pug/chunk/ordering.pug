@@ -1,7 +1,7 @@
 article.ordering
   .wrapper
     h2.title давайте обсудим детали! 
-    form.ordering__form#resultForm
+    form.ordering__form#resultForm(action='https://echo.htmlacademy.ru/' method='post' autocomplete='off')
       .ordering__info
         p
           label(for='form-name') Имя*:
@@ -26,12 +26,17 @@ article.ordering
           span.ordering__file-text Файл не выбран
       .ordering__details
         h3 Выбранные позиции:
-        .ordering__container
-          ul
-            li.visually-hidden
-              button(type='button')
-                .ordering__cross
-              output 
+        label(for='form-positions-').ordering__container
+          button.visually-hidden(type='button')
+            .ordering__cross
+          input.visually-hidden(type='text' name='positions' id='form-positions-' data-span='' value='' readonly)
+          span.visually-hidden
+        //- label(for='form-positions').ordering__container
+        //-   ul
+        //-     li.visually-hidden
+        //-       button(type='button')
+        //-         .ordering__cross
+        //-       output
       .ordering__about
         label(for='form-text') Кратко о проекте и бюджете*:
         textarea#form-text(required='')
