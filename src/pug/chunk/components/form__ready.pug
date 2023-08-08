@@ -4,10 +4,10 @@
         id: 'package-start',
         checkBoxes: 
         [
-          { value: 's-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled' },
-          { value: 's-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled' },
-          { value: 's-three-carriers', span: '3 носителя', checked: 'checked', disabled: 'disabled' },
-          { value: 's-package', span: 'упаковка' }
+          { value: 's-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true' },
+          { value: 's-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 's-three-carriers', span: '3 носителя', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 's-package', span: 'упаковка', nosave: 'false' }
         ],
         price: '200 000 ₽'
       },
@@ -15,11 +15,11 @@
         id: 'package-idenity',
         checkBoxes: 
         [
-          { value: 'i-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled' },
-          { value: 'i-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled' },
-          { value: 'i-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled' },
-          { value: 'i-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled' }, 
-          { value: 'i-package', span: 'упаковка' }
+          { value: 'i-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'i-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'i-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'i-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  }, 
+          { value: 'i-package', span: 'упаковка', nosave: 'false' }
         ],
         price: '250 000 ₽'
       },
@@ -27,13 +27,13 @@
         id: 'package-branding-idenity',
         checkBoxes: 
         [
-          { value: 'bi-two-types-of-naming', span: '2 варианта нейминга', checked: 'checked', disabled: 'disabled' }, 
-          { value: 'bi-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled' },
-          { value: 'bi-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled' },
-          { value: 'bi-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled' },
-          { value: 'bi-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled' },
-          { value: 'bi-brand-platform', span: 'бренд-платформа*', checked: 'checked', disabled: 'disabled' },
-          { value: 'bi-package', span: 'упаковка' }
+          { value: 'bi-two-types-of-naming', span: '2 варианта нейминга', checked: 'checked', disabled: 'disabled', nosave: 'true'  }, 
+          { value: 'bi-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-brand-platform', span: 'бренд-платформа*', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-package', span: 'упаковка', nosave: 'false'  }
         ],
         price: '270 000 ₽',
         commentary: '*характер и ценности бренда, его идея, смысловая основа'
@@ -50,12 +50,12 @@ article#inner1.form__ready
       fieldset
         label.form__ready-card(for=`ready-radio-${package.id}`)
           h4=package.title
-          //- .form__ready-list
-          //-   each checkBox in package.checkBoxes
-          //-     label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
-          //-       input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled)
-          //-       span.form__option
-          //-       p=checkBox.span
+          .form__ready-list
+            each checkBox in package.checkBoxes
+              label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
+                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled data-no-save=checkBox.nosave)
+                span.form__option
+                p=checkBox.span
           .form__ready-container
             p=package.price
             input(type='radio' name='ready-radio' id=`ready-radio-${package.id}` data-span=package.title value=package.id)

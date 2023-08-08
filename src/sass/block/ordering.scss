@@ -203,10 +203,15 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 
-    p {
+    label,
+    input {
       font: $font-700-24-29;
       margin: 0;
       padding: 0;
+    }
+    input {
+      width: inherit;
+      border: none;
     }
   }
 
@@ -218,6 +223,7 @@
 
     label {
       line-height: 12px;
+      height: fit-content;
       position: relative;
       display: grid;
       grid-template-columns: 21px auto;

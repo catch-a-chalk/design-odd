@@ -4,7 +4,7 @@ export const setDataForm = (selector, index) => {
     const getData = (form) => {
       const data = {};
 
-      const inputs = form.querySelectorAll('input');
+      const inputs = form.querySelectorAll('input:not([data-no-save])');
       inputs.forEach((input) => {
         if (input.name && (input.type !== 'checkbox' || input.checked)) {
           if (input.type === 'radio' && !input.checked) {
@@ -52,56 +52,60 @@ export const getDataForm = (formSelector) => {
     updateTotalInputs(0);
   });
 
-  if (data && data[1]) {
-    const formData = data[1];
-    const positionsMap = new Map();
+  if (data) {
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        const formData = data[key];
+        const positionsMap = new Map();
 
-    for (const prop in formData) {
-      if (formData.hasOwnProperty(prop)) {
-        formData[prop].forEach((value) => {
-          if (value.span.trim() !== '' && !positionsMap.has(value.value)) {
-            positionsMap.set(value.value, value.span);
+        for (const prop in formData) {
+          if (formData.hasOwnProperty(prop)) {
+            formData[prop].forEach((value) => {
+              if (value.span.trim() !== '' && !positionsMap.has(value.value)) {
+                positionsMap.set(value.value, value.span);
 
-            const label = document.createElement('label');
-            label.setAttribute('for', `form-${value.value}`);
+                const label = document.createElement('label');
+                label.setAttribute('for', `form-${value.value}`);
 
-            const button = document.createElement('button');
-            button.setAttribute('type', 'button');
-            button.classList.add('ordering__cross');
+                const button = document.createElement('button');
+                button.setAttribute('type', 'button');
+                button.classList.add('ordering__cross');
 
-            const input = document.createElement('input');
-            input.setAttribute('type', 'text');
-            input.setAttribute('name', 'selected_items');
-            input.setAttribute('id', `form-${value.value}`);
-            input.value = value.value;
-            input.classList.add('visually-hidden');
+                const input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('name', 'selected_items');
+                input.setAttribute('id', `form-${value.value}`);
+                input.value = value.value;
+                input.classList.add('visually-hidden');
 
-            const span = document.createElement('span');
-            span.textContent = value.span;
+                const span = document.createElement('span');
+                span.textContent = value.span;
 
-            label.appendChild(button);
-            label.appendChild(input);
-            label.appendChild(span);
-            outputContainer.appendChild(label);
+                label.appendChild(button);
+                label.appendChild(input);
+                label.appendChild(span);
+                outputContainer.appendChild(label);
 
-            button.addEventListener('click', () => {
-              const data = JSON.parse(localStorage.getItem('data-form'));
-              if (data && data[1]) {
-                const index = data[1][prop].findIndex(item => item.value === value.value);
-                if (index !== -1) {
-                  data[1][prop].splice(index, 1);
-                  localStorage.setItem('data-form', JSON.stringify(data));
+                button.addEventListener('click', () => {
+                  const data = JSON.parse(localStorage.getItem('data-form'));
+                  if (data && data[key]) {
+                    const index = data[key][prop].findIndex(item => item.value === value.value);
+                    if (index !== -1) {
+                      data[key][prop].splice(index, 1);
+                      localStorage.setItem('data-form', JSON.stringify(data));
 
-                  outputContainer.removeChild(label);
-                  totalInputs--;
-                  updateTotalInputs(totalInputs);
-                }
+                      outputContainer.removeChild(label);
+                      totalInputs--;
+                      updateTotalInputs(totalInputs);
+                    }
+                  }
+                });
+
+                totalInputs++;
               }
             });
-
-            totalInputs++;
           }
-        });
+        }
       }
     }
 
