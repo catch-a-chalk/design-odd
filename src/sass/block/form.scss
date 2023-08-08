@@ -217,6 +217,7 @@ fieldset input:checked:hover + .form__option {
   grid-column: 4 / -1;
   display: grid;
   gap: 8px;
+  grid-template-columns: minmax(190px, 380px);
 
   label {
     font: $font-200-16-19;
@@ -271,7 +272,7 @@ fieldset input:checked:hover + .form__option {
 
   &-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 360px));
     gap: 30px;
     justify-content: space-between;
     margin-top: 83px;

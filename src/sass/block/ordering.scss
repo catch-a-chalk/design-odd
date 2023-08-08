@@ -247,7 +247,6 @@
     }
 
     .btn-black {
-      // grid-column: 3 / 4;
       margin-top: 50px;
     }
 
@@ -267,13 +266,22 @@
     "file promo"
     "file discount"
     "buttons buttons";
-    column-gap: 26px;
+    column-gap: 60px;
   }
 
   .ordering__form label,
   .ordering__details h3 {
     font: $font-200-18-22;
   }
+
+  .ordering__container {
+    grid-template-columns: 1fr;
+
+      label {
+        font: $font-700-18-21;
+      }
+  }
+
 
   .ordering__promo label {
     font: $font-700-18-21;
@@ -289,11 +297,9 @@
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
 
-    p {
+    label,
+    input {
       font: $font-700-18-21;
-      &:last-child {
-        align-self: flex-end;
-      }
     }
   }
 

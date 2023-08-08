@@ -33,18 +33,10 @@ article.ordering
             .ordering__cross
           input.visually-hidden(type='text' name='selected_items' id='selected_items' data-span='' value='' readonly)
           span.visually-hidden
-        //- label(for='form-positions').ordering__container
-        //-   ul
-        //-     li.visually-hidden
-        //-       button(type='button')
-        //-         .ordering__cross
-        //-       output
       .ordering__about
         label(for='project_description') Кратко о проекте и бюджете*:
         textarea(name='project_description' id='project_description' required='' value='')
       .ordering__discount
-        //- p Ваша скидка: 
-        //- p 15%
         label(for='discount') Ваша скидка:
         input(type='text' name='discount' id='discount' readonly)
       .ordering__buttons

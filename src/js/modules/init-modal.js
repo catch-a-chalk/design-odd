@@ -1,21 +1,41 @@
 export const initModal = () => {
-  var buttons = document.querySelectorAll(".form__stages-container button");
-  var modal = document.querySelector("#form__stages-modal");
-  var modalContent = modal.querySelector(".modal-content");
-
-  [].forEach.call(buttons, function (button) {
-    button.addEventListener("click", function () {
-      modal.classList.toggle("on");
-      document.body.classList.toggle("on-modal");
-
-      // Очистить предыдущий контент модального окна
-      modalContent.innerHTML = "";
-
-      // Создать новый контент модального окна
-      var newContent = document.createElement("div");
-      // Настройте новый контент здесь, например:
-      newContent.innerHTML = "Новый контент модального окна";
-      modalContent.appendChild(newContent);
-    });
-  });
+  // Функция для открытия модального окна
+const openModal = (modal) => {
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Запрещаем скролл при открытом модальном окне
 };
+
+// Функция для закрытия модального окна
+const closeModal = (modal) => {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Восстанавливаем скролл при закрытии модального окна
+};
+
+// Получение всех кнопок вызова модального окна
+const modalTriggerButtons = document.querySelectorAll(".form__stages-question");
+
+// Получение всех модальных окон
+const modalContainers = document.querySelectorAll(".form__stages-modal");
+
+// Получение кнопок закрытия
+const closeButtons = document.querySelectorAll(".btn-arrow");
+
+modalTriggerButtons.addEventListener("click", function(e) {
+  e.preventDefault();
+  modalContainers.style.display = "flex";
+});
+// Назначаем обработчики событий для каждой кнопки вызова модального окна
+// modalTriggerButtons.forEach((button, index) => {
+//   button.addEventListener("click", () => {
+//     openModal(modalContainers[index]);
+//   });
+// });
+
+// Назначаем обработчики событий для каждой кнопки закрытия
+closeButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    closeModal(modalContainers[index]);
+  });
+});
+
+}

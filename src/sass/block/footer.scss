@@ -2,8 +2,10 @@
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 150px 120px;
+  padding: 80px 150px 0;
   background-color: $color-white;
+  position: relative;
+  z-index: 2;
 
   &__contacts {
     display: grid;
@@ -51,7 +53,7 @@
 
 @media (max-width: ($vp-1440 - 1)) {
   .footer {
-    padding: 40px 20px 80px;
+    padding: 40px 20px 0;
   }
 
   .footer__contacts {
@@ -85,7 +87,7 @@
 
 @media (max-width: ($vp-768 - 1)) {
   .footer {
-    padding: 30px 20px 40px;
+    padding: 30px 20px 0;
   }
 
   .footer__contacts {

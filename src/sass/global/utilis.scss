@@ -52,6 +52,11 @@ body.on-modal {
     border-radius: 40px;
     background-color: $color-white;
     color: $color-black;
+    cursor: pointer;
+    &:active {
+      color: $color-nero;
+      border: 2px solid $color-nero;
+    }
 
     &:before {
       content: 'оставить заявку';
@@ -60,10 +65,12 @@ body.on-modal {
 
   &-black {
     font: $font-700-24-29;
+    display: flex;
     padding: 5px 36px;
     border-radius: 25px;
     background-color: $color-black;
     color: $color-white;
+    cursor: pointer;
   }
 
   &-black--order {
@@ -94,26 +101,46 @@ body.on-modal {
 
   &-black--order:active,
   &-black--add:active,
-  &-black--send:active
-   {
+  &-black--send:active {
     width: 39px;
     height: 39px;
     padding: 0;
+  }
 
+  &-black--order:active {
     &:before {
       content: '';
-      width: 20px;
+      width: 21px;
       height: 2px;
       background-color: $color-white;
-      transform: translateY(1px) rotate(45deg);
+      transform: translate(10px, 18px) rotate(45deg);
     }
 
     &:after {
       content: '';
-      width: 20px;
+      width: 21px;
       height: 2px;
       background-color: $color-white;
-      transform: translateY(-1px) rotate(-45deg);
+      transform: translate(-10px, 18px) rotate(-45deg);
+    }
+  }
+
+  &-black--add:active,
+  &-black--send:active {
+    &:before {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translate(0, 2px) rotate(45deg);
+    }
+  
+    &:after {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translate(0, 0) rotate(-45deg);
     }
   }
 }
@@ -137,6 +164,32 @@ body.on-modal {
   .btn-black--review {
     &:before {
       content: 'обзор';
+    }
+  }
+
+  .btn-black--order:active {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+
+    &:before {
+      transform: translate(9px, 16px) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-8px, 16px) rotate(-45deg);
+    }
+  }
+
+  .btn-black--send:active {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+
+    &:before {
+      transform: translate(0, 2px) rotate(45deg);
+    }
+    &:after {
+      transform: translate(0, 0) rotate(-45deg);
     }
   }
 
