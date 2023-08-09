@@ -4,9 +4,9 @@ import { initLine } from './modules/init-line';
 import { hambHandler } from './modules/init-nav';
 import { initLink } from './modules/init-link';
 import { initTooltip } from './modules/init-tooltip';
-import { setDataForm, getDataForm } from './modules/form';
+import { setDataForm, getDataForm } from './modules/init-form';
 import { initDiscount } from './modules/init-discount';
-import { initMdl } from './modules/initMdl';
+import { initMdl } from './modules/init-mdl';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {

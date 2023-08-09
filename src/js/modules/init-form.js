@@ -1,60 +1,123 @@
-export const initForm = () => {
-  const form1 = document.getElementById("form1");
-  const form2 = document.getElementById("form2");
-  const form3 = document.getElementById("form3");
-  
-  // Обработчик события submit для формы 1
-  form1.addEventListener("submit", function(e) {
-    e.preventDefault();
-    // Сохраняем значения формы 1 в localStorage
-    const formData = new FormData(form1);
-    const formKey = form1.id + "Data";
-    localStorage.setItem(formKey, JSON.stringify(Object.fromEntries(formData)));
-    // Переходим на следующую страницу 2
-    // window.location.href = "страница2.html";
-  });
-  
-  // Обработчик события submit для формы 2
-  form2.addEventListener("submit", function(e) {
-    e.preventDefault();
-    // Сохраняем значения формы 2 в localStorage
-    const formData = new FormData(form2);
-    const formKey = form2.id + "Data";
-    localStorage.setItem(formKey, JSON.stringify(Object.fromEntries(formData)));
-    // Переходим на следующую страницу 3
-    // window.location.href = "страница3.html";
-  });
-  
-  form3.addEventListener("submit", function(e) {
-    e.preventDefault();
-    // Сохраняем значения формы 3 в localStorage
-    const formData = new FormData(form3);
-    const formKey = form3.id + "Data";
-    localStorage.setItem(formKey, JSON.stringify(Object.fromEntries(formData)));
-    // Переходим на следующую страницу, если нужно
-    // window.location.href = "страница3.html";
-  });
-  
-  const resultForm = document.getElementById("resultForm");
-  const submitButton = resultForm.querySelector("button[type=submit]");
-  
-  // Обработчик события submit для формы сбора данных
-  resultForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-  
-    // Получаем данные из localStorage
-    const form1Data = JSON.parse(localStorage.getItem("form1Data"));
-    const form2Data = JSON.parse(localStorage.getItem("form2Data"));
-    const form3Data = JSON.parse(localStorage.getItem("form3Data"));
-  
-    // Объединяем данные из всех форм
-    const allData = {
-      ...form1Data,
-      ...form2Data,
-      ...form3Data
+export const setDataForm = (selector, index) => {
+  const form = document.querySelector(selector);
+  if (form) {
+    const getData = (form) => {
+      const data = {};
+
+      const inputs = form.querySelectorAll('input:not([data-no-save])');
+      inputs.forEach((input) => {
+        if (input.name && (input.type !== 'checkbox' || input.checked)) {
+          if (input.type === 'radio' && !input.checked) {
+            return; // Skip unchecked radio inputs
+          }
+
+          if (!data[input.name]) {
+            data[input.name] = [];
+          }
+          data[input.name].push({
+            value: input.value,
+            span: input.dataset.span,
+          });
+        }
+      });
+
+      return data;
     };
-  
-    // Отправляем данные или выполняем необходимые действия
-    console.log(allData);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = getData(form);
+      let data = localStorage.getItem('data-form') ? JSON.parse(localStorage.getItem('data-form')) : {};
+
+      data[index] = { ...data[index], ...formData };
+
+      localStorage.setItem('data-form', JSON.stringify(data));
+
+      // Перенаправление на order.html
+      window.location.href = 'order.html'; // Замените на путь к вашему файлу order.html
+    });
+  }
+};
+
+export const getDataForm = (formSelector) => {
+  const form = document.querySelector(formSelector);
+  const data = JSON.parse(localStorage.getItem('data-form'));
+  const outputContainer = form.querySelector('.ordering__container');
+  const remove = form.querySelector('.ordering__container button');
+  let totalInputs = 0;
+
+  remove.addEventListener('click', () => {
+    localStorage.removeItem('data-form');
+    while (outputContainer.firstChild) {
+      outputContainer.removeChild(outputContainer.firstChild);
+    }
+    updateTotalInputs(0);
   });
+
+  if (data) {
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        const formData = data[key];
+        const positionsMap = new Map();
+
+        for (const prop in formData) {
+          if (formData.hasOwnProperty(prop)) {
+            formData[prop].forEach((value) => {
+              if (value.span.trim() !== '' && !positionsMap.has(value.value)) {
+                positionsMap.set(value.value, value.span);
+
+                const label = document.createElement('label');
+                label.setAttribute('for', `form-${value.value}`);
+
+                const button = document.createElement('button');
+                button.setAttribute('type', 'button');
+                button.classList.add('ordering__cross');
+
+                const input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('name', 'selected_items');
+                input.setAttribute('value', value.span);
+                input.setAttribute('id', `form-${value.value}`);
+                input.value = value.value;
+                input.classList.add('visually-hidden');
+
+                const span = document.createElement('span');
+                span.textContent = value.span;
+
+                label.appendChild(button);
+                label.appendChild(input);
+                label.appendChild(span);
+                outputContainer.appendChild(label);
+
+                button.addEventListener('click', () => {
+                  const data = JSON.parse(localStorage.getItem('data-form'));
+                  if (data && data[key]) {
+                    const index = data[key][prop].findIndex(item => item.value === value.value);
+                    if (index !== -1) {
+                      data[key][prop].splice(index, 1);
+                      localStorage.setItem('data-form', JSON.stringify(data));
+
+                      outputContainer.removeChild(label);
+                      totalInputs--;
+                      updateTotalInputs(totalInputs);
+                    }
+                  }
+                });
+
+                totalInputs++;
+              }
+            });
+          }
+        }
+      }
+    }
+
+    updateTotalInputs(totalInputs);
+  }
+};
+
+function updateTotalInputs(count) {
+  const totalInputsElement = document.querySelector('.ordering__details h3');
+  totalInputsElement.textContent = `Выбранные позиции: ${count}`;
 }

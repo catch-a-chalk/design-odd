@@ -336,9 +336,26 @@ fieldset input:checked:hover + .form__option {
       margin: 5px 0;
     }
 
-    // input:checked + span {
-    //   background: $color-nero;
-    // }
+    input:checked + span {
+      width: 39px;
+      height: 39px;
+      padding: 0;
+      &:before {
+        content: '';
+        width: 21px;
+        height: 2px;
+        background-color: $color-white;
+        transform: translate(10px, 18px) rotate(45deg);
+      }
+  
+      &:after {
+        content: '';
+        width: 21px;
+        height: 2px;
+        background-color: $color-white;
+        transform: translate(-9px, 18px) rotate(-45deg);
+      }
+    }
   }
 
   &-commentary {
@@ -430,6 +447,29 @@ fieldset input:checked:hover + .form__option {
   .form__ready-cards {
     gap: 15px;
     margin-top: 21px;
+  }
+
+  .form__ready-container {
+    input:checked + span {
+      width: 35px;
+      height: 35px;
+      padding: 0;
+      &:before {
+        content: '';
+        width: 21px;
+        height: 2px;
+        background-color: $color-white;
+        transform: translate(9px, 16px) rotate(45deg);
+      }
+  
+      &:after {
+        content: '';
+        width: 21px;
+        height: 2px;
+        background-color: $color-white;
+        transform: translate(-9px, 16px) rotate(-45deg);
+      }
+    }
   }
 
   .form__ready-card {

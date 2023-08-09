@@ -99,33 +99,33 @@ body.on-modal {
     }
   }
 
-  &-black--order:active,
-  &-black--add:active,
+  // &-black--order:active,
+  // &-black--add:active,
   &-black--send:active {
     width: 39px;
     height: 39px;
     padding: 0;
   }
 
-  &-black--order:active {
-    &:before {
-      content: '';
-      width: 21px;
-      height: 2px;
-      background-color: $color-white;
-      transform: translate(10px, 18px) rotate(45deg);
-    }
+  // &-black--order:active {
+  //   &:before {
+  //     content: '';
+  //     width: 21px;
+  //     height: 2px;
+  //     background-color: $color-white;
+  //     transform: translate(10px, 18px) rotate(45deg);
+  //   }
 
-    &:after {
-      content: '';
-      width: 21px;
-      height: 2px;
-      background-color: $color-white;
-      transform: translate(-10px, 18px) rotate(-45deg);
-    }
-  }
+  //   &:after {
+  //     content: '';
+  //     width: 21px;
+  //     height: 2px;
+  //     background-color: $color-white;
+  //     transform: translate(-10px, 18px) rotate(-45deg);
+  //   }
+  // }
 
-  &-black--add:active,
+  // &-black--add:active,
   &-black--send:active {
     &:before {
       content: '';
