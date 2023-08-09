@@ -2607,10 +2607,19 @@ body {
     grid-column: 1/2;
     grid-row: 1/2;
     font: 200 18px/22px "Inter", "MS Sans Serif", sans-serif;
+    position: sticky;
+    top: 50%;
+    /* Измените на свои потребности */
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 
   .form__stages-toggle--active {
     font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
+    -webkit-transition: font 0.3s ease;
+    -o-transition: font 0.3s ease;
+    transition: font 0.3s ease;
   }
 
   .form__stages-list {
@@ -2940,7 +2949,8 @@ body {
 
   .ordering__promo label,
   .ordering__promo input,
-  .ordering__discount p {
+  .ordering__discount label,
+  .ordering__discount input {
     font: 700 12px/15px "Inter", "MS Sans Serif", sans-serif;
   }
 
