@@ -18,8 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Modules
   // ---------------------------------
-
-  initMdl();
   initProjects();
   initLine();
   hambHandler;
@@ -31,10 +29,5 @@ window.addEventListener('DOMContentLoaded', () => {
   setDataForm("#form4", 4);
   getDataForm("#resultForm");
   initDiscount();
-
-  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-  // в load следует добавить скрипты, не участвующие в работе первого экрана
-//   window.addEventListener('load', () => {
-//     initModals();
-//   });
+  initMdl();
 });

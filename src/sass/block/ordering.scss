@@ -339,7 +339,8 @@
 
   .ordering__promo label,
   .ordering__promo input,
-  .ordering__discount p {
+  .ordering__discount label,
+  .ordering__discount input   {
     font: $font-700-12-15;
   }
 

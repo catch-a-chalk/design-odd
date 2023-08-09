@@ -551,9 +551,13 @@ fieldset input:checked:hover + .form__option {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     font: $font-200-18-22;
+    position: sticky;
+    top: 50%; /* Измените на свои потребности */
+    transform: translateY(-50%);
 
     &--active {
       font: $font-700-18-21;
+      transition: font 0.3s ease;
     }
   }
 

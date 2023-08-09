@@ -15,7 +15,5 @@ export const initLine = () => {
       }
     });
   };
-
-  // Отслеживаем событие "скролл"
   window.addEventListener('scroll', check_add_class);
 };
