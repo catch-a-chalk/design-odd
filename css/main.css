@@ -608,35 +608,12 @@ body.on-modal {
   content: "Отправить";
 }
 
-.btn-black--order:active,
-.btn-black--add:active,
 .btn-black--send:active {
   width: 39px;
   height: 39px;
   padding: 0;
 }
 
-.btn-black--order:active:before {
-  background: #ffffff;
-  content: "";
-  width: 21px;
-  height: 2px;
-  -webkit-transform: translate(10px, 18px) rotate(45deg);
-  -ms-transform: translate(10px, 18px) rotate(45deg);
-  transform: translate(10px, 18px) rotate(45deg);
-}
-
-.btn-black--order:active:after {
-  background: #ffffff;
-  content: "";
-  width: 21px;
-  height: 2px;
-  -webkit-transform: translate(-10px, 18px) rotate(-45deg);
-  -ms-transform: translate(-10px, 18px) rotate(-45deg);
-  transform: translate(-10px, 18px) rotate(-45deg);
-}
-
-.btn-black--add:active:before,
 .btn-black--send:active:before {
   background: #ffffff;
   content: "";
@@ -647,7 +624,6 @@ body.on-modal {
   transform: translate(0, 2px) rotate(45deg);
 }
 
-.btn-black--add:active:after,
 .btn-black--send:active:after {
   background: #ffffff;
   content: "";
@@ -722,6 +698,32 @@ body.on-modal {
 .dev__web-services fieldset label {
   grid-area: button;
   justify-self: center;
+}
+
+.dev__web-services fieldset input:checked + span {
+  width: 39px;
+  height: 39px;
+  padding: 0;
+}
+
+.dev__web-services fieldset input:checked + span:before {
+  background: #ffffff;
+  content: "";
+  width: 21px;
+  height: 2px;
+  -webkit-transform: translate(10px, 18px) rotate(45deg);
+  -ms-transform: translate(10px, 18px) rotate(45deg);
+  transform: translate(10px, 18px) rotate(45deg);
+}
+
+.dev__web-services fieldset input:checked + span:after {
+  background: #ffffff;
+  content: "";
+  width: 21px;
+  height: 2px;
+  -webkit-transform: translate(-10px, 18px) rotate(-45deg);
+  -ms-transform: translate(-10px, 18px) rotate(-45deg);
+  transform: translate(-10px, 18px) rotate(-45deg);
 }
 
 .dev__web-services .btn-white {
@@ -1255,6 +1257,32 @@ fieldset input:checked:hover + .form__option {
   font: 700 24px/29px "Inter", "MS Sans Serif", sans-serif;
   text-align: center;
   margin: 5px 0;
+}
+
+.form__ready-container input:checked + span {
+  width: 39px;
+  height: 39px;
+  padding: 0;
+}
+
+.form__ready-container input:checked + span:before {
+  background: #ffffff;
+  content: "";
+  width: 21px;
+  height: 2px;
+  -webkit-transform: translate(10px, 18px) rotate(45deg);
+  -ms-transform: translate(10px, 18px) rotate(45deg);
+  transform: translate(10px, 18px) rotate(45deg);
+}
+
+.form__ready-container input:checked + span:after {
+  background: #ffffff;
+  content: "";
+  width: 21px;
+  height: 2px;
+  -webkit-transform: translate(-9px, 18px) rotate(-45deg);
+  -ms-transform: translate(-9px, 18px) rotate(-45deg);
+  transform: translate(-9px, 18px) rotate(-45deg);
 }
 
 .form__ready-commentary {
@@ -2101,6 +2129,32 @@ body {
     width: 270px;
   }
 
+  .dev__web-services input:checked + span {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
+
+  .dev__web-services input:checked + span:before {
+    content: "";
+    width: 21px;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transform: translate(9px, 16px) rotate(45deg);
+    -ms-transform: translate(9px, 16px) rotate(45deg);
+    transform: translate(9px, 16px) rotate(45deg);
+  }
+
+  .dev__web-services input:checked + span:after {
+    content: "";
+    width: 21px;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transform: translate(-9px, 18px) rotate(-45deg);
+    -ms-transform: translate(-9px, 18px) rotate(-45deg);
+    transform: translate(-9px, 18px) rotate(-45deg);
+  }
+
   .dev__web-title {
     text-align: start;
   }
@@ -2260,6 +2314,32 @@ body {
   .form__ready-cards {
     gap: 15px;
     margin-top: 21px;
+  }
+
+  .form__ready-container input:checked + span {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
+
+  .form__ready-container input:checked + span:before {
+    content: "";
+    width: 21px;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transform: translate(9px, 16px) rotate(45deg);
+    -ms-transform: translate(9px, 16px) rotate(45deg);
+    transform: translate(9px, 16px) rotate(45deg);
+  }
+
+  .form__ready-container input:checked + span:after {
+    content: "";
+    width: 21px;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transform: translate(-9px, 16px) rotate(-45deg);
+    -ms-transform: translate(-9px, 16px) rotate(-45deg);
+    transform: translate(-9px, 16px) rotate(-45deg);
   }
 
   .form__ready-card {
