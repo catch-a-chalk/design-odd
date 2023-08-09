@@ -1,0 +1,55 @@
+.mdl {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: $color-white;
+  height: 100vh;
+  overflow-y: scroll;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  h4 {
+    font: $font-200-18-22;
+  }
+
+  p {
+    font: $font-200-10-12;
+  }
+}
+
+.mdl__open {
+  display: none;
+  width: 40px;
+  height: 40px;
+
+  @media (max-width: ($vp-768 - 1)) {
+    display: flex;
+    grid-column: 4 / 5;
+  }
+}
+
+.mdl__close {
+  width: 30px;
+  height: 30px;
+  transform: rotate(90deg);
+}
+
+.mdl__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  h3,
+  li {
+    font: $font-700-18-21;
+  }
+}

@@ -6,7 +6,7 @@ import { initLink } from './modules/init-link';
 import { initTooltip } from './modules/init-tooltip';
 import { setDataForm, getDataForm } from './modules/form';
 import { initDiscount } from './modules/init-discount';
-// import { initModal } from './modules/init-modal';
+import { initMdl } from './modules/initMdl';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
+  initMdl();
   initProjects();
   initLine();
   hambHandler;
@@ -30,7 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
   setDataForm("#form4", 4);
   getDataForm("#resultForm");
   initDiscount();
-  // initModal();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
