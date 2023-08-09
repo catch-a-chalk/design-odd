@@ -1118,13 +1118,20 @@ fieldset input:checked:hover + .form__option {
   align-items: baseline;
 }
 
-.form__stages-list label:hover {
+.form__stages-list label:hover,
+.form__stages-list label:active,
+.form__stages-list label:focus,
+.form__stages-list label:focus-within {
   font-weight: 700;
   font-size: 16px;
 }
 
 .form__stages-list label:hover .form__stages-tooltip {
   visibility: visible;
+}
+
+.form__stages-list p {
+  margin: 0;
 }
 
 .form__stages-tooltip {
@@ -2031,6 +2038,10 @@ body {
     margin-bottom: 10px;
   }
 
+  .btn-arrow img {
+    width: 30px;
+  }
+
   .btn-black {
     font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
     padding: 7px 20px;
@@ -2297,10 +2308,6 @@ body {
 
   .form__stages-btn {
     padding-top: 18px;
-  }
-
-  .form__stages-btn .btn-arrow svg {
-    width: 30px;
   }
 
   .form__ready {
@@ -2711,7 +2718,10 @@ body {
     line-height: 18px;
   }
 
-  .form__stages-list label:hover {
+  .form__stages-list label:hover,
+  .form__stages-list label:active,
+  .form__stages-list label:focus,
+  .form__stages-list label:focus-within {
     font-size: 15px;
     line-height: 18px;
   }

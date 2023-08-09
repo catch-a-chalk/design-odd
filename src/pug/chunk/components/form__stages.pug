@@ -131,13 +131,12 @@ form.form__stages(id="form1" data-index="1")
                   label(class=`form__label-stages-${checkBox.value}` for=`stages-${checkBox.value}`)
                     input(type='checkbox' name='stages' id=`stages-${checkBox.value}` data-span=checkBox.span value=checkBox.value)
                     span.form__option
-                    =checkBox.span
+                    p=checkBox.span
                     span.form__stages-tooltip=checkBox.tooltip
       .form__stages-btn
         button.btn-white(type="submit")
         a.btn-arrow(href="#inner2")
-          svg(width="52" height="60" role="img" aria-labelledby="arrow__down" aria-description="Вниз")
-            use(href="img/sprite.svg#arrow")
+          img(src="img/icon-arrow.svg", atl="Подняться", width="52")
       .mdl#tooltipModal1
         .mdl__header
           h3 брендинг

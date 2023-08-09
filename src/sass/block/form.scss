@@ -212,7 +212,10 @@ fieldset input:checked:hover + .form__option {
     gap: 10px;
     align-items: baseline;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
       font-weight: 700;
       font-size: 16px;
     }
@@ -220,6 +223,10 @@ fieldset input:checked:hover + .form__option {
     &:hover .form__stages-tooltip {
       visibility: visible;
     }
+  }
+
+  p {
+    margin: 0;
   }
 }
 
@@ -412,6 +419,7 @@ fieldset input:checked:hover + .form__option {
       gap: 30px;
       margin-top: 0;
     }
+
   }
 
   .form__stages fieldset h4 {
@@ -430,10 +438,6 @@ fieldset input:checked:hover + .form__option {
 
   .form__stages-btn {
     padding-top: 18px;
-  }
-
-  .form__stages-btn .btn-arrow svg {
-    width: 30px;
   }
 
   .form__ready {
@@ -609,7 +613,10 @@ fieldset input:checked:hover + .form__option {
     font-size: 15px;
     line-height: 18px;
   
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
       font-size: 15px;
       line-height: 18px;
     }
