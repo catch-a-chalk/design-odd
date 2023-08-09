@@ -53,10 +53,9 @@
         justify-self: center;
       }
 
-      input:checked + span {
-        outline: 2px solid $color-black;
-        outline-offset: 3px;
-      }
+      // input:checked + span {
+      //   background: $color-nero;
+      // }
     }
 
     .btn-white {
