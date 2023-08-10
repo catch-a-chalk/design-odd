@@ -162,6 +162,7 @@
 
     label {
       font: $font-700-14-17;
+      display: flex;
 
       button {
         position: relative;
@@ -172,8 +173,8 @@
   &__cross {
     cursor: pointer;
     position: absolute;
-    right: 20px;
-    top: 10px;
+    right: 5px;
+    padding: 10px;
 
     &:before, 
     &:after {
@@ -323,6 +324,7 @@
   .ordering__form {
     grid-template-columns: 1fr;
     grid-template-areas:
+    "details"
     "info"
     "about"
     "file"
@@ -344,8 +346,16 @@
     font: $font-700-12-15;
   }
 
+  .ordering__container {
+    row-gap: 20px;
+  }
+
   .ordering__details {
-    display: none;
+    margin-top: 25px;
+  }
+
+  .ordering__details h3 {
+    align-self: baseline;
   }
 
   .ordering__buttons {

@@ -11,8 +11,8 @@
     display: flex;
     justify-content: flex-end;
     justify-self: flex-end;
-    align-items: center;
-    gap: 60px;
+    align-items: baseline;
+    gap: 40px;
 
     p {
       font: $font-700-40-48;
@@ -23,7 +23,14 @@
 
     a {
       width: 60px;
+      height: 50px;
       justify-self: end;
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+
+    img {
+      height: 30px;
     }
   }
 
@@ -145,12 +152,23 @@
     padding-top: 45px;
   }
 
+  .dev__web-container h2 {
+    align-self: baseline;
+  }
+
   .dev__web-inbox {
+    gap: 30px;
+
     p {
       font: $font-700-24-29;
     }
     a {
       width: 30px;
+      margin-top: 0;
+    }
+
+    img {
+      height: 20px;
     }
   }
 
