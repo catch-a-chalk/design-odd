@@ -652,10 +652,10 @@ body.on-modal {
   -ms-flex-pack: end;
   justify-content: flex-end;
   justify-self: flex-end;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 60px;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  gap: 40px;
 }
 
 .dev__web-inbox p {
@@ -667,7 +667,15 @@ body.on-modal {
 
 .dev__web-inbox a {
   width: 60px;
+  height: 50px;
   justify-self: end;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.dev__web-inbox img {
+  height: 30px;
 }
 
 .dev__web-services {
@@ -1645,6 +1653,9 @@ fieldset input:checked:hover + .form__option {
 
 .ordering__container label {
   font: 700 14px/17px "Inter", "MS Sans Serif", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .ordering__container label button {
@@ -1654,8 +1665,8 @@ fieldset input:checked:hover + .form__option {
 .ordering__cross {
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 10px;
+  right: 5px;
+  padding: 10px;
 }
 
 .ordering__cross:before,
@@ -2118,12 +2129,26 @@ body {
     padding-top: 45px;
   }
 
+  .dev__web-container h2 {
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+  }
+
+  .dev__web-inbox {
+    gap: 30px;
+  }
+
   .dev__web-inbox p {
     font: 700 24px/29px "Inter", "MS Sans Serif", sans-serif;
   }
 
   .dev__web-inbox a {
     width: 30px;
+    margin-top: 0;
+  }
+
+  .dev__web-inbox img {
+    height: 20px;
   }
 
   .dev__web-services {
@@ -3028,7 +3053,7 @@ body {
 
   .ordering__form {
     grid-template-columns: 1fr;
-    grid-template-areas: "info" "about" "file" "promo" "discount" "buttons";
+    grid-template-areas: "details" "info" "about" "file" "promo" "discount" "buttons";
   }
 
   .ordering__form label,
@@ -3044,8 +3069,17 @@ body {
     font: 700 12px/15px "Inter", "MS Sans Serif", sans-serif;
   }
 
+  .ordering__container {
+    row-gap: 20px;
+  }
+
   .ordering__details {
-    display: none;
+    margin-top: 25px;
+  }
+
+  .ordering__details h3 {
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
   }
 
   .ordering__buttons {
