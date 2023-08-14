@@ -67,7 +67,7 @@
           background-color: $color-white;
           transform: translate(10px, 19px) rotate(45deg);
         }
-    
+
         &:after {
           content: '';
           width: 21px;
@@ -116,31 +116,6 @@
     font: $font-700-24-29;
     grid-area: price;
   }
-
-  &-promotion {
-    font: $font-700-24-29;
-    display: flex;
-    flex-direction: column;
-    width: 385px;
-    align-items: center;
-    align-self: center;
-    border: 1px solid $color-light-grey;
-    border-radius: 20px;
-    margin-top: 30px;
-    margin-bottom: 0;
-    padding: 30px 10px;
-
-    p:first-child {
-      word-break: break-word;
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 50px;
-    }
-  }
-
-  &-promotion--active {
-    border: 1px solid $color-black;
-  }
 }
 
 @media (max-width: ($vp-1440 - 1)) {
@@ -171,31 +146,31 @@
     fieldset {
       grid-template-columns: 150px 50px auto 160px;
       grid-template-rows: 40px auto;
+
+      input:checked + span {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        &:before {
+          content: '';
+          width: 21px;
+          height: 2px;
+          background-color: $color-white;
+          transform: translate(9px, 16px) rotate(45deg);
+        }
+    
+        &:after {
+          content: '';
+          width: 21px;
+          height: 2px;
+          background-color: $color-white;
+          transform: translate(-9px, 16px) rotate(-45deg);
+        }
+      }
     }
 
     .btn-white {
       width: 270px;
-    }
-
-    input:checked + span {
-      width: 35px;
-      height: 35px;
-      padding: 0;
-      &:before {
-        content: '';
-        width: 21px;
-        height: 2px;
-        background-color: $color-white;
-        transform: translate(9px, 16px) rotate(45deg);
-      }
-  
-      &:after {
-        content: '';
-        width: 21px;
-        height: 2px;
-        background-color: $color-white;
-        transform: translate(-9px, 18px) rotate(-45deg);
-      }
     }
   }
 
@@ -219,18 +194,6 @@
 
   .dev__web-price {
     text-align: center;
-  }
-
-  .dev__web-promotion {
-    padding: 10px;
-    p {
-      font: $font-700-18-21;
-      margin-bottom: 5px;
-
-      &:first-child {
-        margin-bottom: 20px;
-      }
-    }
   }
 }
 
@@ -290,15 +253,5 @@
 
   .dev__web-price {
     font: $font-700-14-17;
-  }
-
-  .dev__web-promotion {
-    width: 280px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-
-    p {
-      font: $font-700-14-17;
-    }
   }
 }

@@ -109,19 +109,21 @@ body.on-modal {
     }
   }
 
-  &-black--send:active {
+  &-black--send:active,
+  &-black--order:active {
     width: 39px;
     height: 39px;
     padding: 0;
   }
 
-  &-black--send:active {
+  &-black--send:active,
+  &-black--order:active {
     &:before {
       content: '';
       width: 21px;
       height: 2px;
       background-color: $color-white;
-      transform: translate(0, 2px) rotate(45deg);
+      transform: translate(10px, 18px) rotate(45deg);
     }
   
     &:after {
@@ -129,9 +131,34 @@ body.on-modal {
       width: 21px;
       height: 2px;
       background-color: $color-white;
-      transform: translate(0, 0) rotate(-45deg);
+      transform: translate(-10px, 18px) rotate(-45deg);
     }
   }
+}
+
+.promotion {
+  font: $font-700-24-29;
+  display: flex;
+  flex-direction: column;
+  width: 385px;
+  align-items: center;
+  align-self: center;
+  border: 1px solid $color-light-grey;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px 10px;
+
+  p:first-child {
+    word-break: break-word;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.promotion--active {
+  border: 1px solid $color-black;
 }
 
 @media (max-width: ($vp-1440 - 1)) {
@@ -170,7 +197,7 @@ body.on-modal {
       transform: translate(9px, 16px) rotate(45deg);
     }
     &:after {
-      transform: translate(-8px, 16px) rotate(-45deg);
+      transform: translate(-9px, 16px) rotate(-45deg);
     }
   }
 
@@ -187,17 +214,6 @@ body.on-modal {
     }
   }
 
-  .btn-black--add:active {
-    width: 31px;
-    height: 31px;
-    padding: 0;
-
-    &:before,
-    &:after {
-      width: 17px;
-    }
-  }
-
   .btn-white {
     font: $font-700-20-29;
     border: 2px solid $color-black;
@@ -211,6 +227,18 @@ body.on-modal {
     svg {
       width: 30px;
       height: 37px;
+    }
+  }
+
+  .promotion {
+    padding: 10px;
+    p {
+      font: $font-700-18-21;
+      margin-bottom: 5px;
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
     }
   }
 }
@@ -233,6 +261,16 @@ body.on-modal {
     svg {
       width: 16px;
       height: 21px;
+    }
+  }
+
+  .promotion {
+    width: 280px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    p {
+      font: $font-700-14-17;
     }
   }
 }

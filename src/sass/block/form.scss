@@ -285,6 +285,11 @@ fieldset input:checked:hover + .form__option {
     button {
       grid-column: 2 / 3;
     }
+
+    .promotion {
+      grid-column: 2 / 3;
+      width: auto;
+    }
   }
 
   &-card {
