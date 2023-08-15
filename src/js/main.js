@@ -30,6 +30,8 @@ window.addEventListener('DOMContentLoaded', () => {
   setDataForm("#form4", 4);
   getDataForm("#resultForm");
   initDiscount();
-  initMdl();
-
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMdl();
+})

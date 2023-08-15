@@ -5,8 +5,9 @@ export const initMdl = () => {
 
   tooltipBtn1.addEventListener("click", () => {
     tooltipModal1.style.display = "block";
+    ensureModalInView(tooltipModal1); // Вызов функции для первого модального окна
   });
-
+  
   closeBtn1.addEventListener("click", () => {
     tooltipModal1.style.display = "none";
   });
@@ -17,8 +18,9 @@ export const initMdl = () => {
 
   tooltipBtn2.addEventListener("click", () => {
     tooltipModal2.style.display = "block";
+    ensureModalInView(tooltipModal2); // Вызов функции для второго модального окна
   });
-
+  
   closeBtn2.addEventListener("click", () => {
     tooltipModal2.style.display = "none";
   });
