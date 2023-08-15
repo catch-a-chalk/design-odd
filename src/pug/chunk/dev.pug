@@ -125,7 +125,7 @@ section.dev
         p Пакет web+ брендинг/айдентикa
         p скидка 15%
         a.btn-black.btn-black--add(href='branding.html#packages')
-      button.btn-white(type='submit')
+      button.btn-white(type='submit' data-action="submit-form")
     #inner3.dev__web-container
       h2.title SEO продвижение
     form.dev__web-services(id="form4" data-index="4")
@@ -140,4 +140,4 @@ section.dev
           label(class=`dev__label-seo-${seo.label}` for=`seo-${seo.label}`)
             input.visually-hidden(type='radio' name='seo' id=`seo-${seo.label}` data-span=seo.title value=seo.label)
             span.btn-black.btn-black--order
-      button.btn-white(type='submit')
+      button.btn-white(type='submit' data-action="submit-form")
