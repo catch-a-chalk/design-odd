@@ -1,0 +1,36 @@
+.burger {
+  display: none;
+}
+
+@media (max-width: ($vp-768 - 1)) {
+  .burger {
+    display: flex;
+    align-items: center;
+  }
+
+  .burger__field {
+    padding: 16px 20px;
+    cursor: pointer;
+  }
+
+  .burger__bar {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 6px auto;
+    background-color: black;
+    transition: 0.2s;
+  }
+
+  .burger__field.active .burger__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger__field.active .burger__bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .burger__field.active .burger__bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

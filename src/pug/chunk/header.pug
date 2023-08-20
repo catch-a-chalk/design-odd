@@ -1,11 +1,11 @@
 header.header
   .wrapper
-    nav.navbar
+    nav.navigation
         h2.visually-hidden Навигационное меню
-        .navbar__wrap
-          a#logo.logo(href='index.html')
+        .navigation__wrapper
+          a.navigation__logo(href='index.html')
             img(src="img/logo-design-odd.svg", atl="Логотип", width="205")
-          ul#menu.menu
+          ul#navigation__list.navigation__list
             li
               a(href="index.html#portfolio") портфолио
             li
@@ -14,9 +14,9 @@ header.header
               a(href="web.html") веб
             li
               a(href="order.html") заказ/<br>контакты
-          .hamb
-            #hamb.hamb__field
-              span.bar
-              span.bar
-              span.bar
-    #popupp.popupp
+          .burger
+            #burger.burger__field
+              span.burger__bar
+              span.burger__bar
+              span.burger__bar
+    #navigation__menu.navigation__menu

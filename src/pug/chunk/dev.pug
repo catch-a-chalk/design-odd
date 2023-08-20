@@ -4,6 +4,7 @@
       title: 'сайт-визитка',
       label: 'bc-website',
       number: '01',
+      index: '5',
       description: 'Компактный сайт, содержащий основные элементы информации о компании, товарах и услугах.',
       bold: '+3D анимация бесплатно',
       price: '200 000 ₽'
@@ -12,6 +13,7 @@
       title: 'лендинг',
       label: 'landing',
       number: '02',
+      index: '6',
       description: 'Основная страница для сбора информативных данных о целевой аудитории компании. Используется для усиления эффективности рекламных инструментов.',
       bold: '',
       price: 'от 250 000 ₽'
@@ -20,6 +22,7 @@
       title: 'магазин/лукбук',
       label: 'shop-lookbook',
       number: '03',
+      index: '7',
       description: 'Создание и интеграция внутреннего магазина с возможностью покупки и оплаты внутри сайта.',
       bold: '',
       price: 'от 500 000 ₽'
@@ -28,6 +31,7 @@
       title: 'сайт-портал',
       label: 'website-portal',
       number: '04',
+      index: '8',
       description: 'Содержит большое количество мультимедийных и текстовых наполнителей, целью которых является продвижение товаров и услуг.',
       bold: '',
       price: 'от 450 000 ₽'
@@ -36,6 +40,7 @@
       title: 'приложение',
       label: 'application',
       number: '05',
+      index: '9',
       description: 'Упрощает взаимодействие с аудиторией через специально разработанные приложения для мобильных устройств.',
       bold: '',
       price: 'индивидуально'
@@ -44,6 +49,7 @@
       title: 'индивидуальный продукт',
       label: 'ind-product',
       number: '06',
+      index: '10',
       description: 'Отдельная разработка сайта для каждого индивидуального продукта, соответствующая требованиям и целям компании.',
       bold: '',
       price: 'индивидуально'
@@ -56,6 +62,7 @@
       title: 'базовое',
       label: 'base',
       number: '01',
+      index: '11',
       description: 'Основные пункты работ: оптимизация под ключевые слова, улучшение структуры сайта и помощь в создании качественного контента.',
       bold: '',
       price: '80 000 ₽'
@@ -64,6 +71,7 @@
       title: 'среднее',
       label: 'middle',
       number: '02',
+      index: '12',
       description: '+ дополнительные работы с внутренней ссылочной структурой, улучшение юзабилити сайта, работу с внешними ресурсами, улучшение ссылочной массы.',
       bold: '',
       price: '120 000 ₽'
@@ -72,6 +80,7 @@
       title: 'PRO',
       label: 'pro',
       number: '03',
+      index: '13',
       description: 'продвижение включает в себя Базовое и Среднее SEO c детальным разбором и анализом конкурентов, более глубокую аналитику для подготовки стратегии продвижения на длительный период.',
       bold: '',
       price: '150 000 ₽'
@@ -80,6 +89,7 @@
       title: 'брендовый трафик',
       label: 'brand-traffic',
       number: '04',
+      index: '14',
       description: 'Увеличение органического трафика из поиска. Увеличение трафика из соц-сетей, ссылки с сайтов, E-mail рассылки. Основная поисковая фраза для продвижения - брендовое имя.',
       bold: '',
       price: '80 000 ₽'
@@ -88,56 +98,63 @@
       title: 'разовая оптимизация',
       label: 'one-time-optimization',
       number: '05',
+      index: '15',
       description: 'комплекс мер, включающий в себя анализ исходного состояния сайта, определение ключевых запросов, внутреннюю и внешнюю оптимизацию, создание уникального контента и другие действия. Сопровождение включает в себя мониторинг позиций сайта в поисковых системах и корректировку ключевых слов при необходимости, а также устранение ошибок в поиске.',
       bold: '',
-      price: ''
+      price: '80 000 ₽'
     },
     {
       title: 'SEO аудит сайта',
       label: 'audit',
       number: '06',
+      index: '16',
       description: 'проверка на соответствие требованиям поисковых систем, которая поможет избежать проблем при продвижении сайта с нуля или найти причины резкого снижения трафика уже продвигаемого ресурса.',
       bold: '',
-      price: '80 000 ₽'
+      price: 'индивидуально'
     }
   ]
+
 section.dev
   .wrapper
-    .dev__web-container
+    .dev__container
       h2.title виды веб разработки
-      .dev__web-inbox
+      .dev__inbox
         p SEO
         a.btn-arrow(href="#inner3")
           img(src="img/icon-arrow.svg", atl="Спуститься ниже", width="52")
-    form.dev__web-services(id="form3" data-index="3")
-      each web in WEB
-        fieldset
-          p.dev__web-title=web.title
-          p.dev__web-number=web.number
-          p.dev__web-description=web.description
-            br
-            span=web.bold
-          p.dev__web-price=web.price
-          label(class=`dev__label-web-${web.label}` for=`web-${web.label}`)
-            input.visually-hidden(type='radio' name='web' id=`web-${web.label}` data-span=web.title value=web.label)
-            span.btn-black.btn-black--order
-      article.promotion
-        p Пакет web+ брендинг/айдентикa
-        p скидка 15%
-        a.btn-black.btn-black--add(href='branding.html#packages')
-      button.btn-white(type='submit' data-action="submit-form")
-    #inner3.dev__web-container
+      .dev__block
+        each web in WEB
+          form.dev__services(id=`form${web.index}` data-index=`${web.index}`)
+            fieldset
+              p.dev__title=web.title
+              p.dev__number=web.number
+              p.dev__description=web.description
+                br
+                span=web.bold
+              p.dev__price=web.price
+              .dev__order
+                label.visually-hidden(class=`dev__label-web-${web.label}` for=`web-${web.label}`)
+                input.visually-hidden(type='radio' name='web' id=`web-${web.label}` data-span=web.title value=web.label checked='checked')
+                button.btn-black(type="submit") Заказать
+    article.promotion
+      p Пакет web+ брендинг/айдентикa
+      p скидка 15%
+      a.btn-black#myLink(href='branding.html#packages') Добавить
+    a.btn-white(href='order.html')
+    #inner3.dev__container
       h2.title SEO продвижение
-    form.dev__web-services(id="form4" data-index="4")
-      each seo in SEO
-        fieldset
-          p.dev__web-title=seo.title
-          p.dev__web-number=seo.number
-          p.dev__web-description=seo.description
-            br
-            span=seo.bold
-          p.dev__web-price=seo.price
-          label(class=`dev__label-seo-${seo.label}` for=`seo-${seo.label}`)
-            input.visually-hidden(type='radio' name='seo' id=`seo-${seo.label}` data-span=seo.title value=seo.label)
-            span.btn-black.btn-black--order
-      button.btn-white(type='submit' data-action="submit-form")
+      .dev__block
+        each seo in SEO
+          form.dev__services(id=`form${seo.index}` data-index=`${seo.index}`)
+            fieldset
+              p.dev__title=seo.title
+              p.dev__number=seo.number
+              p.dev__description=seo.description
+                br
+                span=seo.bold
+              p.dev__price=seo.price
+              .dev__order
+                label.visually-hidden(class=`dev__label-seo-${seo.label}` for=`seo-${seo.label}`)
+                input.visually-hidden(type='radio' name='seo' id=`seo-${seo.label}` data-span=seo.title value=seo.label checked='checked')
+                button.btn-black(type="submit") Заказать
+        a.btn-white(href='order.html')

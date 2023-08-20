@@ -1,5 +1,12 @@
-.dev__web {
-  &-container {
+.dev {
+  .btn-white {
+    width: 385px;
+    align-self: center;
+  }
+}
+
+.dev {
+  &__container {
     padding-top: 88px;
     padding-bottom: 10px;
     display: grid;
@@ -7,7 +14,7 @@
     align-items: center;
   }
 
-  &-inbox {
+  &__inbox {
     display: flex;
     justify-content: flex-end;
     justify-self: flex-end;
@@ -30,16 +37,7 @@
     }
   }
 
-  &-services {
-    display: flex;
-    flex-direction: column;
-
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 120px 0 30px;
-    gap: 100px;
-
+  &__services {
     fieldset {
       padding: 0;
       display: grid;
@@ -84,25 +82,25 @@
     }
   }
 
-  &-title {
+  &__title {
     font: $font-200-24-29;
     grid-area: title;
     text-align: end;
     word-break: break-word;
   }
 
-  &-number {
+  &__number {
     font: $font-700-24-29;
     grid-area: number;
     justify-self: center;
   }
 
-  &-description,
-  &-price {
+  &__description,
+  &__price {
     margin-bottom: 0;
   }
 
-  &-description {
+  &__description {
     font: $font-200-24-29;
     grid-area: description;
     padding-right: 20px;
@@ -112,22 +110,40 @@
     }
   }
 
-  &-price {
+  &__price {
     font: $font-700-24-29;
     grid-area: price;
+    text-align: center;
+  }
+
+  &__order {
+    justify-self: center;
   }
 }
 
+.dev__block {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin: 120px 0 30px;
+  padding: 0;
+}
+
 @media (max-width: ($vp-1440 - 1)) {
-  .dev__web-container {
+  .dev .btn-white {
+    width: 270px;
+  }
+
+  .dev__container {
     padding-top: 45px;
   }
 
-  .dev__web-container h2 {
+  .dev__container h2 {
     align-self: baseline;
   }
 
-  .dev__web-inbox {
+  .dev__inbox {
     gap: 30px;
 
     p {
@@ -139,7 +155,7 @@
     }
   }
 
-  .dev__web-services {
+  .dev__block {
     margin: 30px 0;
     gap: 60px;
 
@@ -174,38 +190,42 @@
     }
   }
 
-  .dev__web-title {
+  .dev__title {
     text-align: start;
   }
 
-  .dev__web-title,
-  .dev__web-description {
+  .dev__title,
+  .dev__description {
     font: $font-200-18-22;
   }
 
-  .dev__web-number {
+  .dev__number {
     font: $font-700-18-21;
   }
 
-  .dev__web-description span,
-  .dev__web-price {
+  .dev__description span,
+  .dev__price {
     font: $font-700-18-21;
   }
 
-  .dev__web-price {
+  .dev__price {
     text-align: center;
   }
 }
 
 @media (max-width: ($vp-768 - 1)) {
-  .dev__web-container {
+  .dev .btn-white {
+    width: 185px;
+  }
+
+  .dev__container {
     grid-template-columns: 1fr;
     &:first-child {
       padding-top: 0;
     }
   }
 
-  .dev__web-services {
+  .dev__block {
     gap: 40px;
     margin: 15px 0;
 
@@ -223,35 +243,35 @@
     }
   }
 
-  .dev__web-inbox {
+  .dev__inbox {
     justify-content: flex-start;
     justify-self: flex-start;
     gap: 20px;
     grid-row: 1 / 2;
   }
 
-  .dev__web-title {
+  .dev__title {
     font-size: 15px;
     line-height: 18px;
     margin-top: 12px;
   }
 
-  .dev__web-number {
+  .dev__number {
     font: $font-700-14-17;
   }
 
-  .dev__web-description {
+  .dev__description {
     font: $font-200-12-14;
     margin: 0;
     padding: 0;
     position: relative;
   }
 
-  .dev__web-description span {
+  .dev__description span {
     font: $font-700-12-15;
   }
 
-  .dev__web-price {
+  .dev__price {
     font: $font-700-14-17;
   }
 }

@@ -1,4 +1,4 @@
-.mdl {
+.modal {
   display: none;
   position: fixed;
   top: 50%;
@@ -8,9 +8,9 @@
   transform: translate(-50%, -50%);
   z-index: 1000;
   background-color: $color-white;
-  max-height: 100vh; /* Максимальная высота модального окна */
-  overflow-y: auto; /* Добавь возможность скролла */
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Тень для модального окна */
+  max-height: 100vh;
+  overflow-y: auto;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 
   ul {
     margin: 0;
@@ -26,7 +26,7 @@
   }
 }
 
-.mdl__open {
+.modal__open {
   display: none;
   width: 40px;
   height: 40px;
@@ -38,7 +38,7 @@
   }
 }
 
-.mdl__close {
+.modal__close {
   width: 30px;
   height: 30px;
   transform: rotate(90deg);
@@ -49,7 +49,7 @@
   }
 }
 
-.mdl__header {
+.modal__header {
   position: sticky;
   top: 0;
   background-color: $color-white;
@@ -57,8 +57,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 1; /* Установи бОльший z-index для .mdl__header, чтобы он был над остальным контентом */
-  padding: 35px 0 20px; /* Добавь немного отступов для стиля */
+  z-index: 1;
+  padding: 35px 0 20px;
 
   h3,
   li {
@@ -66,8 +66,7 @@
   }
 }
 
-.mdl__content {
-  // padding: 20px; /* Добавь отступы для контента, чтобы он не перекрывал .mdl__header */
+.modal__content {
   overflow-y: auto;
 }
 

@@ -83,19 +83,6 @@ body.on-modal {
     cursor: pointer;
   }
 
-  &-black--order {
-    justify-self: center;
-    &:before {
-      content: 'Заказать';
-    }
-  }
-
-  &-black--add {
-    &:before {
-      content: 'Добавить';
-    }
-  }
-
   &-black--review {
     &:before {
       content: 'Обзор..';
@@ -109,15 +96,13 @@ body.on-modal {
     }
   }
 
-  &-black--send:active,
-  &-black--order:active {
+  &-black--send:active {
     width: 39px;
     height: 39px;
     padding: 0;
   }
 
-  &-black--send:active,
-  &-black--order:active {
+  &-black--send:active {
     &:before {
       content: '';
       width: 21px;
@@ -134,6 +119,50 @@ body.on-modal {
       transform: translate(-10px, 18px) rotate(-45deg);
     }
   }
+
+  &-black--cross {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+
+    &:before {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translate(10px, 20px) rotate(45deg);
+    }
+  
+    &:after {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translate(-10px, 20px) rotate(-45deg);
+    }
+  }
+
+  &-black--ex {
+    padding: 0;
+    width: 39px;
+    height: 39px;
+
+    &:before {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translate(0px, 0px) rotate(45deg);
+    }
+  
+    &:after {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $color-white;
+      transform: translate(-0px, -2px) rotate(-45deg);
+    }
+  }
 }
 
 .promotion {
@@ -146,7 +175,7 @@ body.on-modal {
   border: 1px solid $color-light-grey;
   border-radius: 20px;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding: 30px 10px;
 
   p:first-child {
@@ -230,6 +259,34 @@ body.on-modal {
     }
   }
 
+  .btn-black--cross {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+
+    &:before {
+      transform: translate(9px, 17px) rotate(45deg);
+    }
+  
+    &:after {
+      transform: translate(-9px, 17px) rotate(-45deg);
+    }
+  }
+
+  .btn-black--ex {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+
+    &:before {
+      transform: translate(0px, 2px) rotate(45deg);
+    }
+  
+    &:after {
+      transform: translate(-0px, 0px) rotate(-45deg);
+    }
+  }
+
   .promotion {
     padding: 10px;
     p {
@@ -261,6 +318,20 @@ body.on-modal {
     svg {
       width: 16px;
       height: 21px;
+    }
+  }
+
+  .btn-black--ex {
+    padding: 0;
+    width: 35px;
+    height: 35px;
+
+    &:before {
+      transform: translate(0px, 1px) rotate(45deg);
+    }
+  
+    &:after {
+      transform: translate(-0px, -1px) rotate(-45deg);
     }
   }
 

@@ -1,0 +1,14 @@
+.header {
+  padding-top: 27px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 3;
+  min-height: 121px;
+  background-color: $color-white;
+}
+
+@media (max-width: ($vp-1440 - 1)) {
+  .header {
+    min-height: 90px;
+  }
+}

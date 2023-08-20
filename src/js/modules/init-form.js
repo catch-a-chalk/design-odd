@@ -8,7 +8,7 @@ export const setDataForm = (selector, index) => {
       inputs.forEach((input) => {
         if (input.name && (input.type !== 'checkbox' || input.checked)) {
           if (input.type === 'radio' && !input.checked) {
-            return; // Skip unchecked radio inputs
+            return;
           }
 
           if (!data[input.name]) {
@@ -26,17 +26,37 @@ export const setDataForm = (selector, index) => {
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
+    
       const formData = getData(form);
       let data = localStorage.getItem('data-form') ? JSON.parse(localStorage.getItem('data-form')) : {};
-
-      data[index] = { ...data[index], ...formData };
-
+    
+      if (data[index]) {
+        // Удаляем ключ из LocalStorage
+        delete data[index];
+      } else {
+        data[index] = formData;
+      }
+    
       localStorage.setItem('data-form', JSON.stringify(data));
-
-      // Перенаправление на order.html
-      window.location.href = 'order.html'; // Замените на путь к вашему файлу order.html
+    
+      // Получаем ссылку на кнопку
+      const submitButton = form.querySelector('[type="submit"]');
+    
+      if (submitButton) {
+        // Проверяем, есть ли уже класс .btn-black--ex
+        if (submitButton.classList.contains('btn-black--ex')) {
+          // Удаляем класс .btn-black--ex
+          submitButton.classList.remove('btn-black--ex');
+          submitButton.textContent = 'Заказать';
+        } else {
+          // Добавляем класс .btn-black--ex
+          submitButton.classList.add('btn-black--ex');
+          submitButton.textContent = '';
+        }
+      }
     });
+    
+    
   }
 };
 

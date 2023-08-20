@@ -172,6 +172,7 @@
     label {
       font: $font-700-14-17;
       display: flex;
+      align-items: flex-start;
 
       button {
         position: relative;
@@ -361,6 +362,10 @@
 
   .ordering__container {
     row-gap: 20px;
+  }
+
+  .ordering__container label span {
+    margin-top: 1px;
   }
 
   .ordering__details {
