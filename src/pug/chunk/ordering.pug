@@ -1,8 +1,6 @@
 article.ordering
   .wrapper
     h2.title давайте обсудим детали!
-    //- вставить вместо (action='https://echo.htmlacademy.ru/' method='post' autocomplete='off') 
-    //- следующий код (action='http://127.0.0.1:4000/send_email' method='post' enctype='multipart/form-data')
     form.ordering__form#resultForm(action='http://127.0.0.1:4000/send_email' method='post' enctype='multipart/form-data')
       .ordering__info
         p
@@ -27,7 +25,10 @@ article.ordering
           span.btn-black.btn-black--review.ordering__file-btn
           span.ordering__file-text Файл не выбран
       .ordering__details
-        h3 Выбранные позиции:
+        .ordering__heading
+          h3 Выбранные позиции:
+          a.btn-arrow#back(href="branding.html?prevPage=web.html")
+            img(src="img/icon-arrow.svg", atl="Подняться", width="52")
         label(for='selected_items').ordering__container
           button.visually-hidden(type='button')
             .ordering__cross

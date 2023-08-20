@@ -32,4 +32,9 @@ export const initMdl = () => {
   closeBtn2.addEventListener("click", () => {
     closeModal(tooltipModal2);
   });
+
+  const tooltipBtn3 = document.getElementById("tooltipBtn3");
+  if (tooltipBtn3) {
+    tooltipBtn3.style.display = "none";
+  }
 };

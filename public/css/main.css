@@ -1343,13 +1343,18 @@ fieldset input:checked:hover + .form__option {
   top: 50%;
   left: 50%;
   width: 100%;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1000;
-  height: 100vh;
-  overflow-y: scroll;
+  max-height: 100vh;
+  /* Максимальная высота модального окна */
+  overflow-y: auto;
+  /* Добавь возможность скролла */
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  /* Тень для модального окна */
 }
 
 .mdl ul {
@@ -1369,6 +1374,7 @@ fieldset input:checked:hover + .form__option {
   display: none;
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 
 .mdl__close {
@@ -1377,9 +1383,24 @@ fieldset input:checked:hover + .form__option {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.mdl__close:hover {
+  -webkit-transform: rotate(90deg) scale(1.2);
+  -ms-transform: rotate(90deg) scale(1.2);
+  transform: rotate(90deg) scale(1.2);
 }
 
 .mdl__header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1393,11 +1414,19 @@ fieldset input:checked:hover + .form__option {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  z-index: 1;
+  /* Установи бОльший z-index для .mdl__header, чтобы он был над остальным контентом */
+  padding: 35px 0 20px;
+  /* Добавь немного отступов для стиля */
 }
 
 .mdl__header h3,
 .mdl__header li {
   font: 700 18px/21px "Inter", "MS Sans Serif", sans-serif;
+}
+
+.mdl__content {
+  overflow-y: auto;
 }
 
 .header {
@@ -1637,8 +1666,23 @@ fieldset input:checked:hover + .form__option {
 .ordering__details h3 {
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
   text-align: center;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 12px;
+}
+
+.ordering__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.ordering__heading a {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .ordering__about {
@@ -2427,6 +2471,10 @@ body {
   .ordering__form label,
   .ordering__details h3 {
     font: 200 18px/22px "Inter", "MS Sans Serif", sans-serif;
+  }
+
+  .ordering__details h3 {
+    margin-top: 3px;
   }
 
   .ordering__container {

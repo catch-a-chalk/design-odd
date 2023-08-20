@@ -7,6 +7,7 @@ import { initTooltip } from './modules/init-tooltip';
 import { setDataForm, getDataForm } from './modules/init-form';
 import { initDiscount } from './modules/init-discount';
 import { initMdl } from './modules/init-mdl';
+import { initBack } from './modules/init-back';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -28,8 +29,12 @@ window.addEventListener('DOMContentLoaded', () => {
   setDataForm("#form2", 2);
   setDataForm("#form3", 3);
   setDataForm("#form4", 4);
+  setDataForm("#form7", 7);
+  setDataForm("#form8", 8);
+  setDataForm("#form9", 9);
   getDataForm("#resultForm");
   initDiscount();
+  initBack();
 });
 
 document.addEventListener('DOMContentLoaded', () => {

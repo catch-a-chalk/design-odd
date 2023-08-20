@@ -9,7 +9,8 @@
           { value: 's-three-carriers', span: '3 носителя', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 's-package', span: 'упаковка' }
         ],
-        price: '200 000 ₽'
+        price: '200 000 ₽',
+        index: '7'
       },
       { title: 'Пакет айдентика',
         id: 'package-idenity',
@@ -21,7 +22,8 @@
           { value: 'i-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  }, 
           { value: 'i-package', span: 'упаковка' }
         ],
-        price: '250 000 ₽'
+        price: '250 000 ₽',
+        index: '8'
       },
       { title: 'Пакет брендинг и айдентика ',
         id: 'package-branding-idenity',
@@ -36,6 +38,7 @@
           { value: 'bi-package', span: 'упаковка' }
         ],
         price: '270 000 ₽',
+        index: '9',
         commentary: '*характер и ценности бренда, его идея, смысловая основа'
       }
     ]
@@ -45,24 +48,28 @@ article#inner1.form__ready
     | 
     br
     | для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
-  form.form__ready-cards(id="form2" data-index="2")
+  .form__ready-cards
     each package in PACKAGES
       fieldset
-        label.form__ready-card(for=`ready-radio-${package.id}`)
+        form.form__ready-card(id=`form${package.index}` data-index=`${package.index}`)
           h4=package.title
           .form__ready-list
             each checkBox in package.checkBoxes
               label(class=`form__label-ready-${checkBox.value}` for=`ready-${checkBox.value}`)
-                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled data-no-save=checkBox.nosave data-span=`упаковка для ${package.title}`)
+                input(type='checkbox' name='ready-check' id=`ready-${checkBox.value}` data-no-save=checkBox.nosave  value=checkBox.value checked=checkBox.checked disabled=checkBox.disabled data-span=`${package.title}: ${checkBox.span}` data-price=package.price)
                 span.form__option
                 p=checkBox.span
+              label.visually-hidden(for=`ready-${package.id}`)
+                input.visually-hidden(type='radio' name='ready-package' id=`ready-${package.id}` value=package.id checked='checked' data-span=package.title)
           .form__ready-container
-            p=package.price
-            input(type='radio' name='ready-radio' id=`ready-radio-${package.id}` data-span=package.title value=package.id)
-            span.btn-black.btn-black--order
+            //- p.form__ready-price
+            p.form__ready-price=package.price
+            //- input(type='radio' name='ready-radio' id=`ready-radio-${package.id}` data-span=package.title value=package.id)
+            button.btn-black(type="submit") Заказать
         small.form__ready-commentary=package.commentary
     article.promotion
       p Пакет web+ брендинг/айдентикa
       p скидка 15%
-      a.btn-black.btn-black--add(href='web.html#form3')
-    button.btn-white(type="submit" data-action="submit-form")
+      a.btn-black.btn-black--add(href="web.html#form3")
+    a.btn-white(href="order.html")
+//- УБРАТЬ ИЗ РАЗМЕТКИ И ВНОСИТЬ ДАННЫЕ В ТЕГ ТОЛЬКО ЧЕРЕЗ JS!

@@ -127,8 +127,17 @@
     h3 {
       font: $font-200-24-29;
       text-align: center;
-      margin-top: 0;
+      margin-top: 10px;
       margin-bottom: 12px;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      transform: rotate(90deg);
     }
   }
 
@@ -273,6 +282,10 @@
   .ordering__form label,
   .ordering__details h3 {
     font: $font-200-18-22;
+  }
+
+  .ordering__details h3 {
+    margin-top: 3px;
   }
 
   .ordering__container {
