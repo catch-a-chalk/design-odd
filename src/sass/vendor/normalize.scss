@@ -232,7 +232,8 @@ button {
 		outline: 1px dotted ButtonText;
 	}
 }
-input {
+input,
+input ~ p {
 	margin: 0;
 	overflow: visible;
   -webkit-user-select: none;

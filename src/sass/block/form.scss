@@ -38,6 +38,7 @@
   cursor: pointer;
   width: 16px;
   height: 16px;
+  margin-top: 2px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' fill='%23fff' rx='3.5'/%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23E8E7E7' rx='3.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
@@ -47,6 +48,12 @@ fieldset input:checked:hover + .form__option {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' fill='%23fff' rx='3.5'/%3E%3Cpath stroke='%23000' d='M4 7.143 7.2 10 12 5'/%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23000' rx='3.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
+
+// fieldset input:checked + p,
+// fieldset input:checked:hover + p {
+//   font-weight: 700;
+//   font-size: 16px;
+// }
 
 .form__intro {
   padding-top: 70px;
@@ -211,29 +218,26 @@ fieldset input:checked:hover + .form__option {
   grid-template-columns: minmax(190px, 380px);
 
   label {
-    font: $font-200-16-19;
     position: relative;
     display: grid;
     grid-template-columns: min-content minmax(auto, 322px) auto;
     gap: 10px;
     align-items: baseline;
 
-    &:hover,
-    &:active,
-    &:focus,
-    &:focus-within {
-      font-weight: 700;
-      font-size: 16px;
-    }
-
     &:hover .form__stages-tooltip {
       visibility: visible;
     }
   }
+}
 
-  p {
-    margin: 0;
-  }
+.form__description {
+  font: $font-200-16-19;
+  margin: 0;
+}
+
+input:checked ~ .form__description {
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .form__stages-tooltip {

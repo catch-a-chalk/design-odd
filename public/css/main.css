@@ -299,7 +299,8 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-input {
+input,
+input ~ p {
   margin: 0;
   overflow: visible;
   -webkit-user-select: none;
@@ -928,6 +929,7 @@ body.on-modal {
   cursor: pointer;
   width: 16px;
   height: 16px;
+  margin-top: 2px;
 }
 
 fieldset input:checked + .form__option,
@@ -1136,7 +1138,6 @@ fieldset input:checked:hover + .form__option {
 }
 
 .form__stages-list label {
-  font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
   position: relative;
   display: grid;
   grid-template-columns: -webkit-min-content minmax(auto, 322px) auto;
@@ -1147,20 +1148,18 @@ fieldset input:checked:hover + .form__option {
   align-items: baseline;
 }
 
-.form__stages-list label:hover,
-.form__stages-list label:active,
-.form__stages-list label:focus,
-.form__stages-list label:focus-within {
-  font-weight: 700;
-  font-size: 16px;
-}
-
 .form__stages-list label:hover .form__stages-tooltip {
   visibility: visible;
 }
 
-.form__stages-list p {
+.form__description {
+  font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
   margin: 0;
+}
+
+input:checked ~ .form__description {
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .form__stages-tooltip {

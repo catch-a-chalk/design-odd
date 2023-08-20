@@ -133,7 +133,7 @@ form.form__stages(id="form1" data-index="1")
                   label(class=`form__label-stages-${checkBox.value}` for=`stages-${checkBox.value}`)
                     input.form__stages-input(type='checkbox' name='stages' id=`stages-${checkBox.value}` data-span=checkBox.span value=checkBox.value)
                     span.form__option
-                    p=checkBox.span
+                    p.form__description=checkBox.span
                     span.form__stages-tooltip=checkBox.tooltip
       .form__stages-btn
         button.btn-white(type="submit")

@@ -62,9 +62,7 @@ article#inner1.form__ready
               label.visually-hidden(for=`ready-${package.id}`)
                 input.visually-hidden(type='radio' name='ready-package' id=`ready-${package.id}` value=package.id checked='checked' data-span=package.title)
           .form__ready-container
-            //- p.form__ready-price
             p.form__ready-price=package.price
-            //- input(type='radio' name='ready-radio' id=`ready-radio-${package.id}` data-span=package.title value=package.id)
             button.btn-black(type="submit") Заказать
         small.form__ready-commentary=package.commentary
     article.promotion
