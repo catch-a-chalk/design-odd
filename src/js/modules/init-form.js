@@ -26,37 +26,57 @@ export const setDataForm = (selector, index) => {
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-    
+
       const formData = getData(form);
       let data = localStorage.getItem('data-form') ? JSON.parse(localStorage.getItem('data-form')) : {};
-    
-      if (data[index]) {
-        // Удаляем ключ из LocalStorage
-        delete data[index];
-      } else {
-        data[index] = formData;
-      }
-    
-      localStorage.setItem('data-form', JSON.stringify(data));
-    
-      // Получаем ссылку на кнопку
+
       const submitButton = form.querySelector('[type="submit"]');
-    
-      if (submitButton) {
-        // Проверяем, есть ли уже класс .btn-black--ex
-        if (submitButton.classList.contains('btn-black--ex')) {
-          // Удаляем класс .btn-black--ex
+      const isCrossButton = submitButton && submitButton.getAttribute('data-cross') === 'true';
+
+      if (isCrossButton) {
+        if (data[index]) {
+          delete data[index];
           submitButton.classList.remove('btn-black--ex');
           submitButton.textContent = 'Заказать';
         } else {
-          // Добавляем класс .btn-black--ex
+          data[index] = formData;
           submitButton.classList.add('btn-black--ex');
           submitButton.textContent = '';
         }
+      } else {
+        data[index] = formData;
       }
+
+      // Находим ближайший родительский элемент form для данной кнопки
+      const parentForm2 = submitButton.closest('#form2');
+      const parentForm3 = submitButton.closest('#form3');
+      const parentForm4 = submitButton.closest('#form4');
+      if (parentForm2) {
+        if (isCrossButton) {
+          parentForm2.style.border = '2px solid #d3d3d3';
+        } if (isCrossButton && parentForm2.querySelector('[data-cross="true"].btn-black--ex')) {
+          parentForm2.style.border = '2px solid #0e0e0e';
+        }
+      }
+
+      if (parentForm3) {
+        if (isCrossButton) {
+          parentForm3.style.border = '2px solid #d3d3d3';
+        } if (isCrossButton && parentForm3.querySelector('[data-cross="true"].btn-black--ex')) {
+          parentForm3.style.border = '2px solid #0e0e0e';
+        }
+      }  
+
+      if (parentForm4) {
+        if (isCrossButton) {
+          parentForm4.style.border = '2px solid #d3d3d3';
+        } if (isCrossButton && parentForm4.querySelector('[data-cross="true"].btn-black--ex')) {
+          parentForm4.style.border = '2px solid #0e0e0e';
+        }
+      }  
+
+      localStorage.setItem('data-form', JSON.stringify(data));
     });
-    
-    
   }
 };
 

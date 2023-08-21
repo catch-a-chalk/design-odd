@@ -43,7 +43,7 @@
       }
     ]
 
-article#inner1.form__ready
+#inner1.form__ready
   h3#packages.title готовые пакеты услуг
     | 
     br
@@ -63,7 +63,7 @@ article#inner1.form__ready
                 input.visually-hidden(type='radio' name='ready-package' id=`ready-${package.id}` value=package.id checked='checked' data-span=package.title)
           .form__ready-container
             p.form__ready-price=package.price
-            button.btn-black(type="submit") Заказать
+            button.btn-black(type="submit" data-cross="true") Заказать
         small.form__ready-commentary=package.commentary
     article.promotion
       p Пакет web+ брендинг/айдентикa

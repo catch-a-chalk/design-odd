@@ -135,7 +135,7 @@ section.dev
               .dev__order
                 label.visually-hidden(class=`dev__label-web-${web.label}` for=`web-${web.label}`)
                 input.visually-hidden(type='radio' name='web' id=`web-${web.label}` data-span=web.title value=web.label checked='checked')
-                button.btn-black(type="submit") Заказать
+                button.btn-black(type="submit" data-cross="true") Заказать
     article.promotion
       p Пакет web+ брендинг/айдентикa
       p скидка 15%
@@ -156,5 +156,5 @@ section.dev
               .dev__order
                 label.visually-hidden(class=`dev__label-seo-${seo.label}` for=`seo-${seo.label}`)
                 input.visually-hidden(type='radio' name='seo' id=`seo-${seo.label}` data-span=seo.title value=seo.label checked='checked')
-                button.btn-black(type="submit") Заказать
+                button.btn-black(type="submit" data-cross="true") Заказать
         a.btn-white(href='order.html')

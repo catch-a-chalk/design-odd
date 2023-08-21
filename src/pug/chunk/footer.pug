@@ -1,4 +1,4 @@
-- const CONTACTS = [{ label: 'написать', href: 'mailto:Hello@design-odd.com', text: 'Hello@design-odd.com'}, { label: 'позвонить', href: 'tel:+74951656009', text: '+7(495)165-60-09'}, { label: 'посмотреть', href: '#', text: 'behance'}, { label: 'присылайте CV', href: 'mailto:job@design-odd.com', text: 'job@design-odd.com'}]
+- const CONTACTS = [{ label: 'написать', href: 'mailto:Hello@design-odd.com', text: 'Hello@design-odd.com'}, { label: 'позвонить', href: 'tel:+74951656009', text: '+7(495)165-60-09'}, { label: 'посмотреть', href: 'https://www.behance.net/design-odd?tracking_source=search_projects%7CMead+packaging', text: 'behance', subhref: 'https://dprofile.ru/odd', subtext: 'dprofile' }, { label: 'присылайте CV', href: 'mailto:job@design-odd.com', text: 'job@design-odd.com'}]
 
 footer.footer
   h2.title контакты
@@ -7,4 +7,5 @@ footer.footer
       li.footer__item
         p=contact.label
         a(href=contact.href)=contact.text
+        a(href=contact.subhref)=contact.subtext
 script(src="js/main.js")

@@ -12,7 +12,6 @@ import { initCross } from './modules/init-cross';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
   // Utils
   // ---------------------------------
 
@@ -24,33 +23,29 @@ window.addEventListener('DOMContentLoaded', () => {
   
   burgerHandler;
   initLink();
+  initProjects();
 });
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   initModal();
 // });
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.pathname === '/index.html') {
-    initProjects();
-  }
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname === '/branding.html') {
     initLine();
     initModal();
     initTooltip();
+    initCross();
     setDataForm("#form1", 1);
     setDataForm("#form2", 2);
     setDataForm("#form3", 3);
     setDataForm("#form4", 4);
-    
-  initCross();
   }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname === '/web.html') {
+    initCross();
     setDataForm("#form5", 5);
     setDataForm("#form6", 6);
     setDataForm("#form7", 7);
@@ -63,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setDataForm("#form14", 14);
     setDataForm("#form15", 15);
     setDataForm("#form16", 16);
-    
-  initCross();
   }
 });
 
