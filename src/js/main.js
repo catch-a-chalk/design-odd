@@ -8,7 +8,8 @@ import { setDataForm, getDataForm } from './modules/init-form';
 import { initDiscount } from './modules/init-discount';
 import { initModal } from './modules/init-modal';
 import { initBack } from './modules/init-back';
-import { initCross } from './modules/init-cross';
+// import { initCross } from './modules/init-cross';
+import { initPrice } from './modules/init-price';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initLine();
     initModal();
     initTooltip();
-    initCross();
+    // initCross();
+    initPrice();
     setDataForm("#form1", 1);
     setDataForm("#form2", 2);
     setDataForm("#form3", 3);
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname === '/web.html') {
-    initCross();
+    // initCross();
     setDataForm("#form5", 5);
     setDataForm("#form6", 6);
     setDataForm("#form7", 7);

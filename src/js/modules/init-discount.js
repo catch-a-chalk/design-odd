@@ -1,6 +1,5 @@
 export const initDiscount = () => {
   const orderingDiscount = document.querySelector('.ordering__discount input');
-  // const linkElement = document.querySelector(".promotion a.btn-black");
 
   const updateDiscountValue = () => {
     const localStorageData = JSON.parse(localStorage.getItem('data-form'));

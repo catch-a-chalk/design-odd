@@ -83,43 +83,6 @@ body.on-modal {
     cursor: pointer;
   }
 
-  &-black--review {
-    &:before {
-      content: 'Обзор..';
-    }
-  }
-
-  &-black--send {
-    justify-self: center;
-    &:before {
-      content: 'Отправить';
-    }
-  }
-
-  &-black--send:active {
-    width: 39px;
-    height: 39px;
-    padding: 0;
-  }
-
-  &-black--send:active {
-    &:before {
-      content: '';
-      width: 21px;
-      height: 2px;
-      background-color: $color-white;
-      transform: translate(10px, 18px) rotate(45deg);
-    }
-  
-    &:after {
-      content: '';
-      width: 21px;
-      height: 2px;
-      background-color: $color-white;
-      transform: translate(-10px, 18px) rotate(-45deg);
-    }
-  }
-
   &-black--cross {
     padding: 0;
     width: 40px;
@@ -209,38 +172,6 @@ body.on-modal {
   .btn-black {
     font: $font-700-18-21;
     padding: 7px 20px;
-  }
-
-  .btn-black--review {
-    &:before {
-      content: 'обзор';
-    }
-  }
-
-  .btn-black--order:active {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-
-    &:before {
-      transform: translate(9px, 16px) rotate(45deg);
-    }
-    &:after {
-      transform: translate(-9px, 16px) rotate(-45deg);
-    }
-  }
-
-  .btn-black--send:active {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-
-    &:before {
-      transform: translate(0, 2px) rotate(45deg);
-    }
-    &:after {
-      transform: translate(0, 0) rotate(-45deg);
-    }
   }
 
   .btn-white {
