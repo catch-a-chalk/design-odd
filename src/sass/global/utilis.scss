@@ -41,8 +41,7 @@ body.on-modal {
     width: 75px;
     height: 75px;
     img {
-      height: 30px;
-      transform: scale(1.3);
+      height: 50px;
 
       -webkit-user-select: none;
       -khtml-user-select: none;
@@ -95,7 +94,7 @@ body.on-modal {
       background-color: $color-white;
       transform: translate(10px, 20px) rotate(45deg);
     }
-  
+
     &:after {
       content: '';
       width: 21px;
@@ -117,7 +116,7 @@ body.on-modal {
       background-color: $color-white;
       transform: translate(0px, 0px) rotate(45deg);
     }
-  
+
     &:after {
       content: '';
       width: 21px;
@@ -166,7 +165,7 @@ body.on-modal {
 
   .btn-arrow img {
     width: 30px;
-    height: 20px;
+    height: 30px;
   }
 
   .btn-black {
@@ -198,7 +197,7 @@ body.on-modal {
     &:before {
       transform: translate(9px, 17px) rotate(45deg);
     }
-  
+
     &:after {
       transform: translate(-9px, 17px) rotate(-45deg);
     }
@@ -212,7 +211,7 @@ body.on-modal {
     &:before {
       transform: translate(0px, 2px) rotate(45deg);
     }
-  
+
     &:after {
       transform: translate(-0px, 0px) rotate(-45deg);
     }
@@ -237,7 +236,7 @@ body.on-modal {
     margin-top: 10px;
   }
 
-  .btn-black, 
+  .btn-black,
   .btn-white {
     font: $font-700-18-21;
   }

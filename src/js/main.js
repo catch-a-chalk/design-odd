@@ -10,6 +10,7 @@ import { initModal } from './modules/init-modal';
 import { initBack } from './modules/init-back';
 // import { initCross } from './modules/init-cross';
 import { initPrice } from './modules/init-price';
+import { initCursor } from './modules/init-cursor';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   burgerHandler;
   initLink();
   initProjects();
+  initCursor();
 });
 
 // document.addEventListener('DOMContentLoaded', () => {

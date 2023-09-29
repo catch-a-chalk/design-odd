@@ -261,10 +261,6 @@ input:checked ~ .form__description {
   position: relative;
   z-index: 2;
 
-  h3 {
-    padding-left: 100px;
-  }
-
   &-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 360px));
@@ -454,10 +450,6 @@ input:checked ~ .form__description {
 
   .form__ready {
     padding-top: 68px;
-  }
-  
-  .form__ready h3 {
-    padding-left: 0;
   }
 
   .form__ready-cards {
