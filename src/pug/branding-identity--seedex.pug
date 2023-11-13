@@ -4,7 +4,7 @@ block page
   h1.visually-hidden Страница SEEDEX
   include chunk/header
   main
-    section.template#template-seedex
+    section.template
       .template__grid
         .template__main-content
           .template__heading
@@ -45,7 +45,7 @@ block page
         .template__pic
           img(src="img/t-seedex-pills@1x.jpg", alt="Упаковка SeedEx")
       .template__fullwidth
-          img(src="img/t-seedex-booklet@1x.jpg", alt="Буклет SeedEx")
+        img(src="img/t-seedex-booklet@1x.jpg", alt="Буклет SeedEx")
       .template__grid.template__grid--fullwidth
         img(src="img/t-seedex-specification@1x.jpg", alt="Спецификация SeedEx")
         img(src="img/t-seedex-card@1x.jpg", alt="Визитка SeedEx")
@@ -59,8 +59,6 @@ block page
           a(href="index.html")
             img(src="img/icon-arrow.svg", atl="Назад", width="52").template__arrow.template__arrow--left
             h4 портфолио
-        a(href="#template-seedex").template__up
+        a(href="#header").template__up
           img(src="img/icon-arrow.svg", atl="Подняться", width="52").template__arrow.template__arrow--top
-  //- include chunk/popup
   include chunk/footer
-  .cursor

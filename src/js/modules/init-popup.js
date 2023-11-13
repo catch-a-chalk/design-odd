@@ -35,3 +35,5 @@
 //     popupForm.style.display = "flex";
 //   }
 // });
+
+// export default {popupHandler}

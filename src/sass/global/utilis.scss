@@ -41,7 +41,7 @@ body.on-modal {
     width: 75px;
     height: 75px;
     img {
-      height: 50px;
+      height: 35px;
 
       -webkit-user-select: none;
       -khtml-user-select: none;
@@ -61,7 +61,7 @@ body.on-modal {
     border-radius: 40px;
     background-color: $color-white;
     color: $color-black;
-    cursor: pointer;
+    // cursor: none;
     &:active {
       color: $color-nero;
       border: 2px solid $color-nero;
@@ -79,7 +79,7 @@ body.on-modal {
     border-radius: 25px;
     background-color: $color-black;
     color: $color-white;
-    cursor: pointer;
+    // cursor: none;
   }
 
   &-black--cross {
@@ -146,6 +146,10 @@ body.on-modal {
     margin-top: 0;
     margin-bottom: 50px;
   }
+}
+
+.promotion:hover {
+  border: 1px solid $color-black;
 }
 
 .promotion--active {
@@ -259,14 +263,14 @@ body.on-modal {
     &:before {
       transform: translate(0px, 1px) rotate(45deg);
     }
-  
+
     &:after {
       transform: translate(-0px, -1px) rotate(-45deg);
     }
   }
 
   .promotion {
-    width: 280px;
+    width: -moz-available;
     margin-top: 30px;
     margin-bottom: 30px;
 

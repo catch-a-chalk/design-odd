@@ -1,39 +1,34 @@
-.cursor{
-  display: block;
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #f1f2f3;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  z-index: 9999;
-}
+// .cursor{
+//   display: block;
+//   position: fixed;
+//   pointer-events: none;
+//   z-index: 9999;
+// }
 
-.cursor.active{
-  animation: active_cursor 300ms ease forwards running
-}
+// .cursor.active{
+//   animation: active_cursor 300ms ease forwards running
+// }
 
-@keyframes active_cursor{
-  0%{
-      transform: scale(1);
-  }
+// @keyframes active_cursor{
+//   0%{
+//       transform: scale(1);
+//   }
 
-  100%{
-      transform: scale(5);
-  }
-}
+//   100%{
+//       transform: scale(2);
+//   }
+// }
 
-.cursor.unactive{
-  animation: unactive_cursor 300ms ease forwards running
-}
+// .cursor.unactive{
+//   animation: unactive_cursor 300ms ease forwards running
+// }
 
-@keyframes unactive_cursor{
-  0%{
-      transform: scale(5);
-  }
+// @keyframes unactive_cursor{
+//   0%{
+//       transform: scale(2);
+//   }
 
-  100%{
-      transform: scale(1);
-  }
-}
+//   100%{
+//       transform: scale(1);
+//   }
+// }

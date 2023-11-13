@@ -5,7 +5,11 @@
 
 * {
   box-sizing: border-box;
-  cursor: none;
+}
+
+:root {
+  // cursor: none;
+  cursor: url('../img/vector.png') 2 2, default;
 }
 
 body {

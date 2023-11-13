@@ -5,7 +5,7 @@
   input,
   textarea {
     font: $font-200-24-29;
-    cursor: pointer;
+    cursor: url('../img/vector_hover.png') 2 2, pointer;
     outline: none;
     caret-color: $color-black;
     -webkit-tap-highlight-color: transparent;
@@ -15,7 +15,7 @@
   &__form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
+    grid-template-areas:
       "info details"
       "info about"
       "file about"
@@ -154,7 +154,7 @@
       border-radius: 20px;
       padding: 5px 20px;
       height: 225px;
-  
+
       &:focus,
       &:focus-within,
       &:active {
@@ -181,17 +181,17 @@
   }
 
   &__cross {
-    cursor: pointer;
+    cursor: url('../img/vector_hover.png') 2 2, pointer;
     position: absolute;
     right: 5px;
     padding: 10px;
 
-    &:before, 
+    &:before,
     &:after {
-      content: ""; 
-      position: absolute; 
-      width: 12px; 
-      height: 2px; 
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 2px;
       background: $color-mischka;
     }
 
@@ -270,7 +270,7 @@
 
 @media (max-width: ($vp-1440 - 1)) {
   .ordering__form {
-    grid-template-areas: 
+    grid-template-areas:
     "info details"
     "info details"
     "about about"
@@ -376,6 +376,9 @@
     align-self: baseline;
   }
 
+  .ordering__discount {
+    min-height: 31px;
+  }
   .ordering__buttons {
     grid-template-columns: 1fr;
 

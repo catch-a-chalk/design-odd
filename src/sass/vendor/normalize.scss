@@ -158,6 +158,7 @@ pre {
 }
 a {
 	background-color: transparent;
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
 }
 abbr[title] {
 	border-bottom: none;
@@ -217,7 +218,7 @@ button {
 	text-transform: none;
 	background: none;
 	border: none;
-	cursor: pointer;
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
 	-webkit-appearance: button;
   -webkit-user-select: none;
 	-khtml-user-select: none;
@@ -232,6 +233,9 @@ button {
 		outline: 1px dotted ButtonText;
 	}
 }
+label {
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
+}
 input,
 input ~ p {
 	margin: 0;
@@ -241,6 +245,7 @@ input ~ p {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
 }
 input[type="checkbox"] + span {
 	content: url("../img/check-off.svg");
@@ -259,7 +264,7 @@ input[type="checkbox"]:checked + span {
 input[type="checkbox"]:disabled + span,
 input[type="checkbox"]:disabled ~ small {
 	opacity: 0.5;
-	cursor: default;
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
 }
 optgroup {
 	font-family: inherit;
@@ -282,6 +287,7 @@ textarea {
 	overflow: auto;
 }
 [type="button"] {
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
 	-webkit-appearance: button;
 	&::-moz-focus-inner {
 		border-style: none;
@@ -292,6 +298,7 @@ textarea {
 	}
 }
 [type="reset"] {
+	cursor: url('../img/vector_hover.png') 2 2, pointer;
 	-webkit-appearance: button;
 	&::-moz-focus-inner {
 		border-style: none;
@@ -302,6 +309,7 @@ textarea {
 	}
 }
 [type="submit"] {
+	// cursor: none;
 	-webkit-appearance: button;
 	&::-moz-focus-inner {
 		border-style: none;

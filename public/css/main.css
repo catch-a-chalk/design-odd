@@ -204,6 +204,7 @@ pre {
 
 a {
   background: transparent;
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
 }
 
 abbr[title] {
@@ -282,7 +283,7 @@ button {
   text-transform: none;
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
   -webkit-appearance: button;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -299,6 +300,10 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
+label {
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
+}
+
 input,
 input ~ p {
   margin: 0;
@@ -307,6 +312,7 @@ input ~ p {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
 }
 
 input[type=checkbox] + span {
@@ -327,7 +333,7 @@ input[type=checkbox]:checked + span {
 input[type=checkbox]:disabled + span,
 input[type=checkbox]:disabled ~ small {
   opacity: 0.5;
-  cursor: default;
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
 }
 
 optgroup {
@@ -348,6 +354,7 @@ textarea {
 }
 
 [type=button] {
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
   -webkit-appearance: button;
 }
 
@@ -361,6 +368,7 @@ textarea {
 }
 
 [type=reset] {
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
   -webkit-appearance: button;
 }
 
@@ -486,6 +494,14 @@ li {
 }
 
 @font-face {
+  font-family: "Inter-ExtraLight";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/font/Inter-ExtraLight.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -553,7 +569,7 @@ body.on-modal {
 }
 
 .btn-arrow img {
-  height: 50px;
+  height: 35px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -576,7 +592,6 @@ body.on-modal {
   border: 2px solid #0e0e0e;
   border-radius: 40px;
   color: #0e0e0e;
-  cursor: pointer;
 }
 
 .btn-white:active {
@@ -597,7 +612,6 @@ body.on-modal {
   padding: 5px 36px;
   border-radius: 25px;
   color: #ffffff;
-  cursor: pointer;
 }
 
 .btn-black--cross {
@@ -681,82 +695,16 @@ body.on-modal {
   margin-bottom: 50px;
 }
 
+.promotion:hover {
+  border: 1px solid #0e0e0e;
+}
+
 .promotion--active {
   border: 1px solid #0e0e0e;
 }
 
 .burger {
   display: none;
-}
-
-.cursor {
-  display: block;
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #f1f2f3;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.cursor.active {
-  -webkit-animation: active_cursor 300ms ease forwards running;
-  animation: active_cursor 300ms ease forwards running;
-}
-
-@-webkit-keyframes active_cursor {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  100% {
-    -webkit-transform: scale(5);
-    transform: scale(5);
-  }
-}
-
-@keyframes active_cursor {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  100% {
-    -webkit-transform: scale(5);
-    transform: scale(5);
-  }
-}
-
-.cursor.unactive {
-  -webkit-animation: unactive_cursor 300ms ease forwards running;
-  animation: unactive_cursor 300ms ease forwards running;
-}
-
-@-webkit-keyframes unactive_cursor {
-  0% {
-    -webkit-transform: scale(5);
-    transform: scale(5);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@keyframes unactive_cursor {
-  0% {
-    -webkit-transform: scale(5);
-    transform: scale(5);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
 }
 
 .dev .btn-white {
@@ -791,8 +739,8 @@ body.on-modal {
 
 .dev__inbox p {
   font: 700 40px/48px "Inter", "MS Sans Serif", sans-serif;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
   justify-self: flex-end;
 }
 
@@ -802,7 +750,7 @@ body.on-modal {
   justify-self: end;
   -ms-flex-item-align: start;
   align-self: flex-start;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .dev__services fieldset {
@@ -995,6 +943,9 @@ body.on-modal {
   display: grid;
   grid-template-columns: 1fr 1fr 60px 1fr 1fr;
   gap: 50px;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
 }
 
 .form__boooooox h4 {
@@ -1006,7 +957,6 @@ body.on-modal {
 
 .form__option {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Crect width='15' height='15' x='.5' y='.5' fill='%23fff' rx='3.5'/%3E%3Crect width='15' height='15' x='.5' y='.5' stroke='%23E8E7E7' rx='3.5'/%3E%3C/svg%3E") no-repeat;
-  cursor: pointer;
   width: 16px;
   height: 16px;
   margin-top: 2px;
@@ -1033,7 +983,7 @@ fieldset input:checked:hover + .form__option {
 .form__progress {
   background: #eaecf0;
   position: absolute;
-  width: 6px;
+  width: 5px;
   height: 140em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1048,7 +998,7 @@ fieldset input:checked:hover + .form__option {
 .form__progress-bar {
   background: #0e0e0e;
   position: fixed;
-  width: 6px;
+  width: 5px;
   height: 50vh;
   top: 0;
   bottom: 50vh;
@@ -1058,7 +1008,7 @@ fieldset input:checked:hover + .form__option {
 .form__progress-overlay-top {
   background: #0e0e0e;
   position: absolute;
-  width: 6px;
+  width: 5px;
   top: 0;
   bottom: auto;
   left: 0;
@@ -1160,7 +1110,6 @@ fieldset input:checked:hover + .form__option {
   -webkit-box-shadow: none;
   box-shadow: none;
   position: sticky;
-  position: -webkit-sticky;
 }
 
 .form__stages fieldset {
@@ -1299,7 +1248,7 @@ input:checked ~ .form__description {
   gap: 10px;
   justify-items: center;
   padding: 8px 30px 43px;
-  border: 2px solid #d3d3d3;
+  border: 1px solid #d3d3d3;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -1308,7 +1257,7 @@ input:checked ~ .form__description {
 .form__ready-card:focus,
 .form__ready-card:focus-within,
 .form__ready-card:active {
-  border: 2px solid #0e0e0e;
+  border: 1px solid #0e0e0e;
 }
 
 .form__ready-card h4 {
@@ -1450,7 +1399,7 @@ input:checked ~ .form__description {
   display: none;
   width: 40px;
   height: 40px;
-  cursor: pointer;
+  cursor: none;
 }
 
 .modal__close {
@@ -1459,7 +1408,7 @@ input:checked ~ .form__description {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  cursor: pointer;
+  cursor: none;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   -o-transition: transform 0.3s ease-in-out;
@@ -1594,7 +1543,7 @@ input:checked ~ .form__description {
 .ordering input,
 .ordering textarea {
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
-  cursor: pointer;
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
   outline: none;
   caret-color: #0e0e0e;
   -webkit-tap-highlight-color: transparent;
@@ -1797,7 +1746,7 @@ input:checked ~ .form__description {
 }
 
 .ordering__cross {
-  cursor: pointer;
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
   position: absolute;
   right: 5px;
   padding: 10px;
@@ -2132,6 +2081,8 @@ input:checked ~ .form__description {
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .projects__cta img:hover {
@@ -2156,6 +2107,40 @@ input:checked ~ .form__description {
   text-align: end;
 }
 
+.telegram {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 11;
+  -webkit-transition: ease-out 300ms;
+  -o-transition: ease-out 300ms;
+  transition: ease-out 300ms;
+}
+
+.telegram:hover {
+  -webkit-transition: ease-in 300ms;
+  -o-transition: ease-in 300ms;
+  transition: ease-in 300ms;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  cursor: url("../img/vector_hover.png") 2 2, pointer;
+}
+
 .template {
   max-width: 1440px;
   margin: 30px auto 0;
@@ -2163,7 +2148,7 @@ input:checked ~ .form__description {
 
 .template__grid {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: 4fr 6fr;
   gap: 80px;
   margin-bottom: 80px;
   position: relative;
@@ -2175,6 +2160,18 @@ input:checked ~ .form__description {
 
 .template__grid--fullwidth img {
   width: 100%;
+}
+
+.template__grid--links {
+  padding-right: 150px;
+}
+
+.template__grid--elements {
+  grid-template-columns: 3fr 5fr;
+}
+
+.template__grid--noise {
+  grid-template-columns: 2fr 3fr;
 }
 
 .template__main-content {
@@ -2192,8 +2189,22 @@ input:checked ~ .form__description {
   padding-left: 40px;
 }
 
+.template__main-content--noise {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.template__main-content--noise .template__categories {
+  margin-top: 25px;
+}
+
+.template__main-content--noise .template__services {
+  margin-top: 20%;
+}
+
 .template__heading {
-  background: url("../../img/bg-pencil.svg") no-repeat center/contain;
+  background: url("../img/bg-pencil.svg") no-repeat center/contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2204,18 +2215,20 @@ input:checked ~ .form__description {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
+  right: 5.5vw;
 }
 
 .template__heading-container h2 {
   font: 200 40px/48px "Inter", "MS Sans Serif", sans-serif;
-  margin-top: 45px;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
 .template__heading-container p {
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
   margin-top: 5px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .template__categories {
@@ -2241,8 +2254,14 @@ input:checked ~ .form__description {
   padding-left: 110px;
 }
 
+.template__services--noise {
+  margin-top: 20%;
+}
+
 .template__h3 {
   font: 200 40px/48px "Inter", "MS Sans Serif", sans-serif;
+  font-size: 2rem;
+  line-height: 27px;
   margin-top: 0;
   margin-bottom: 5px;
 }
@@ -2251,6 +2270,8 @@ input:checked ~ .form__description {
   margin: 5px 0 0;
   padding: 0;
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
+  font-size: 1.3rem;
+  line-height: 2rem;
 }
 
 .template__pic {
@@ -2269,12 +2290,25 @@ input:checked ~ .form__description {
   padding-right: 40px;
 }
 
+.template__pic--noise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 90px;
+}
+
 .template__subheading {
   padding-left: 110px;
 }
 
 .template__text {
   font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
+  font-size: 1.3rem;
+  line-height: 2rem;
   margin-top: 5px;
 }
 
@@ -2296,6 +2330,8 @@ input:checked ~ .form__description {
   text-align: center;
   text-decoration: underline;
   color: #0e0e0e;
+  font-size: 1.3rem;
+  line-height: 2rem;
 }
 
 .template__up {
@@ -2364,12 +2400,37 @@ input:checked ~ .form__description {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  cursor: none;
+}
+
+:root {
+  cursor: url("../img/vector.png") 2 2, default;
 }
 
 body {
   font: 200 21px/1.5 "Inter", "MS Sans Serif", sans-serif;
   background: #ffffff;
+}
+
+@media (min-width: 1024px) {
+  .preform p {
+    max-width: calc(100vw - 70%);
+  }
+}
+
+@media (min-width: 1920px) {
+  .template__heading {
+    right: 4vw;
+  }
+}
+
+@media (max-width: 1800px) {
+  .template__heading {
+    right: 4.5vw;
+  }
+
+  .template__heading {
+    right: 5vw;
+  }
 }
 
 @media (max-width: 1439px) {
@@ -2800,6 +2861,10 @@ body {
     padding-top: 45px;
   }
 
+  .preform p {
+    max-width: calc(100vw - 62%);
+  }
+
   .projects__nav {
     padding: 0 50px;
   }
@@ -2829,10 +2894,19 @@ body {
     font: 200 18px/22px "Inter", "MS Sans Serif", sans-serif;
   }
 
+  .telegram {
+    bottom: 50px;
+    right: 22px;
+  }
+
   .template__grid {
     grid-template-columns: 3fr 4fr;
     gap: 30px;
     margin-bottom: 40px;
+  }
+
+  .template__heading {
+    position: static;
   }
 
   .template__heading-container h2 {
@@ -2862,16 +2936,6 @@ body {
     margin: 0;
   }
 
-  .template__h3 {
-    font: 200 24px/29px "Inter", "MS Sans Serif", sans-serif;
-  }
-
-  .template__list,
-  .template__text,
-  .template__link {
-    font: 200 16px/19px "Inter", "MS Sans Serif", sans-serif;
-  }
-
   .template__subheading {
     padding-left: 40px;
   }
@@ -2899,6 +2963,14 @@ body {
     grid-template-columns: 3fr 5fr;
     margin-bottom: 40px;
     gap: 50px;
+  }
+
+  .template__grid--links {
+    padding-right: 40px;
+  }
+
+  .template__grid--links a {
+    text-align: end;
   }
 
   .template__link {
@@ -2964,7 +3036,7 @@ body {
   }
 
   .promotion {
-    width: 280px;
+    width: -moz-available;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -2984,7 +3056,7 @@ body {
 
   .burger__field {
     padding: 16px 20px;
-    cursor: pointer;
+    cursor: none;
   }
 
   .burger__bar {
@@ -3049,6 +3121,16 @@ body {
     justify-self: flex-start;
     gap: 20px;
     grid-row: 1/2;
+  }
+
+  .dev__inbox p {
+    line-height: 25px;
+    margin-top: 0;
+  }
+
+  .dev__inbox img {
+    width: 25px;
+    height: 20px;
   }
 
   .dev__title {
@@ -3481,7 +3563,7 @@ body {
   }
 
   .navigation__menu .navigation__list > li > a:hover {
-    background-color: rgba(122, 82, 179, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   body.noscroll {
@@ -3525,6 +3607,10 @@ body {
   .ordering__details h3 {
     -ms-flex-item-align: baseline;
     align-self: baseline;
+  }
+
+  .ordering__discount {
+    min-height: 31px;
   }
 
   .ordering__buttons {
@@ -3606,6 +3692,19 @@ body {
   .template__categories,
   .template__services {
     padding-left: 0;
+  }
+
+  .template__categories {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .template__pic--colors {

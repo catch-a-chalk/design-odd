@@ -2,47 +2,48 @@
   const PACKAGES = [
       { title: 'Пакет START',
         id: 'package-start',
-        checkBoxes: 
+        checkBoxes:
         [
-          { value: 's-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true' },
-          { value: 's-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 's-two-logotypes', span: 'логотип 2 варианта', checked: 'checked', disabled: 'disabled', nosave: 'true' },
+          { value: 's-corporate-style', span: 'фирменный стиль (цвет/шрифт/паттерн)', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 's-three-carriers', span: '3 носителя', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 's-package', span: 'упаковка' }
         ],
         index: '2'
       },
-      { title: 'Пакет айдентика',
+      { title: 'Пакет брендинг',
         id: 'package-idenity',
-        checkBoxes: 
+        checkBoxes:
         [
           { value: 'i-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'i-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'i-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'i-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  }, 
+          { value: 'i-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'i-platform', span: 'бренд-платформа*', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
           { value: 'i-package', span: 'упаковка' }
         ],
-        index: '3'
-      },
-      { title: 'Пакет брендинг и айдентика ',
-        id: 'package-branding-idenity',
-        checkBoxes: 
-        [
-          { value: 'bi-two-types-of-naming', span: '2 варианта нейминга', checked: 'checked', disabled: 'disabled', nosave: 'true'  }, 
-          { value: 'bi-two-logotypes', span: '2 логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'bi-corporate-style', span: 'фирменный стиль – цвет/шрифт/паттерн', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'bi-five-carriers', span: '5 носителей', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'bi-brandbook', span: 'брендбук', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'bi-brand-platform', span: 'бренд-платформа*', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
-          { value: 'bi-package', span: 'упаковка' }
-        ],
-        index: '4',
+        index: '3',
         commentary: '*характер и ценности бренда, его идея, смысловая основа'
+      },
+      { title: 'Пакет продукт',
+        id: 'package-branding-idenity',
+        checkBoxes:
+        [
+          { value: 'bi-design-audit', span: 'дизайн-аудит бренда', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-two-logotypes', span: '2 варианта логотипа', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-two-designs', span: '2 дизайна упаковки (2 SKU)', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-designing-package', span: 'дизайн всех сторон упаковки выбранного варианта (2 SKU)', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-package-markup', span: 'верстка макетов упаковки', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-perpess-preparation', span: 'предпечатная подготовка', checked: 'checked', disabled: 'disabled', nosave: 'true'  },
+          { value: 'bi-package', span: 'упаковка (+1 SKU)' }
+        ],
+        index: '4'
       }
     ]
 
 #inner1.form__ready
   h3#packages.title готовые пакеты услуг
-    | 
+    |
     br
     | для&nbsp;малого&nbsp;и&nbsp;среднего бизнеса
   .form__ready-cards

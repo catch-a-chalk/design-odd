@@ -166,6 +166,7 @@ textarea {
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
+  cursor: none;
 }
 
 /**
@@ -197,6 +198,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  cursor: none;
 }
 
 /**
@@ -209,6 +211,7 @@ button::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
+  cursor: none;
 }
 
 /**
@@ -220,6 +223,7 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
+  cursor: none;
 }
 
 /**
@@ -280,6 +284,7 @@ textarea {
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
+  cursor: none;
 }
 
 /**

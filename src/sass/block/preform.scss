@@ -35,6 +35,16 @@
     letter-spacing: 0em;
     padding-top: 45px;
   }
+
+  .preform p {
+    max-width: calc(100vw - 62%);
+  }
+}
+
+@media (min-width: ($vp-1024)) {
+  .preform p {
+    max-width: calc(100vw - 70%);
+  }
 }
 
 @media (max-width: ($vp-768 - 1)) {

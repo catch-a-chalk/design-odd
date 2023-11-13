@@ -1,10 +1,28 @@
+@media (min-width: ($vp-1920)) {
+  .template__heading {
+    right: calc(100vw - 96vw);
+  }
+}
+
+@media (max-width: 1800px) {
+  .template__heading {
+    right: calc(100vw - 95.5vw);
+  }
+}
+
+@media (max-width: 1800px) {
+  .template__heading {
+    right: calc(100vw - 95vw);
+  }
+}
+
 .template {
   max-width: 1440px;
   margin: 30px auto 0;
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: 4fr 6fr;
     gap: 80px;
     margin-bottom: 80px;
     position: relative;
@@ -14,6 +32,18 @@
       img {
         width: 100%;
       }
+    }
+
+    &--links {
+      padding-right: 150px;
+    }
+
+    &--elements {
+      grid-template-columns: 3fr 5fr;
+    }
+
+    &--noise {
+      grid-template-columns: 2fr 3fr;
     }
   }
 
@@ -25,26 +55,40 @@
     padding-left: 40px;
   }
 
+  &__main-content--noise {
+    justify-content: flex-start;
+
+    .template__categories {
+      margin-top: 25px;
+    }
+
+    .template__services {
+      margin-top: 20%;
+    }
+  }
+
   &__heading {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("../../img/bg-pencil.svg");
+    background-image: url("../img/bg-pencil.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    position: relative;
+    right: calc(100vw - 94.5vw);
   }
 
   &__heading-container {
     h2 {
       font: $font-200-40-48;
-      margin-top: 45px;
+      margin-top: 15px;
       margin-bottom: 5px;
     }
     p {
       font: $font-200-24-29;
       margin-top: 5px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
   }
 
@@ -65,10 +109,16 @@
 
   &__services {
     padding-left: 110px;
+
+    &--noise {
+      margin-top: 20%;
+    }
   }
 
   &__h3 {
     font: $font-200-40-48;
+    font-size: 2rem;
+    line-height: 27px;
     margin-top: 0;
     margin-bottom: 5px;
   }
@@ -77,6 +127,8 @@
     margin: 5px 0 0;
     padding: 0;
     font: $font-200-24-29;
+    font-size: 1.3rem;
+    line-height: 2rem;
   }
 
   &__pic {
@@ -92,6 +144,12 @@
     &--hands {
       padding-right: 40px;
     }
+
+    &--noise {
+      display: flex;
+      flex-direction: column;
+      gap: 90px;
+    }
   }
 
   &__subheading {
@@ -100,6 +158,8 @@
 
   &__text {
     font: $font-200-24-29;
+    font-size: 1.3rem;
+    line-height: 2rem;
     margin-top: 5px;
   }
 
@@ -120,6 +180,8 @@
     text-align: center;
     text-decoration: underline;
     color: $color-black;
+    font-size: 1.3rem;
+    line-height: 2rem;
   }
 
   &__up {
@@ -168,6 +230,9 @@
     margin-bottom: 40px;
   }
 
+  .template__heading {
+    position: static;
+  }
   .template__heading-container h2 {
     font: $font-200-24-29;
     margin-top: 20px;
@@ -195,15 +260,15 @@
     margin: 0;
   }
 
-  .template__h3 {
-    font: $font-200-24-29;
-  }
+  // .template__h3 {
+  //   font: $font-200-24-29;
+  // }
 
-  .template__list,
-  .template__text,
-  .template__link {
-    font: $font-200-16-19;
-  }
+  // .template__list,
+  // .template__text,
+  // .template__link {
+  //   font: $font-200-16-19;
+  // }
 
   .template__subheading {
     padding-left: 40px;
@@ -230,6 +295,14 @@
     grid-template-columns: 3fr 5fr;
     margin-bottom: 40px;
     gap: 50px;
+  }
+
+  .template__grid--links {
+    padding-right: 40px;
+  }
+
+  .template__grid--links a {
+    text-align: end;
   }
 
   .template__link {
@@ -270,6 +343,13 @@
 
   .template__categories, .template__services {
     padding-left: 0;
+  }
+
+  .template__categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .template__pic--colors {

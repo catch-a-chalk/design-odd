@@ -7,11 +7,11 @@
       width: 136px;
       justify-self: end;
     }
-  
+
     li:nth-child(4n+3) {
       width: 136px;
     }
-  } 
+  }
 
   &__nav {
     padding: 0;
@@ -36,7 +36,7 @@
       &:hover {
         font-weight: 700;
       }
-  
+
       &:focus-visible {
         font-weight: 700;
       }
@@ -89,6 +89,7 @@
       margin-top: 10px;
       aspect-ratio: 658 / 401;
       transition: 1s;
+      object-fit: cover;
 
       &:hover {
         transform: scale(1.1);
@@ -109,7 +110,6 @@
     font: $font-200-24-29;
     color: $color-black;
     margin-top: var(--mt-inside-card);
-    // max-width: 180px;
     text-align: end;
   }
 }
